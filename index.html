@@ -1402,7 +1402,7 @@
            title="Star on GitHub">
           <span class="star-icon">★</span>
           Star
-          <span class="star-count" id="star-count">…</span>
+          <span class="star-count" id="star-count" style="display:none"></span>
         </a>
         <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◑</button>
       </nav>
@@ -3368,14 +3368,15 @@ setTimeout(()=>{
 
 /* ═══════════════════════════════════════════════════════════
    GITHUB STAR COUNT
-   Fetches star count from the GitHub API and updates the nav
-   star button + the CTA badge. Cached in sessionStorage so
-   it survives page navigations without extra API calls.
+   Fetches live star count from the GitHub API.
+   Cached in sessionStorage for 5 minutes to avoid hammering
+   the API on every navigation, but fresh enough to reflect
+   new stars quickly.
 ═══════════════════════════════════════════════════════════ */
 (function(){
-  const REPO = "kishormorol/SkillsAllYouNeed";
+  const REPO      = "kishormorol/SkillsAllYouNeed";
   const CACHE_KEY = "sayn-stars";
-  const CACHE_TTL = 3600 * 1000; // 1 hour
+  const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
   function fmtStars(n){
     if(n >= 1000) return (n/1000).toFixed(1).replace(/\.0$/,"") + "k";
@@ -3385,8 +3386,13 @@ setTimeout(()=>{
   function applyCount(n){
     const navCount = document.getElementById("star-count");
     const ctaCount = document.getElementById("star-count-cta");
+    /* Only show count when there is at least 1 star */
+    if(n < 1){
+      if(navCount) navCount.style.display = "none";
+      return;
+    }
     const formatted = fmtStars(n);
-    if(navCount) navCount.textContent = formatted;
+    if(navCount){ navCount.textContent = formatted; navCount.style.display = ""; }
     if(ctaCount){ ctaCount.textContent = formatted; ctaCount.classList.add("loaded"); }
   }
 
@@ -3400,7 +3406,7 @@ setTimeout(()=>{
   } catch(_){}
 
   /* Fetch from GitHub API (unauthenticated — 60 req/hr per IP) */
-  fetch("https://api.github.com/repos/" + REPO)
+  fetch("https://api.github.com/repos/" + REPO, {cache:"no-store"})
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(data => {
       const stars = data.stargazers_count || 0;
@@ -3408,9 +3414,9 @@ setTimeout(()=>{
       try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({stars, ts: Date.now()})); } catch(_){}
     })
     .catch(() => {
-      /* Hide the count element gracefully on failure */
+      /* On failure just hide the count — the button still works */
       const navCount = document.getElementById("star-count");
-      if(navCount) navCount.textContent = "★";
+      if(navCount) navCount.style.display = "none";
     });
 })();
 
