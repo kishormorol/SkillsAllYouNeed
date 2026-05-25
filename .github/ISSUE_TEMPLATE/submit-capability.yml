@@ -1,0 +1,96 @@
+name: Submit a capability
+description: Propose a new skill or capability to add to the directory
+title: "[Skill] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Fill in the fields below and the skill will be reviewed and added to the catalog.
+
+  - type: input
+    id: name
+    attributes:
+      label: Skill name
+      description: Short display name, title case
+      placeholder: e.g. Smart Notes
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ecosystem
+    attributes:
+      label: Ecosystem
+      options:
+        - Claude
+        - Claude Code
+        - ChatGPT
+        - Codex
+        - Gemini
+        - DeepSeek
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Document
+        - Code
+        - Web
+        - Data
+        - Memory
+        - Integration
+        - Visual
+        - Agentic
+        - API
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Stable
+        - Beta
+        - Deprecated
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What this skill does — one or two sentences
+      placeholder: Automatically extracts and saves key decisions from a conversation into your project notes.
+    validations:
+      required: true
+
+  - type: input
+    id: trigger
+    attributes:
+      label: Trigger phrase
+      description: What phrase or action activates this skill
+      placeholder: '"Save this to my notes" · auto-triggered on decisions'
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Worked example
+      description: A concrete real-world scenario showing the skill in action
+      placeholder: After a planning session, Claude surfaces a bullet list of decisions and asks to save them.
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: Link to official documentation or announcement
+      placeholder: https://www.anthropic.com/news/smart-notes
+    validations:
+      required: true

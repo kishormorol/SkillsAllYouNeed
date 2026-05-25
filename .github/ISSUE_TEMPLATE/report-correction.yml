@@ -1,0 +1,57 @@
+name: Report a correction
+description: Flag an inaccuracy, broken link, or outdated entry
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for keeping the directory accurate. Fill in what's wrong and what it should be.
+
+  - type: input
+    id: skill-id
+    attributes:
+      label: Skill ID
+      description: The ID shown on the card (e.g. cl-artifacts, gpt-canvas)
+      placeholder: e.g. cl-memory
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Type of correction
+      options:
+        - Inaccurate description
+        - Wrong status (Stable / Beta / Deprecated)
+        - Broken or wrong source URL
+        - Outdated information
+        - Wrong ecosystem or category
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-is-wrong
+    attributes:
+      label: What is wrong
+      description: Describe the current inaccuracy
+      placeholder: The status is listed as Beta but it has been Stable since March 2025.
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-it-should-be
+    attributes:
+      label: What it should be
+      description: The correct information
+      placeholder: Status should be Stable. Source — https://...
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: Link that confirms the correction (optional but helpful)
+      placeholder: https://docs.example.com/changelog
