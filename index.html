@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SkillsAllYouNeed — A Curated Directory of AI Assistant Capabilities</title>
+<title>SkillsAllYouNeed — The Open Registry of AI Skills</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +11,7 @@
 
 <style>
   /* ─────────────────────────────────────────────────────────────
-     SkillsAllYouNeed — Editorial Brutalist Preprint
-     Vol. 01 / Issue 2026 / arXiv:2605.10847
+     SkillsAllYouNeed — Open AI Skills Registry
      ───────────────────────────────────────────────────────────── */
 
   :root{
@@ -75,126 +74,85 @@
     z-index:2;
   }
 
-  /* ── Top rule + running head ─────────────────────────────── */
-  .runninghead{
-    border-bottom:1px solid var(--rule);
-    padding:14px 0 10px;
-    display:flex; justify-content:space-between; align-items:baseline;
-    gap:24px;
+  /* ── Hero / site header ──────────────────────────────────── */
+  .hero{ border-bottom:1px solid var(--rule); }
+  .hero-top{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 0 12px;
+    border-bottom:1px solid var(--rule-soft);
     font-family:var(--mono);
     font-size:11px;
-    letter-spacing:.06em;
+    letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--ink-2);
   }
-  .runninghead .left{ display:flex; gap:24px; align-items:baseline; flex-wrap:wrap; }
-  .runninghead .dot{
-    width:8px; height:8px; background:var(--accent); display:inline-block;
-    margin-right:8px; transform:translateY(1px);
-  }
-  .runninghead .right{ display:flex; gap:20px; }
-  .runninghead .right span{ opacity:.7; }
+  .hero-brand{ display:flex; align-items:center; gap:8px; font-weight:500; color:var(--ink); }
+  .hero-dot{ width:8px; height:8px; background:var(--accent); display:inline-block; flex-shrink:0; }
+  .hero-nav{ display:flex; gap:20px; }
+  .hero-nav a{ color:var(--ink-soft); transition:color .12s ease; }
+  .hero-nav a:hover{ color:var(--accent); }
 
-  /* ── Masthead ───────────────────────────────────────────── */
-  .masthead{
-    padding:64px 0 56px;
-    border-bottom:1px solid var(--rule);
-    position:relative;
-  }
-  .masthead .kicker{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:24px;
-    display:flex; align-items:center; gap:14px;
-  }
-  .kicker .bar{ width:36px; height:1px; background:var(--accent); display:inline-block; }
-
-  .masthead h1{
+  .hero-body{ padding:64px 0 56px; }
+  .hero-body h1{
     font-family:var(--serif-display);
     font-weight:400;
-    font-size: clamp(72px, 13.4vw, 220px);
-    line-height:.86;
-    letter-spacing:-0.03em;
-    margin:0 0 18px;
-    font-feature-settings:"liga","dlig","swsh";
+    font-size: clamp(56px, 9vw, 130px);
+    line-height:.9;
+    letter-spacing:-.025em;
+    margin:0 0 28px;
   }
-  .masthead h1 .it{ font-style:italic; color:var(--accent); }
-  .masthead h1 .amp{
-    font-style:italic;
-    font-weight:300;
-  }
-
-  .masthead .sub{
-    display:grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap:48px;
-    margin-top:36px;
-    align-items:start;
-  }
-  .abstract{
+  .hero-body h1 em{ font-style:italic; color:var(--accent); }
+  .hero-sub{
     font-family:var(--serif-body);
-    font-size: clamp(17px, 1.35vw, 21px);
+    font-size: clamp(17px, 1.4vw, 21px);
     line-height:1.45;
     color:var(--ink-2);
-    max-width:62ch;
+    max-width:64ch;
+    margin:0 0 40px;
     text-wrap:pretty;
   }
-  .abstract::before{
-    content:"Abstract.";
-    font-family:var(--serif-body);
-    font-weight:600;
+  .hero-stats{
+    display:flex; gap:48px; margin-bottom:36px; flex-wrap:wrap;
+  }
+  .hero-stats .stat{ display:flex; flex-direction:column; gap:2px; }
+  .hero-stats .stat b{
+    font-family:var(--serif-display);
+    font-size: clamp(36px, 4vw, 52px);
     font-style:italic;
-    margin-right:.4em;
-    color:var(--ink);
+    line-height:1;
+    color:var(--accent);
+    font-weight:400;
+    letter-spacing:-.02em;
   }
-
-  .meta-block{
+  .hero-stats .stat span{
     font-family:var(--mono);
-    font-size:11.5px;
-    line-height:1.75;
-    color:var(--ink-2);
-    border-left:1px solid var(--rule);
-    padding-left:24px;
-  }
-  .meta-block .row{ display:grid; grid-template-columns:90px 1fr; gap:12px; }
-  .meta-block .row dt{ color:var(--ink-mute); letter-spacing:.05em; text-transform:uppercase; }
-  .meta-block .row dd{ margin:0; color:var(--ink); }
-  .meta-block .row dd a:hover{ color:var(--accent); border-bottom:1px solid var(--accent); }
-
-  /* Volume slug */
-  .vol-stamp{
-    position:absolute; right:0; top:64px;
-    text-align:right;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.1em;
+    font-size:10.5px;
     text-transform:uppercase;
-    color:var(--ink-2);
-    line-height:1.6;
-    display:none;
+    letter-spacing:.12em;
+    color:var(--ink-mute);
   }
-  @media (min-width: 1100px){ .vol-stamp{ display:block; } }
+  .hero-cta{ display:flex; gap:10px; flex-wrap:wrap; }
+  .cta-primary{
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    padding:10px 20px; background:var(--ink); color:var(--paper); border:1px solid var(--ink);
+    transition:background .12s ease, border-color .12s ease; display:inline-block;
+  }
+  .cta-primary:hover{ background:var(--accent); border-color:var(--accent); }
+  .cta-ghost{
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    padding:10px 20px; background:transparent; color:var(--ink-soft); border:1px solid var(--rule);
+    transition:background .12s ease, color .12s ease; display:inline-block;
+  }
+  .cta-ghost:hover{ background:var(--ink); color:var(--paper); }
 
   /* ── Section header ─────────────────────────────────────── */
   .section{ padding:80px 0 40px; border-bottom:1px solid var(--rule); }
   .section.tight{ padding-top:48px; }
   .section-head{
     display:grid;
-    grid-template-columns: 110px 1fr auto;
+    grid-template-columns: 1fr auto;
     gap:32px;
     align-items:baseline;
     margin-bottom:36px;
-  }
-  .section-head .num{
-    font-family:var(--serif-display);
-    font-size:84px;
-    line-height:1;
-    color:var(--accent);
-    font-style:italic;
-    letter-spacing:-.02em;
   }
   .section-head .label{
     font-family:var(--mono);
@@ -397,7 +355,7 @@
     text-transform:uppercase;
     color:var(--ink-soft);
   }
-  .card .cat::before{ content:"§ "; opacity:.5; }
+  .card .cat::before{ content:"# "; opacity:.4; }
   .card .status{
     font-family:var(--mono);
     font-size:10.5px;
@@ -545,156 +503,6 @@
   .sheet .src:hover{ background:var(--ink); color:var(--paper); }
   .sheet .src::before{ content:"↗"; color:var(--accent); }
   .sheet .src:hover::before{ color:var(--highlight); }
-
-  /* ── Comparison matrix ─────────────────────────────────── */
-  .matrix-wrap{
-    border:1px solid var(--rule);
-    background:var(--paper);
-    overflow-x:auto;
-  }
-  table.matrix{
-    width:100%;
-    border-collapse:collapse;
-    font-family:var(--serif-body);
-    min-width:760px;
-  }
-  table.matrix caption{
-    text-align:left;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-mute);
-    padding:14px 18px;
-    border-bottom:1px solid var(--rule);
-    background:var(--paper-2);
-  }
-  table.matrix caption b{ color:var(--ink); font-weight:500; }
-  table.matrix thead th{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--ink);
-    text-align:center;
-    padding:18px 14px 16px;
-    border-bottom:1px solid var(--rule);
-    background:var(--paper);
-    vertical-align:bottom;
-    font-weight:500;
-  }
-  table.matrix thead th:first-child{ text-align:left; padding-left:22px; }
-  table.matrix thead .head-glyph{
-    display:flex; flex-direction:column; align-items:center; gap:8px;
-  }
-  table.matrix thead .head-glyph svg{ width:22px; height:22px; }
-  table.matrix tbody td{
-    font-size:16px;
-    padding:16px 14px;
-    text-align:center;
-    border-bottom:1px solid var(--rule-soft);
-    vertical-align:middle;
-  }
-  table.matrix tbody td:first-child{
-    text-align:left;
-    font-family:var(--serif-body);
-    font-size:18px;
-    padding-left:22px;
-    color:var(--ink);
-    width:38%;
-  }
-  table.matrix tbody td:first-child .row-num{
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--ink-mute);
-    letter-spacing:.1em;
-    margin-right:14px;
-    display:inline-block;
-    min-width:24px;
-  }
-  table.matrix tbody tr:hover{ background:var(--paper-2); }
-  table.matrix tbody tr:last-child td{ border-bottom:0; }
-
-  .mark{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:34px; height:34px;
-    font-family:var(--mono);
-    font-size:14px;
-    font-weight:500;
-  }
-  .mark.yes{ color:var(--accent); font-size:22px; font-family:var(--serif-display); }
-  .mark.no{ color:var(--ink-mute); font-size:18px; }
-  .mark.partial{
-    background:var(--paper-2);
-    color:var(--ink);
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    border:1px solid var(--rule);
-    width:auto; padding:4px 8px;
-    height:auto;
-  }
-
-  /* ── References ─────────────────────────────────────────── */
-  .refs-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:48px;
-  }
-  @media (max-width: 900px){ .refs-grid{ grid-template-columns:1fr; } }
-  .refs ol{
-    padding:0; margin:0;
-    list-style:none;
-    counter-reset: ref;
-    font-family:var(--serif-body);
-    font-size:15px;
-    line-height:1.5;
-  }
-  .refs li{
-    counter-increment: ref;
-    padding:14px 0 14px 36px;
-    border-bottom:1px solid var(--rule-soft);
-    position:relative;
-    color:var(--ink-2);
-  }
-  .refs li::before{
-    content: "[" counter(ref) "]";
-    position:absolute; left:0; top:14px;
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--accent);
-    letter-spacing:.04em;
-  }
-  .refs li a{ border-bottom:1px solid var(--rule-soft); }
-  .refs li a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
-  .refs li em{ font-style:italic; color:var(--ink); }
-  .refs li .where{
-    display:block;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.04em;
-    color:var(--ink-mute);
-    margin-top:4px;
-  }
-
-  .methodology{
-    font-family:var(--serif-body);
-    font-size:15.5px;
-    line-height:1.6;
-    color:var(--ink-2);
-    text-wrap:pretty;
-  }
-  .methodology p{ margin:0 0 14px; }
-  .methodology .pull{
-    font-family:var(--serif-display);
-    font-style:italic;
-    font-size:24px;
-    line-height:1.25;
-    color:var(--ink);
-    border-left:2px solid var(--accent);
-    padding:6px 0 6px 18px;
-    margin:18px 0;
-  }
 
   /* ── Colophon / footer ──────────────────────────────────── */
   .colophon{
@@ -954,12 +762,12 @@
   /* ── Print stylesheet (v1.1) ─── */
   @media print {
     @page { size: A4; margin: 18mm 16mm 20mm; }
-    @page :left  { @bottom-left  { content: "SkillsAllYouNeed · v1.1"; font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } @bottom-right { content: counter(page) " / " counter(pages); font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } }
-    @page :right { @bottom-left  { content: "arXiv:2605.10847"; font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } @bottom-right { content: counter(page) " / " counter(pages); font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } }
+    @page :left  { @bottom-left  { content: "SkillsAllYouNeed"; font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } @bottom-right { content: counter(page) " / " counter(pages); font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } }
+    @page :right { @bottom-left  { content: "kishormorol.github.io/SkillsAllYouNeed"; font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } @bottom-right { content: counter(page) " / " counter(pages); font-family: "JetBrains Mono", monospace; font-size:9pt; color:#666; } }
 
     html, body{ background:#fff !important; color:#111 !important; }
     body::before, body{ background-image: none !important; }
-    .runninghead, #filters-section, .hint-key, .shortcuts, .scrim, .toast, .eco-strip, .vol-stamp, .sort-toggle{ display:none !important; }
+    .hero-nav, #filters-section, .hint-key, .shortcuts, .scrim, .toast, .eco-strip, .sort-toggle{ display:none !important; }
     .section{ border-bottom:1px solid #111 !important; padding:18pt 0 !important; }
     .section-head{ break-after:avoid; }
     .grid{ display:block !important; border:0 !important; }
@@ -994,20 +802,15 @@
       border-top:1px dotted #999;
     }
     .card .anchor, .card .bottom .status-dot{ display:none !important; }
-    table.matrix{ break-inside: avoid; font-size:10pt; }
-    table.matrix tbody td{ padding:6pt 8pt !important; font-size:10pt !important; }
-    .refs li{ break-inside: avoid; }
     a{ color:#111 !important; }
     a[href]:after{ content: " (" attr(href) ")"; font-family:"JetBrains Mono", monospace; font-size:8pt; color:#666; }
     .colophon{ break-before: page; }
   }
 
-  /* responsive masthead */
   @media (max-width: 800px){
-    .masthead .sub{ grid-template-columns:1fr; gap:24px; }
-    .section-head{ grid-template-columns: 60px 1fr; }
-    .section-head .num{ font-size:48px; }
+    .section-head{ grid-template-columns: 1fr; }
     .section-head .right{ display:none; }
+    .hero-stats{ gap:28px; }
   }
 
   /* ── v1.2: Favorites · Counts · Nav · Export · Scroll-top ─── */
@@ -1184,67 +987,45 @@
 
 <div class="shell">
 
-  <!-- ─── RUNNING HEAD ─── -->
-  <header class="runninghead" aria-label="Running head">
-    <div class="left">
-      <span><span class="dot"></span>SkillsAllYouNeed</span>
-      <span>Vol. 01 / Issue 2026</span>
-      <span>arXiv:2605.10847 [cs.AI]</span>
+  <!-- ─── HERO ─── -->
+  <header class="hero" aria-label="Site header">
+    <div class="hero-top">
+      <div class="hero-brand">
+        <span class="hero-dot"></span>
+        SkillsAllYouNeed
+      </div>
+      <nav class="hero-nav" aria-label="Site links">
+        <a href="https://github.com/kishormorol/SkillsAllYouNeed" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/kishormorol/SkillsAllYouNeed/issues/new?template=submit-capability.yml" target="_blank" rel="noopener">Submit skill</a>
+      </nav>
     </div>
-    <div class="right">
-      <span>Submitted 18 May 2026</span>
-      <span>Revised 20 May 2026</span>
+    <div class="hero-body">
+      <h1>The open registry of<br/><em>AI&nbsp;skills.</em></h1>
+      <p class="hero-sub">Ready-to-use skill definitions for Claude Code, Claude.ai, ChatGPT and more. Copy into your project, drop into Settings, and go.</p>
+      <div class="hero-stats" aria-label="Registry stats">
+        <div class="stat"><b id="hero-skill-count">115</b><span>skills</span></div>
+        <div class="stat"><b>6</b><span>models</span></div>
+        <div class="stat"><b>9</b><span>categories</span></div>
+        <div class="stat"><b>Free</b><span>to use</span></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#catalog-section" class="cta-primary">Browse skills ↓</a>
+        <a href="https://github.com/kishormorol/SkillsAllYouNeed/issues/new?template=submit-capability.yml" target="_blank" rel="noopener" class="cta-ghost">Submit a skill</a>
+        <a href="https://github.com/kishormorol/SkillsAllYouNeed" target="_blank" rel="noopener" class="cta-ghost">GitHub ↗</a>
+      </div>
     </div>
   </header>
 
-  <!-- ─── MASTHEAD ─── -->
-  <section class="masthead" aria-label="Masthead">
-    <div class="vol-stamp">
-      Vol. 01<br/>
-      Issue 2026<br/>
-      pp. 1—36
-    </div>
-
-    <div class="kicker"><span class="bar"></span>A Preprint · Living Document · Curated Directory</div>
-
-    <h1>
-      Skills<br/>
-      <span class="amp">All&nbsp;</span><span>You&nbsp;</span><span class="it">Need.</span>
-    </h1>
-
-    <div class="sub">
-      <p class="abstract">
-        We present a comprehensive directory of every first‑party skill, capability, tool, and extension
-        currently shipping across six major AI assistant ecosystems: <em>Claude</em>, <em>Claude Code</em>,
-        <em>ChatGPT</em>, <em>OpenAI Codex</em>, <em>Gemini</em>, and <em>DeepSeek</em>, including their first‑party developer APIs.
-        This directory now catalogs <b id="abs-count">38</b> distinct capabilities,
-        classifies them along nine functional axes, and provides a side‑by‑side results table comparing
-        what each ecosystem can and cannot do. The directory is searchable, filterable, deep‑linkable,
-        and intended as a practitioner's reference rather than an exhaustive academic survey.
-      </p>
-
-      <dl class="meta-block" aria-label="Document metadata">
-        <div class="row"><dt>Author</dt><dd>Kishor Morol</dd></div>
-        <div class="row"><dt>DOI</dt><dd>10.48550/skills.2605.10847</dd></div>
-        <div class="row"><dt>Updated</dt><dd id="meta-updated">20 May 2026, 14:02 UTC</dd></div>
-        <div class="row"><dt>License</dt><dd>CC BY 4.0</dd></div>
-        <div class="row"><dt>Source</dt><dd><a href="https://github.com/kishormorol/SkillsAllYouNeed" target="_blank" rel="noopener">github.com/kishormorol/SkillsAllYouNeed</a></dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ─── §I  FILTERS ─── -->
+  <!-- ─── FILTERS ─── -->
   <section class="section tight" id="filters-section">
     <div class="section-head">
-      <div class="num">I</div>
       <div>
-        <div class="label">§ I · Apparatus</div>
-        <h2>Filter <span class="it">&amp; query</span> the corpus.</h2>
+        <div class="label">Filter</div>
+        <h2>Find the <span class="it">right skill.</span></h2>
       </div>
       <div class="right">
-        Six ecosystems<br/>
-        Nine categories<br/>
-        Three states
+        6 ecosystems · 9 categories<br/>
+        Stable · Beta · Deprecated
       </div>
     </div>
 
@@ -1278,13 +1059,12 @@
     <div id="active-filters" class="active-filters" aria-live="polite"></div>
   </section>
 
-  <!-- ─── §II  CATALOG ─── -->
+  <!-- ─── CATALOG ─── -->
   <section class="section" id="catalog-section">
     <div class="section-head">
-      <div class="num">II</div>
       <div>
-        <div class="label">§ II · Catalog</div>
-        <h2>The <span class="it">corpus</span> of capabilities.</h2>
+        <div class="label">Catalog</div>
+        <h2>Browse all <span class="it">skills.</span></h2>
       </div>
       <div class="right">
         <span class="sort-toggle" aria-label="Sort entries">
@@ -1293,7 +1073,7 @@
           <a id="sort-recent" tabindex="0" role="button">recent</a>
         </span><br/>
         click any card<br/>
-        for full citation
+        for full details
       </div>
     </div>
 
@@ -1311,71 +1091,17 @@
     <div id="grid" class="grid" aria-live="polite" style="border-top:0"></div>
   </section>
 
-  <!-- ─── §III  MATRIX ─── -->
-  <section class="section" id="matrix-section">
-    <div class="section-head">
-      <div class="num">III</div>
-      <div>
-        <div class="label">§ III · Results</div>
-        <h2>Capability <span class="it">matrix</span>.</h2>
-      </div>
-      <div class="right">
-        Table 1 of 1<br/>
-        n = <span id="matrix-count">28</span> capabilities<br/>
-        6 systems
-      </div>
-    </div>
-
-    <div class="matrix-wrap">
-      <table class="matrix" id="matrix">
-        <caption><b>Table 1.</b> &nbsp;Side‑by‑side capability comparison across the six catalogued ecosystems. Cells are coded ✓ supported · ✗ not supported · partial (limited or via third‑party).</caption>
-      </table>
-    </div>
-  </section>
-
-  <!-- ─── §IV  REFERENCES ─── -->
-  <section class="section" id="references">
-    <div class="section-head">
-      <div class="num">IV</div>
-      <div>
-        <div class="label">§ IV · References &amp; Method</div>
-        <h2>Bibliography <span class="it">&amp; methodology</span>.</h2>
-      </div>
-      <div class="right">
-        n = <span id="refs-count">12</span> sources<br/>
-        last verified<br/>
-        20 May 2026
-      </div>
-    </div>
-
-    <div class="refs-grid">
-      <div class="refs">
-        <ol id="refs-list"></ol>
-      </div>
-
-      <div class="methodology">
-        <p><b>Methodology.</b> Entries were compiled from official product documentation, changelogs, and first‑party announcements between January 2024 and May 2026. Each capability was verified against its vendor's currently‑published documentation within seven days of the listed revision date.</p>
-        <p>A capability is marked <em>Stable</em> when it is generally available to non‑enterprise users without waitlist. <em>Beta</em> indicates limited rollout, opt‑in, or vendor‑labelled preview. <em>Deprecated</em> indicates a capability that has been formally retired but remains accessible to grandfathered users.</p>
-        <div class="pull">
-          “The directory is a living document. Submissions and corrections are welcome via the source repository.”
-        </div>
-        <p>Glyphs are original geometric marks designed for this preprint and bear no affiliation with the vendors. The accent ink throughout is a single saturated vermillion (#C7401E), set against an off‑white book paper (#F2EFE6). Set in Instrument Serif, Newsreader, and JetBrains Mono.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ─── CONTRIBUTE BANNER ─── -->
   <section class="section tight" id="contribute-section">
     <div class="section-head">
-      <div class="num">V</div>
       <div>
-        <div class="label">§ V · Contribute</div>
+        <div class="label">Contribute</div>
         <h2>Missing a <span class="it">skill?</span></h2>
       </div>
       <div class="right">
         Open a GitHub issue<br/>
         reviewed within days<br/>
-        added to the catalog
+        added to the registry
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)">
@@ -1401,28 +1127,28 @@
   <!-- ─── COLOPHON ─── -->
   <footer class="colophon">
     <div>
-      <h5>Colophon · v1.2</h5>
-      <p>Composed in plain HTML &amp; CSS without a framework. Typeset on a 12‑column hairline grid. Body type set in Newsreader at 17/24. Display set in Instrument Serif. Metadata, IDs, and citation furniture set in JetBrains Mono. <em>v1.1:</em> API category, ~40 new entries, deep‑linking, keyboard shortcuts, ecosystem strip, print stylesheet. <em>v1.2:</em> favorites, chip counts, sheet nav, Export JSON, Surprise me, active filter tags, scroll‑to‑top, Gemini &amp; DeepSeek ecosystems.</p>
+      <h5>About · v2.0</h5>
+      <p>An open registry of usable AI skill definitions — Claude Code .md skills, CLAUDE.md templates, Claude.ai skill uploads, ChatGPT custom instructions, and more. Composed in plain HTML &amp; CSS without a framework. <em>v1.x:</em> capability directory with filters, deep‑linking, keyboard shortcuts, favorites, Export JSON. <em>v2.0:</em> redesigned as a skills marketplace; removed academic framing.</p>
     </div>
     <div>
-      <h5>Submission</h5>
+      <h5>Contribute</h5>
       <ul>
-        <li><a href="https://github.com/kishormorol/SkillsAllYouNeed/issues/new?template=submit-capability.yml" target="_blank" rel="noopener">→ Submit a capability</a></li>
+        <li><a href="https://github.com/kishormorol/SkillsAllYouNeed/issues/new?template=submit-capability.yml" target="_blank" rel="noopener">→ Submit a skill</a></li>
         <li><a href="https://github.com/kishormorol/SkillsAllYouNeed/issues/new?template=report-correction.yml" target="_blank" rel="noopener">→ Report a correction</a></li>
         <li><a href="https://github.com/kishormorol/SkillsAllYouNeed/commits/main" target="_blank" rel="noopener">→ View changelog</a></li>
-        <li><a href="#" id="export-corpus-link">→ Download JSON corpus</a></li>
+        <li><a href="#" id="export-corpus-link">→ Download JSON</a></li>
       </ul>
     </div>
     <div>
       <h5>Maintainer</h5>
-      <p>Curated &amp; maintained by <em>Kishor Morol</em>. With thanks to the practitioners who reported missing capabilities.</p>
-      <p style="margin-top:10px"><a href="mailto:kishor@skills-all-you-need.org" style="border-bottom:1px solid var(--rule)">kishor@skills-all-you-need.org</a></p>
+      <p>Curated &amp; maintained by <em>Kishor Morol</em>. Contributions welcome — open an issue or PR on GitHub.</p>
+      <p style="margin-top:10px"><a href="https://github.com/kishormorol/SkillsAllYouNeed" target="_blank" rel="noopener" style="border-bottom:1px solid var(--rule)">github.com/kishormorol/SkillsAllYouNeed</a></p>
     </div>
 
     <div class="end">
       <span>© 2026 · SkillsAllYouNeed · CC BY 4.0</span>
-      <span>Set on warm paper · pressed in vermillion ink</span>
-      <span>arXiv:2605.10847</span>
+      <span>115+ skills · 6 models · 9 categories</span>
+      <span>kishormorol.github.io/SkillsAllYouNeed</span>
     </div>
   </footer>
 
@@ -2503,9 +2229,7 @@ function render(){
 
   $("#count").textContent = filtered.length;
   const totalEl = $("#total-count"); if(totalEl) totalEl.textContent = SKILLS.length;
-  $("#abs-count").textContent = SKILLS.length;
-  const matrixCount = $("#matrix-count"); if(matrixCount) matrixCount.textContent = MATRIX_ROWS.length;
-  const refsCount = $("#refs-count"); if(refsCount) refsCount.textContent = REFS.length;
+  const heroCount = $("#hero-skill-count"); if(heroCount) heroCount.textContent = SKILLS.length;
 
   renderActiveFilters();
 
@@ -3038,8 +2762,6 @@ document.getElementById("add-skill-form").addEventListener("submit", e=>{
 /* ───── Boot ───── */
 buildChips();
 buildEcoStrip();
-buildMatrix();
-buildRefs();
 render();
 openFromHash();
 updateFavCount();
