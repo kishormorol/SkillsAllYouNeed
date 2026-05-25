@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>SkillsAllYouNeed for LLMs — The Open Registry of AI Skills</title>
 
+<!-- apply saved theme immediately so there's no flash on reload -->
+<script>if(localStorage.getItem("sayn-theme")==="dark")document.documentElement.setAttribute("data-theme","dark");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -918,6 +920,175 @@
     .sheet-nav, .sheet-actions{ display:none !important; }
   }
 
+  /* ══════════════════════════════════════════════════════════
+     DARK MODE
+  ══════════════════════════════════════════════════════════ */
+  [data-theme="dark"]{
+    --paper:     #17140F;
+    --paper-2:   #1F1C14;
+    --paper-edge:#2A2620;
+    --ink:       #F0EDE3;
+    --ink-2:     #D5D0C4;
+    --ink-soft:  #A8A296;
+    --ink-mute:  #6E6860;
+    --rule:      rgba(240,237,227,.28);
+    --rule-soft: rgba(240,237,227,.10);
+    --accent:    #E05830;
+    --highlight: #F5D77A;
+  }
+  [data-theme="dark"] body{
+    background-image: radial-gradient(rgba(240,237,227,.025) 1px, transparent 1px);
+  }
+  [data-theme="dark"] body::before{
+    background:
+      repeating-linear-gradient(0deg, rgba(240,237,227,.01) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(240,237,227,.007) 0 1px, transparent 1px 4px);
+  }
+  /* dark-mode toggle button */
+  .dark-toggle{
+    font-size:15px; line-height:1; letter-spacing:0;
+    color:var(--ink-soft); padding:1px 4px;
+    border:none; background:none; cursor:pointer;
+    transition:color .15s ease, transform .2s ease;
+    font-family:inherit;
+  }
+  .dark-toggle:hover{ color:var(--accent); transform:rotate(18deg); }
+
+  /* ══════════════════════════════════════════════════════════
+     ONBOARDING STRIP
+  ══════════════════════════════════════════════════════════ */
+  .onboarding-strip{
+    background:var(--ink); color:var(--paper);
+    border-bottom:1px solid var(--rule);
+    display:none; /* shown by JS the first visit */
+  }
+  .onboarding-inner{
+    display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+    padding:16px 0;
+  }
+  .onboarding-title{
+    font-family:var(--serif-display); font-style:italic;
+    font-size:19px; white-space:nowrap; flex-shrink:0; line-height:1;
+  }
+  .onboarding-steps{
+    display:flex; gap:18px; flex-wrap:wrap; flex:1; align-items:flex-start;
+  }
+  .onboarding-step{
+    display:flex; align-items:baseline; gap:7px;
+    font-family:var(--serif-body); font-size:13.5px;
+    line-height:1.4; color:rgba(242,239,230,.72); max-width:200px;
+  }
+  .step-num{
+    font-family:var(--mono); font-size:10px; font-weight:600;
+    background:var(--accent); color:var(--paper);
+    width:17px; height:17px; flex-shrink:0;
+    display:inline-flex; align-items:center; justify-content:center;
+  }
+  .onboarding-dismiss{
+    font-family:var(--mono); font-size:10px; letter-spacing:.1em;
+    text-transform:uppercase; color:rgba(242,239,230,.4);
+    border:1px solid rgba(242,239,230,.18); padding:5px 10px;
+    background:transparent; cursor:pointer; white-space:nowrap; flex-shrink:0;
+    transition:color .12s ease, border-color .12s ease;
+  }
+  .onboarding-dismiss:hover{ color:var(--paper); border-color:rgba(242,239,230,.5); }
+  @media(max-width:700px){
+    .onboarding-steps .onboarding-step:last-child{ display:none; }
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     QUICK PRESET FILTERS
+  ══════════════════════════════════════════════════════════ */
+  .preset-row{
+    padding-bottom:14px;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .preset-btn{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.08em;
+    text-transform:uppercase; padding:5px 13px;
+    border:1px solid var(--accent); color:var(--accent);
+    background:transparent; cursor:pointer; border-radius:0;
+    transition:background .12s ease, color .12s ease;
+  }
+  .preset-btn:hover, .preset-btn.active{
+    background:var(--accent); color:var(--paper);
+  }
+  .preset-btn.preset-clear{
+    border-color:var(--rule); color:var(--ink-mute);
+  }
+  .preset-btn.preset-clear:hover{
+    background:var(--ink); color:var(--paper); border-color:var(--ink);
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     NEW BADGE
+  ══════════════════════════════════════════════════════════ */
+  .new-badge{
+    font-family:var(--mono); font-size:8.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--paper); background:var(--accent);
+    padding:1px 5px; margin-left:5px; vertical-align:middle;
+    animation:pulse-new 2.6s ease-in-out infinite;
+  }
+  .card.featured .new-badge{ background:var(--highlight); color:var(--ink); }
+  @keyframes pulse-new{
+    0%,100%{ opacity:1; } 50%{ opacity:.6; }
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     CATEGORY COLOR ACCENTS
+  ══════════════════════════════════════════════════════════ */
+  .cat[data-cat="Code"]        { color:#2D7A4F; }
+  .cat[data-cat="Web"]         { color:#1A5F96; }
+  .cat[data-cat="Visual"]      { color:#7030A0; }
+  .cat[data-cat="Agentic"]     { color:var(--accent); }
+  .cat[data-cat="Integration"] { color:#A0600A; }
+  .cat[data-cat="API"]         { color:#0A7A7A; }
+  .cat[data-cat="Data"]        { color:#1A6090; }
+  .card.featured .cat{ color:rgba(242,239,230,.6) !important; }
+  [data-theme="dark"] .cat[data-cat="Code"]        { color:#5CB880; }
+  [data-theme="dark"] .cat[data-cat="Web"]         { color:#5AA8DC; }
+  [data-theme="dark"] .cat[data-cat="Visual"]      { color:#B07ACC; }
+  [data-theme="dark"] .cat[data-cat="Integration"] { color:#CC9840; }
+  [data-theme="dark"] .cat[data-cat="API"]         { color:#40C0C0; }
+  [data-theme="dark"] .cat[data-cat="Data"]        { color:#5AAAD0; }
+
+  /* ══════════════════════════════════════════════════════════
+     IMPROVED EMPTY STATE
+  ══════════════════════════════════════════════════════════ */
+  .no-results{
+    grid-column:span 12; padding:72px 24px;
+    text-align:center;
+    font-family:var(--serif-display); font-style:italic;
+    font-size:32px; color:var(--ink-mute);
+    border-bottom:1px solid var(--rule);
+  }
+  .no-results small{
+    display:block; font-family:var(--mono); font-style:normal;
+    font-size:11px; text-transform:uppercase; letter-spacing:.12em;
+    margin-top:12px; color:var(--ink-mute);
+  }
+  .no-results .nr-reset{
+    display:inline-block; margin-top:20px;
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+    text-transform:uppercase; padding:9px 18px;
+    border:1px solid var(--rule); color:var(--ink-soft);
+    background:transparent; cursor:pointer;
+    transition:background .12s ease, color .12s ease;
+  }
+  .no-results .nr-reset:hover{ background:var(--ink); color:var(--paper); }
+
+  /* ══════════════════════════════════════════════════════════
+     CARD HOVER GLYPH ANIMATION
+  ══════════════════════════════════════════════════════════ */
+  .card .glyph{ transition: transform .18s ease; }
+  .card:hover .glyph{ transform: scale(1.12); }
+  .card.featured:hover .glyph{ transform: scale(1.12); }
+
+  /* hero accent glow */
+  .hero-body{
+    background: radial-gradient(ellipse at 0% 70%, rgba(199,64,30,.07) 0%, transparent 60%);
+  }
+
   /* ── Add Skill form ─── */
   .add-scrim{
     position:fixed; inset:0; background:rgba(21,19,14,.62);
@@ -1004,13 +1175,14 @@
       <nav class="hero-nav" aria-label="Site links">
         <a href="https://github.com/kishormorol/SkillsAllYouNeed" target="_blank" rel="noopener">GitHub</a>
         <a href="https://github.com/kishormorol/SkillsAllYouNeed/issues/new?template=submit-capability.yml" target="_blank" rel="noopener">Submit skill</a>
+        <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◑</button>
       </nav>
     </div>
     <div class="hero-body">
       <h1>Skills<em>All</em><br/>You<em>Need</em><span class="h1-sub"> for LLMs</span></h1>
       <p class="hero-sub">The open registry of AI skills — ready-to-use skill definitions for Claude Code, Claude.ai, ChatGPT and more. Copy into your project, drop into Settings, and go.</p>
       <div class="hero-stats" aria-label="Registry stats">
-        <div class="stat"><b id="hero-skill-count">115</b><span>skills</span></div>
+        <div class="stat"><b id="hero-skill-count">0</b><span>skills</span></div>
         <div class="stat"><b>4</b><span>models</span></div>
         <div class="stat"><b>9</b><span>categories</span></div>
         <div class="stat"><b>Free</b><span>to use</span></div>
@@ -1022,6 +1194,19 @@
       </div>
     </div>
   </header>
+
+  <!-- ─── ONBOARDING STRIP (shown once, dismissible) ─── -->
+  <div class="onboarding-strip" id="onboarding-strip" aria-label="Welcome guide">
+    <div class="onboarding-inner">
+      <div class="onboarding-title">New here?</div>
+      <div class="onboarding-steps">
+        <div class="onboarding-step"><span class="step-num">1</span><span>Browse 111 skills across Claude, ChatGPT, Gemini &amp; more</span></div>
+        <div class="onboarding-step"><span class="step-num">2</span><span>Click any card — see the trigger phrase and how to activate it</span></div>
+        <div class="onboarding-step"><span class="step-num">3</span><span>Save favourites ♥, export as JSON, or submit a missing skill</span></div>
+      </div>
+      <button class="onboarding-dismiss" id="onboarding-dismiss" aria-label="Dismiss welcome guide">Got it ✕</button>
+    </div>
+  </div>
 
   <!-- ─── CATALOG + FILTERS (combined) ─── -->
   <section class="section tight" id="catalog-section">
@@ -1048,6 +1233,16 @@
         <span class="lbl">Q</span>
         <input id="q" type="search" placeholder="search names, descriptions, triggers…" aria-label="Search skills" />
         <span class="count"><b id="count">92</b>&nbsp;of&nbsp;<b id="total-count">92</b>&nbsp;skills</span>
+      </div>
+
+      <!-- quick presets -->
+      <div class="filter-row preset-row" role="group" aria-label="Quick filter presets">
+        <span class="lbl">Quick</span>
+        <button class="preset-btn" data-preset="claude-code" aria-label="Show Claude Code skills only">Claude Code</button>
+        <button class="preset-btn" data-preset="agentic"    aria-label="Show Agentic category only">Agentic</button>
+        <button class="preset-btn" data-preset="stable"     aria-label="Show Stable skills only">Stable only</button>
+        <button class="preset-btn" data-preset="new"        aria-label="Show newly added skills">New additions ✦</button>
+        <button class="preset-btn preset-clear" data-preset="clear" aria-label="Clear all filters">Clear all ↺</button>
       </div>
 
       <!-- ecosystem chips -->
@@ -2085,6 +2280,16 @@ const ECOSYSTEMS = ["Claude","Claude Code","ChatGPT","Gemini"];
 const CATEGORIES = ["Document","Code","Web","Data","Memory","Integration","Visual","Agentic","API"];
 const STATUSES   = ["Stable","Beta","Deprecated"];
 
+/* IDs added in the open-source batch — used to show the "new" badge */
+const NEW_IDS = new Set([
+  "cc-skill-docx","cc-skill-pptx","cc-skill-xlsx","cc-skill-pdf",
+  "cc-skill-frontend","cc-skill-mcp-builder","cc-skill-webapp-testing",
+  "cc-skill-creator","cc-skill-algo-art","cc-skill-brand",
+  "cc-skill-internal-comms","cc-skill-canvas-design","cc-skill-claude-api",
+  "cc-skill-web-artifacts","cc-skill-slack-gif","cc-skill-theme-factory",
+  "cc-skill-ai-research","cc-skill-cybersecurity","cc-skill-awesome-collection"
+]);
+
 /* ───── Favorites (localStorage) ───── */
 const favorites = new Set(JSON.parse(localStorage.getItem("skills-favs")||"[]"));
 function saveFavs(){ localStorage.setItem("skills-favs", JSON.stringify([...favorites])); }
@@ -2100,6 +2305,7 @@ const state = {
   statuses:new Set(),
   sort:"index",   // "index" | "recent"
   favOnly:false,
+  newOnly:false,  // show only the NEW_IDS batch
 };
 
 let lastFiltered   = [];
@@ -2167,6 +2373,7 @@ function spanFor(i){ return SPAN_PATTERN[i % SPAN_PATTERN.length]; }
 
 function matchesFilters(s){
   if(state.favOnly && !favorites.has(s.id)) return false;
+  if(state.newOnly && !NEW_IDS.has(s.id)) return false;
   if(state.ecosystems.size && !state.ecosystems.has(s.ecosystem)) return false;
   if(state.categories.size && !state.categories.has(s.category)) return false;
   if(state.statuses.size && !state.statuses.has(s.status)) return false;
@@ -2194,12 +2401,15 @@ function render(){
 
   $("#count").textContent = filtered.length;
   const totalEl = $("#total-count"); if(totalEl) totalEl.textContent = SKILLS.length;
-  const heroCount = $("#hero-skill-count"); if(heroCount) heroCount.textContent = SKILLS.length;
+  /* Only update the hero counter after the first load — boot uses animateCount() instead */
+  const heroCount = $("#hero-skill-count");
+  if(heroCount && render._firstDone) heroCount.textContent = SKILLS.length;
 
   renderActiveFilters();
 
   if(filtered.length === 0){
-    grid.innerHTML = `<div class="no-results">No entries match this query.<small>try widening the filters · or pressing reset</small></div>`;
+    const qLabel = state.query ? `"${escapeHTML(state.query)}"` : "that combination";
+    grid.innerHTML = `<div class="no-results">Nothing matched ${qLabel}.<small>Try broader terms · or fewer filters</small><button class="nr-reset" onclick="document.getElementById('reset').click()">Reset all filters ↺</button></div>`;
     return;
   }
 
@@ -2219,12 +2429,13 @@ function render(){
     card.dataset.source  = s.source;
 
     const nameHTML = s.name.replace(/(\S+)$/, '<span class="it">$1</span>');
+    const isNew = NEW_IDS.has(s.id);
 
     card.innerHTML = `
       <div class="top">
         <div class="glyph">${GLYPHS[s.ecosystem]}</div>
         <div class="id-wrap">
-          <div class="id">${s.id}${s._custom?'<span class="custom-badge">custom</span>':''}</div>
+          <div class="id">${s.id}${s._custom?'<span class="custom-badge">custom</span>':''}${isNew?'<span class="new-badge">new</span>':''}</div>
           <button class="anchor" title="Copy deep link" aria-label="Copy deep link to ${s.name}" data-copy="${s.id}">¶</button>
         </div>
         <div class="meta-top" style="flex:1">
@@ -2236,7 +2447,7 @@ function render(){
       <p class="desc">${escapeHTML(s.description)}</p>
       <p class="trigger" title="Click to copy trigger">${escapeHTML(s.trigger)}</p>
       <div class="bottom">
-        <span class="cat">${s.category}</span>
+        <span class="cat" data-cat="${s.category}">${s.category}</span>
         <span class="status" data-status="${s.status}"><span class="status-dot"></span>${s.status}</span>
         <button class="fav-btn${isSaved?" saved":""}" data-fav-id="${s.id}"
           title="${isSaved?"Remove from saved":"Save this skill"}"
@@ -2532,8 +2743,9 @@ function renderActiveFilters(){
   state.ecosystems.forEach(e => tags.push({type:"eco",  val:e}));
   state.categories.forEach(c => tags.push({type:"cat",  val:c}));
   state.statuses.forEach(s   => tags.push({type:"stat", val:s}));
-  if(state.favOnly) tags.push({type:"fav", val:"Saved only"});
-  if(state.query)   tags.push({type:"q",   val:`"${state.query}"`});
+  if(state.favOnly) tags.push({type:"fav",    val:"Saved only"});
+  if(state.newOnly) tags.push({type:"newOnly", val:"New additions"});
+  if(state.query)   tags.push({type:"q",       val:`"${state.query}"`});
 
   if(!tags.length){ bar.style.display="none"; return; }
   bar.style.display = "flex";
@@ -2556,6 +2768,9 @@ function renderActiveFilters(){
       } else if(type==="fav"){
         state.favOnly = false;
         $("#fav-filter-btn")?.setAttribute("aria-pressed","false");
+      } else if(type==="newOnly"){
+        state.newOnly = false;
+        $$(".preset-btn").forEach(b=>{ if(b.dataset.preset==="new") b.classList.remove("active"); });
       } else if(type==="q"){
         state.query = ""; $("#q").value = "";
       }
@@ -2652,9 +2867,10 @@ $("#q").addEventListener("input", e=>{ state.query = e.target.value.trim(); rend
 $("#reset").addEventListener("click", ()=>{
   state.query = "";
   state.ecosystems.clear(); state.categories.clear(); state.statuses.clear();
-  state.favOnly = false;
+  state.favOnly = false; state.newOnly = false;
   $("#q").value = "";
   $$(".chip[aria-pressed='true']").forEach(c=>c.setAttribute("aria-pressed","false"));
+  $$(".preset-btn").forEach(b=>b.classList.remove("active"));
   render();
 });
 
@@ -2736,6 +2952,138 @@ updateFavCount();
 /* Wire corpus download link in footer */
 const _corpusLink = document.getElementById("export-corpus-link");
 if(_corpusLink) _corpusLink.addEventListener("click", (e)=>{ e.preventDefault(); $("#export-btn").click(); });
+
+/* ═══════════════════════════════════════════════════════════
+   DARK MODE TOGGLE
+═══════════════════════════════════════════════════════════ */
+(function(){
+  const btn = document.getElementById("dark-toggle");
+  if(!btn) return;
+  function applyIcon(){
+    const dark = document.documentElement.getAttribute("data-theme") === "dark";
+    btn.textContent = dark ? "○" : "●";
+    btn.title = dark ? "Switch to light mode" : "Switch to dark mode";
+    btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  }
+  applyIcon();
+  btn.addEventListener("click", ()=>{
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+    localStorage.setItem("sayn-theme", isDark ? "light" : "dark");
+    applyIcon();
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   ANIMATED HERO COUNTERS
+═══════════════════════════════════════════════════════════ */
+function animateCount(el, target, duration){
+  if(!el) return;
+  duration = duration || 1100;
+  const startTime = performance.now();
+  function tick(now){
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3); /* ease-out cubic */
+    el.textContent = Math.round(eased * target);
+    if(t < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(tick);
+}
+/* Run after boot (boot is synchronous above, so this fires right after) */
+setTimeout(()=>{
+  animateCount(document.getElementById("hero-skill-count"), SKILLS.length, 1100);
+}, 80);
+
+/* ═══════════════════════════════════════════════════════════
+   QUICK PRESET FILTERS
+═══════════════════════════════════════════════════════════ */
+(function(){
+  function resetAll(){
+    state.ecosystems.clear(); state.categories.clear();
+    state.statuses.clear(); state.query = ""; state.favOnly = false; state.newOnly = false;
+    document.getElementById("q").value = "";
+    document.querySelectorAll(".chip[aria-pressed='true']").forEach(c=>c.setAttribute("aria-pressed","false"));
+    document.querySelectorAll(".preset-btn").forEach(b=>b.classList.remove("active"));
+  }
+  document.querySelectorAll(".preset-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const p = btn.dataset.preset;
+      resetAll();
+
+      if(p === "claude-code"){
+        state.ecosystems.add("Claude Code");
+        document.querySelector(`#eco-chips .chip[data-eco="Claude Code"]`)?.setAttribute("aria-pressed","true");
+        btn.classList.add("active");
+      } else if(p === "agentic"){
+        state.categories.add("Agentic");
+        document.querySelector(`#cat-chips .chip[data-filter-val="Agentic"]`)?.setAttribute("aria-pressed","true");
+        btn.classList.add("active");
+      } else if(p === "stable"){
+        state.statuses.add("Stable");
+        document.querySelector(`#status-chips .chip[data-filter-val="Stable"]`)?.setAttribute("aria-pressed","true");
+        btn.classList.add("active");
+      } else if(p === "new"){
+        state.newOnly = true;
+        btn.classList.add("active");
+      }
+      /* "clear" just resets — already done above */
+      render();
+      document.getElementById("catalog-section").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+
+  /* Deactivate preset buttons when user manually changes filters */
+  document.getElementById("q").addEventListener("input", ()=>{
+    document.querySelectorAll(".preset-btn").forEach(b=>b.classList.remove("active"));
+  });
+  document.querySelectorAll(".chip").forEach(c=>{
+    c.addEventListener("click", ()=>{
+      document.querySelectorAll(".preset-btn").forEach(b=>b.classList.remove("active"));
+    });
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   ROTATING SEARCH PLACEHOLDER
+═══════════════════════════════════════════════════════════ */
+(function(){
+  const hints = [
+    "search names, descriptions, triggers…",
+    "try: memory",
+    "try: code review",
+    "try: generate image",
+    "try: webhook",
+    "try: artifacts",
+    "try: voice mode",
+    "try: Claude Code",
+    "try: export to docx",
+    "try: browser automation",
+  ];
+  let idx = 0;
+  const q = document.getElementById("q");
+  setInterval(()=>{
+    if(document.activeElement !== q && !state.query){
+      idx = (idx + 1) % hints.length;
+      q.setAttribute("placeholder", hints[idx]);
+    }
+  }, 3200);
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   ONBOARDING STRIP — show once, dismiss to localStorage
+═══════════════════════════════════════════════════════════ */
+(function(){
+  const strip = document.getElementById("onboarding-strip");
+  if(!strip) return;
+  if(!localStorage.getItem("sayn-onboarding-seen")){
+    strip.style.display = "block";
+  }
+  document.getElementById("onboarding-dismiss").addEventListener("click", ()=>{
+    strip.style.display = "none";
+    localStorage.setItem("sayn-onboarding-seen", "1");
+  });
+})();
 
 /* ───── Smooth-scroll all internal anchor links ───── */
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
