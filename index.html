@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SkillsAllYouNeed — The Open Registry of AI Skills</title>
+<title>SkillsAllYouNeed for LLMs — The Open Registry of AI Skills</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,6 +102,12 @@
     margin:0 0 28px;
   }
   .hero-body h1 em{ font-style:italic; color:var(--accent); }
+  .hero-body h1 .h1-sub{
+    font-size: clamp(22px, 2.8vw, 44px);
+    font-style: normal;
+    color: var(--ink-soft);
+    letter-spacing: -.01em;
+  }
   .hero-sub{
     font-family:var(--serif-body);
     font-size: clamp(17px, 1.4vw, 21px);
@@ -1001,7 +1007,7 @@
       </nav>
     </div>
     <div class="hero-body">
-      <h1>Skills<em>All</em><br/>You<em>Need.</em></h1>
+      <h1>Skills<em>All</em><br/>You<em>Need</em><span class="h1-sub"> for LLMs</span></h1>
       <p class="hero-sub">The open registry of AI skills — ready-to-use skill definitions for Claude Code, Claude.ai, ChatGPT and more. Copy into your project, drop into Settings, and go.</p>
       <div class="hero-stats" aria-label="Registry stats">
         <div class="stat"><b id="hero-skill-count">115</b><span>skills</span></div>
