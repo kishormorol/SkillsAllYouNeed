@@ -1513,6 +1513,12 @@
       </div>
       <div class="form-row full">
         <div class="form-group">
+          <label for="f-howto">How to use *</label>
+          <input id="f-howto" type="text" placeholder="e.g. Settings → Connectors → enable, or `npm install -g package`" autocomplete="off" />
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
           <label for="f-example">Worked example *</label>
           <textarea id="f-example" rows="2" placeholder="A concrete real-world scenario showing the skill in action."></textarea>
         </div>
@@ -2185,6 +2191,139 @@ const SKILLS = [
     source:"https://api-docs.deepseek.com/guides/kv_cache"}
 ];
 
+/* ───── How-to-use lookup (keyed by skill id) ───── */
+const HOWTO = {
+  /* CLAUDE */
+  "cl-artifacts":     "Open claude.ai and make your request — Claude renders the output in a side panel automatically. No toggle needed.",
+  "cl-visualizer":    "Ask Claude to \"show\" or \"draw\" something. It streams an inline SVG or chart directly into the reply.",
+  "cl-code-exec":     "Attach a file or ask Claude to run code. It opens a sandboxed Linux container and returns real downloadable output files.",
+  "cl-skills":        "Skills load automatically based on your request type — just ask (e.g. \"make a deck\" loads the pptx skill). No manual toggle.",
+  "cl-projects":      "claude.ai sidebar → New Project → add custom instructions and upload knowledge files. All chats inside share the same context.",
+  "cl-memory":        "Say \"remember that I…\" or go to Settings → Memory to view, edit, or delete stored facts.",
+  "cl-past-search":   "Ask \"what did we discuss about X?\" — Claude automatically uses conversation_search to find relevant prior threads.",
+  "cl-web":           "Ask any time-sensitive question. Claude decides when to search; no toggle needed. Cited sources appear in the reply.",
+  "cl-mcp":           "Settings → Connectors → enable a connector (e.g. Google Drive). Then reference it naturally in your prompt.",
+  "cl-styles":        "Sidebar → Styles → choose a preset or click + to author your own. The style applies to all replies in that chat.",
+  "cl-imagegen":      "Connect an image-generation MCP server via Settings → Connectors, then say \"generate an image of…\".",
+  "cl-voice":         "Open the Claude iOS or Android app and tap the microphone icon to start a spoken conversation.",
+  /* CLAUDE CODE */
+  "cc-cli":           "Install: `npm install -g @anthropic-ai/claude-code` then run `claude` inside any project directory.",
+  "cc-plan":          "In interactive mode press Shift+Tab to enter Plan Mode. Claude maps the codebase before touching any files.",
+  "cc-subagents":     "Reference the Agent tool in a prompt or hook — Claude Code spawns and coordinates child agents automatically.",
+  "cc-hooks":         "Create `.claude/hooks/` in your repo. Add shell scripts named after lifecycle events, e.g. `PostToolUse.sh`.",
+  "cc-slash":         "Type `/command` in the prompt. Store custom commands as Markdown files in `.claude/commands/`.",
+  "cc-claude-md":     "Create a `CLAUDE.md` file at your repo root. Claude Code reads it at the start of every session automatically.",
+  "cc-mcp":           "Run `claude mcp add <name> <command>` or edit `~/.claude/mcp.json`. Restart Claude Code to load new servers.",
+  "cc-vscode":        "Install \"Claude Code\" from the VS Code Marketplace. A panel appears in the sidebar — open it to start.",
+  "cc-jetbrains":     "Install \"Claude Code\" from JetBrains Marketplace. Open the tool window from the right sidebar.",
+  "cc-slack":         "Install the Claude Code Slack app from the Anthropic integrations page, then @mention Claude in any channel.",
+  "cc-actions":       "Add `uses: anthropics/claude-code-action@v1` to a step in your `.github/workflows/*.yml` file.",
+  /* CHATGPT */
+  "gpt-canvas":       "Say \"open this in canvas\" or click the canvas icon in the toolbar. ChatGPT opens a collaborative side editor.",
+  "gpt-customs":      "chatgpt.com → Explore GPTs → + Create → configure name, instructions, knowledge files, and tools.",
+  "gpt-actions":      "In GPT Builder → Configure → Actions → paste your OpenAPI 3.1 schema. Add an auth method if required.",
+  "gpt-dalle":        "Say \"generate an image of…\" — DALL·E 3 is built in. No setup required. Iterate with follow-up prompts.",
+  "gpt-ada":          "Upload a file (CSV, Excel, PDF) or say \"run python\". The sandbox activates and returns charts or cleaned data.",
+  "gpt-browse":       "Ask any time-sensitive question. ChatGPT browses automatically when it detects a freshness need.",
+  "gpt-memory":       "Say \"remember that I…\" or go to Settings → Personalization → Manage memories to view or delete stored facts.",
+  "gpt-projects":     "chatgpt.com sidebar → New Project → name it → add custom instructions and upload shared files.",
+  "gpt-connectors":   "Settings → Connectors → connect Google Drive, GitHub, Outlook, etc. Reference them naturally in prompts.",
+  "gpt-voice":        "Mobile or desktop app → tap the waveform icon. Advanced Voice Mode responds in natural speech with low latency.",
+  "gpt-store":        "chatgpt.com → Explore GPTs → search the marketplace and click Use to install any published GPT.",
+  "gpt-sora":         "chatgpt.com → Sora tab (where available) → describe your scene → select duration and aspect ratio.",
+  "gpt-operator":     "operator.chatgpt.com (Plus/Pro) → describe the web task → Operator drives a real browser to complete it.",
+  "gpt-tasks":        "Say \"every Monday at 9am, send me a brief on…\" — ChatGPT schedules it automatically. Manage in Settings → Tasks.",
+  /* CODEX */
+  "cx-cli":           "Install: `npm install -g @openai/codex` then run `codex` in any repo. Use `--approval-mode` to control autonomy.",
+  "cx-cloud":         "chatgpt.com/codex → New task → describe what you want built. Codex runs in a cloud VM and returns a PR.",
+  "cx-ide":           "Install \"Codex\" from the VS Code Marketplace → open the Codex panel → connect to a repo and start a task.",
+  "cx-agents-md":     "Create `AGENTS.md` at your repo root. Codex reads it at the start of each run to learn your conventions.",
+  "cx-github":        "Install the Codex GitHub App from the GitHub Marketplace → it automatically reviews new PRs on labelled repos.",
+  "cx-in-chat":       "In a ChatGPT thread, type `@codex` followed by your coding task. Codex runs and posts results in-thread.",
+  /* v1.1 CLAUDE */
+  "cl-research":      "Toggle \"Research mode\" in the Claude composer → ask your question. Claude browses and returns a multi-section cited report.",
+  "cl-computer-use":  "Enable in Settings, or call the API with `tools:[{type:\"computer_use_20250124\"}]` and header `anthropic-beta: computer-use-2025-01-24`.",
+  "cl-files":         "Drag any file onto the Claude composer or click the paperclip icon. Supports PDF, DOCX, XLSX, images, audio, and code.",
+  "cl-imagine":       "Say \"Imagine a UI for…\" in Claude. The Imagine surface renders a live interactive widget inline in the reply.",
+  "cl-widgets":       "Just ask a question that triggers a widget — e.g. \"weekend in Paris\" or \"nearest coffee shops\". No setup needed.",
+  "cl-excel":         "Install the Claude add-in from the Microsoft Excel Add-ins store → open the Claude side panel inside Excel.",
+  "cl-chrome":        "Install the Claude Chrome extension from the Chrome Web Store → click the Claude icon in the browser toolbar.",
+  "cl-cowork":        "Download the Cowork desktop app → right-click any file or folder → select \"Ask Claude\".",
+  "cl-incognito":     "Claude sidebar → New incognito chat. The session is not stored and does not write to Memory.",
+  /* v1.1 CLAUDE CODE */
+  "cc-output-styles": "Run `/output-style` in a session or set `output_style` in `.claude/settings.json` for a project-wide default.",
+  "cc-permissions":   "Press Shift+Tab to cycle modes: Plan → Accept-Edits → Bypass → Auto. The current mode is shown in the prompt.",
+  "cc-background":    "Append `&` to any task: `\"run the full test suite &\"`. Claude Code returns control immediately and notifies you on completion.",
+  "cc-skills":        "Add `.md` skill files to `~/.claude/skills/` (global) or `.claude/skills/` (per-repo). Invoke with `/skill-name`.",
+  "cc-cost":          "Type `/cost` at any point in a session to see token usage and dollar spend. Use `/compact` to trim context.",
+  /* v1.1 CHATGPT */
+  "gpt-pulse":        "Opt in via the ChatGPT sidebar → Pulse. Set your preferred delivery time and topics. It delivers each morning unprompted.",
+  "gpt-study":        "Tools menu → Study Mode, or ask \"quiz me on…\" / \"explain this without giving the answer\".",
+  "gpt-record":       "Click the Record button in the desktop or mobile app during or after a meeting. A summary is generated when you stop.",
+  "gpt-shopping":     "Ask \"compare X vs Y vs Z\" or phrase a product intent question. ChatGPT returns structured comparison cards.",
+  "gpt-library":      "chatgpt.com sidebar → Library. All DALL·E images are browseable by date; click any to re-open in canvas.",
+  "gpt-realtime":     "Connect via WebSocket: `wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview` with your API key as a Bearer token.",
+  "gpt-assistants":   "Existing builds: `POST /v1/assistants` (legacy). For new builds, migrate to the Responses API instead.",
+  "gpt-responses":    "`POST /v1/responses` with a `tools` array. The stateful successor to Assistants for new agentic builds.",
+  "gpt-structured":   "Add `response_format:{type:\"json_schema\",json_schema:{name:\"...\",schema:{...}}}` to your API call.",
+  /* v1.1 CODEX */
+  "cx-review":        "Label a PR `codex/review` or comment `@codex review` on it. Codex posts structured inline review comments automatically.",
+  "cx-slack":         "Install the Codex Slack app → `@codex` in any channel followed by your task description.",
+  "cx-jetbrains":     "Install \"Codex\" from the JetBrains Marketplace → open the Codex tool window from the right sidebar.",
+  "cx-web":           "chatgpt.com/codex → monitor running tasks, view logs, and merge completed PRs from any browser.",
+  "cx-mcp":           "Add MCP server entries to `~/.codex/mcp.json`. Codex loads them automatically at the start of each task.",
+  /* API — CLAUDE */
+  "api-anthropic-computer": "Request with `tools:[{type:\"computer_use_20250124\",name:\"computer\",display_width_px:1024,display_height_px:768}]` + header `anthropic-beta: computer-use-2025-01-24`.",
+  "api-anthropic-files":    "`POST /v1/files` multipart with your file → use the returned `file_id` in a `document` content block on future requests.",
+  "api-anthropic-batch":    "`POST /v1/messages/batches` with a `requests` array (up to 10,000 items). Poll the returned batch `id` for status.",
+  "api-anthropic-cache":    "Add `\"cache_control\":{\"type\":\"ephemeral\"}` to any content block. First request populates the cache; subsequent calls hit it.",
+  "api-anthropic-pdf":      "Send a `document` content block: `{type:\"document\",source:{type:\"base64\",media_type:\"application/pdf\",data:\"<base64>\"}}` .",
+  "api-anthropic-mcp-conn": "Add `mcp_servers:[{\"type\":\"url\",\"url\":\"https://your-mcp.com\",\"name\":\"my-tool\"}]` to your Messages API request body.",
+  /* API — OPENAI */
+  "api-openai-realtime":    "Connect: `new WebSocket('wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview',['realtime','openai-insecure-api-key.KEY'])`.",
+  "api-openai-batch":       "`POST /v1/batches` with a JSONL file of `{custom_id, method, url, body}` objects. Poll `GET /v1/batches/{id}` for status.",
+  "api-openai-vision":      "Include `{type:\"image_url\",image_url:{url:\"data:image/jpeg;base64,...\"}}` in the `content` array of a user message.",
+  "api-openai-fine-tuning": "Upload a JSONL training file via `POST /v1/files`, then `POST /v1/fine_tuning/jobs` with the file ID and base model name.",
+  /* GEMINI */
+  "gm-gems":          "gemini.google.com → Gem manager (sidebar) → New Gem → give it a name, persona instructions, and optional knowledge files.",
+  "gm-deep-research": "Click the \"Deep Research\" button above the Gemini composer, then ask your research question. A cited multi-page report is returned.",
+  "gm-live":          "Open Gemini on iOS or Android → tap the camera/microphone icon to enter Live mode. Point and speak.",
+  "gm-imagegen":      "Say \"generate an image of…\" or \"create a picture of…\" in Gemini. Imagen 3 is built in — no setup required.",
+  "gm-veo":           "Gemini Advanced → say \"generate a video of…\" (regional availability varies). Select duration and style if prompted.",
+  "gm-canvas":        "Click the Canvas icon in the Gemini toolbar or say \"open in canvas\". Gemini opens a collaborative document editor.",
+  "gm-files":         "Click the paperclip icon in the Gemini composer or drag and drop a file. Supports PDF, DOCX, images, audio, and video.",
+  "gm-notebooklm":    "notebooklm.google.com → New notebook → upload sources (PDFs, URLs, Docs) → ask questions or generate an Audio Overview.",
+  "gm-web-search":    "Ask any time-sensitive question. Google Search grounding is on by default — cited sources appear inline in the reply.",
+  "gm-code-exec":     "Upload a file or ask Gemini to run code. It executes Python in a Colab-style sandbox and returns results or charts.",
+  "gm-data-analysis": "Upload a CSV or spreadsheet → ask \"summarise this\" or \"show me a trend chart\". Gemini uses pandas and matplotlib internally.",
+  "gm-workspace":     "In Google Docs, Gmail, or Sheets → click \"Help me write\" or open the Gemini side panel. No extra install needed.",
+  "gm-extensions":    "gemini.google.com → Settings → Extensions → enable the Google apps you want (Search, Maps, YouTube, Workspace, etc.).",
+  "gm-astra":         "Open Gemini on mobile → tap the Astra button → point your camera and speak. Astra responds to what it sees in real time.",
+  "gm-memory":        "Say \"remember that I…\" in Gemini, or go to gemini.google.com → Settings → Memory to view or delete stored facts.",
+  "gm-projects":      "gemini.google.com sidebar → New Project → name it and add background context. All chats inside share persistent memory.",
+  "gm-chrome":        "Chrome address bar → type `@gemini` and press Tab, or press Ctrl+Shift+Space to open the Gemini side panel.",
+  /* API — GEMINI */
+  "api-google-gemini":    "`POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=YOUR_KEY` with a JSON body.",
+  "api-google-grounding": "Add `\"tools\":[{\"google_search\":{}}]` to your Gemini API request body. Grounding uses your existing API key — no extra auth.",
+  "api-google-vertex":    "`pip install google-cloud-aiplatform` → `vertexai.init(project=...,location=...)` → `GenerativeModel(\"gemini-2.0-flash\").generate_content(...)`.",
+  "api-google-files":     "`POST https://generativelanguage.googleapis.com/upload/v1beta/files` with your file. Use the returned `uri` in a `file_data` part.",
+  "api-google-code-exec": "Add `\"tools\":[{\"code_execution\":{}}]` to your Gemini API request. The model generates and runs Python, returning results inline.",
+  /* DEEPSEEK */
+  "ds-chat":          "Go to chat.deepseek.com or download the DeepSeek iOS/Android app. Sign up and start chatting immediately.",
+  "ds-deepthink":     "Toggle \"DeepThink\" in the chat UI before sending. Via API: `model:\"deepseek-reasoner\"` in your request.",
+  "ds-web-search":    "Click the Search toggle in the DeepSeek chat composer before sending a message to enable live web retrieval.",
+  "ds-files":         "Click the paperclip icon in the DeepSeek chat composer to upload a PDF, DOCX, TXT, or image file.",
+  "ds-artifacts":     "Ask for any renderable output (HTML, SVG, code preview) — the artifacts side panel opens automatically.",
+  "ds-image-input":   "Click the image icon or paste an image directly into the DeepSeek chat composer, then ask your question.",
+  "ds-coder":         "Use deepseek-chat (V3) in the chat UI — it's code-optimised by default. Via API: `model:\"deepseek-chat\"`.",
+  /* API — DEEPSEEK */
+  "api-deepseek-chat":      "Drop-in for OpenAI SDK: `client = OpenAI(api_key=\"sk-...\",base_url=\"https://api.deepseek.com\")`. Change `model` to `\"deepseek-chat\"`.",
+  "api-deepseek-function":  "Add `tools:[{\"type\":\"function\",\"function\":{\"name\":\"...\",\"parameters\":{...}}}]` to your `/chat/completions` request body.",
+  "api-deepseek-fim":       "`POST /completions` with `{\"model\":\"deepseek-chat\",\"prompt\":\"<prefix>\",\"suffix\":\"<suffix>\",\"max_tokens\":128}`.",
+  "api-deepseek-reasoner":  "`model:\"deepseek-reasoner\"` → read `choices[0].message.reasoning_content` for the full chain-of-thought trace.",
+  "api-deepseek-cache":     "Prefix caching is automatic — no setup needed. Check `usage.prompt_cache_hit_tokens` in the response to confirm cache hits.",
+};
+
 /* ───── Merge custom skills from localStorage into SKILLS ───── */
 (function(){
   try{
@@ -2342,7 +2481,7 @@ function matchesFilters(s){
   if(state.statuses.size && !state.statuses.has(s.status)) return false;
   if(state.query){
     const q = state.query.toLowerCase();
-    const blob = (s.name+" "+s.description+" "+s.trigger+" "+s.example+" "+s.category+" "+s.ecosystem).toLowerCase();
+    const blob = (s.name+" "+s.description+" "+s.trigger+" "+s.example+" "+s.category+" "+s.ecosystem+" "+(s.howto||HOWTO[s.id]||"")).toLowerCase();
     if(!blob.includes(q)) return false;
   }
   return true;
@@ -2478,6 +2617,9 @@ function openSheet(s, opts){
 
     <h4>Trigger</h4>
     <pre class="field">${escapeHTML(s.trigger)}</pre>
+
+    <h4>How to use</h4>
+    <p class="field serif">${escapeHTML(s.howto || HOWTO[s.id] || "See the source link below for setup instructions.")}</p>
 
     <h4>Worked example</h4>
     <p class="field serif">${escapeHTML(s.example)}</p>
@@ -2869,10 +3011,11 @@ document.getElementById("add-skill-form").addEventListener("submit", e=>{
   const status      = val("f-status");
   const description = val("f-desc");
   const trigger     = val("f-trigger");
+  const howto       = val("f-howto");
   const example     = val("f-example");
   const source      = val("f-source") || "#";
 
-  if(!name||!ecosystem||!category||!status||!description||!trigger||!example){
+  if(!name||!ecosystem||!category||!status||!description||!trigger||!howto||!example){
     showToast("please fill in all required fields");
     return;
   }
@@ -2881,7 +3024,7 @@ document.getElementById("add-skill-form").addEventListener("submit", e=>{
     showToast("a skill with that name already exists");
     return;
   }
-  const skill = {id,name,ecosystem,category,status,description,trigger,example,source,_custom:true};
+  const skill = {id,name,ecosystem,category,status,description,trigger,howto,example,source,_custom:true};
   SKILLS.push(skill);
   const saved = JSON.parse(localStorage.getItem("skills-custom")||"[]");
   saved.push(skill);
