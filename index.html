@@ -3367,16 +3367,13 @@ setTimeout(()=>{
 }, 80);
 
 /* ═══════════════════════════════════════════════════════════
-   GITHUB STAR COUNT
-   Fetches live star count from the GitHub API.
-   Cached in sessionStorage for 5 minutes to avoid hammering
-   the API on every navigation, but fresh enough to reflect
-   new stars quickly.
+   GITHUB STAR COUNT — always fetches live on every page load
+   so the count reflects new stars immediately.
+   GitHub allows 60 unauthenticated req/hr per IP — fine for
+   a static site where each visitor has their own quota.
 ═══════════════════════════════════════════════════════════ */
 (function(){
-  const REPO      = "kishormorol/SkillsAllYouNeed";
-  const CACHE_KEY = "sayn-stars";
-  const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+  const REPO = "kishormorol/SkillsAllYouNeed";
 
   function fmtStars(n){
     if(n >= 1000) return (n/1000).toFixed(1).replace(/\.0$/,"") + "k";
@@ -3386,38 +3383,16 @@ setTimeout(()=>{
   function applyCount(n){
     const navCount = document.getElementById("star-count");
     const ctaCount = document.getElementById("star-count-cta");
-    /* Only show count when there is at least 1 star */
-    if(n < 1){
-      if(navCount) navCount.style.display = "none";
-      return;
-    }
+    if(n < 1){ return; } /* keep hidden until at least 1 star */
     const formatted = fmtStars(n);
     if(navCount){ navCount.textContent = formatted; navCount.style.display = ""; }
     if(ctaCount){ ctaCount.textContent = formatted; ctaCount.classList.add("loaded"); }
   }
 
-  /* Try sessionStorage cache first */
-  try {
-    const cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || "null");
-    if(cached && (Date.now() - cached.ts) < CACHE_TTL){
-      applyCount(cached.stars);
-      return;
-    }
-  } catch(_){}
-
-  /* Fetch from GitHub API (unauthenticated — 60 req/hr per IP) */
   fetch("https://api.github.com/repos/" + REPO, {cache:"no-store"})
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(data => {
-      const stars = data.stargazers_count || 0;
-      applyCount(stars);
-      try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({stars, ts: Date.now()})); } catch(_){}
-    })
-    .catch(() => {
-      /* On failure just hide the count — the button still works */
-      const navCount = document.getElementById("star-count");
-      if(navCount) navCount.style.display = "none";
-    });
+    .then(data => applyCount(data.stargazers_count || 0))
+    .catch(() => {}); /* fail silently — button still works */
 })();
 
 /* ═══════════════════════════════════════════════════════════
