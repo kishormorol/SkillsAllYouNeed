@@ -13,21 +13,21 @@
 <meta name="theme-color" content="#17140F"  media="(prefers-color-scheme: dark)">
 
 <!-- SEO -->
-<meta name="description" content="The open registry of AI skills — 111 ready-to-use skill definitions for Claude Code, Claude.ai, ChatGPT and Gemini. Browse, filter, copy the trigger phrase and go.">
-<meta name="keywords" content="AI skills, Claude Code skills, ChatGPT skills, Gemini skills, LLM skills, AI capabilities, Claude skills, skill definitions">
+<meta name="description" content="The open registry of AI skills — 146 ready-to-use skill definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, and Codex. Browse, filter, copy the trigger phrase and go.">
+<meta name="keywords" content="AI skills, Claude Code skills, ChatGPT skills, Gemini skills, LLM skills, AI capabilities, Claude skills, Perplexity skills, Copilot skills, OpenCode skills, Codex skills, skill definitions">
 <link rel="canonical" href="https://kishormorol.github.io/SkillsAllYouNeed/">
 
 <!-- Open Graph (rich previews on Slack, LinkedIn, iMessage, etc.) -->
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="https://kishormorol.github.io/SkillsAllYouNeed/">
 <meta property="og:title"       content="SkillsAllYouNeed for LLMs — The Open Registry of AI Skills">
-<meta property="og:description" content="111 ready-to-use skill definitions for Claude Code, Claude.ai, ChatGPT and Gemini. Browse, filter, copy the trigger phrase and go.">
+<meta property="og:description" content="146 ready-to-use skill definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, and Codex. Browse, filter, copy the trigger phrase and go.">
 <meta property="og:site_name"   content="SkillsAllYouNeed">
 
 <!-- Twitter / X card -->
 <meta name="twitter:card"        content="summary">
 <meta name="twitter:title"       content="SkillsAllYouNeed for LLMs">
-<meta name="twitter:description" content="111 ready-to-use AI skill definitions for Claude, ChatGPT, Gemini and more. Free, open, filterable.">
+<meta name="twitter:description" content="146 ready-to-use AI skill definitions for Claude, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, Codex and more. Free, open, filterable.">
 <meta name="twitter:site"        content="@kishormorol">
 
 <!-- apply saved theme immediately so there's no flash on reload -->
@@ -69,6 +69,8 @@
     --eco-gemini:       #4527A0;
     --eco-perplexity:   #1B9E86;
     --eco-copilot:      #0078D4;
+    --eco-opencode:     #14B85A;
+    --eco-codex:        #19C37D;
   }
 
   *{ box-sizing:border-box; }
@@ -331,6 +333,8 @@
   .chip[data-eco="Gemini"][aria-pressed="true"]       { box-shadow: inset 3px 0 0 var(--eco-gemini); }
   .chip[data-eco="Perplexity"][aria-pressed="true"]   { box-shadow: inset 3px 0 0 var(--eco-perplexity); }
   .chip[data-eco="Copilot"][aria-pressed="true"]      { box-shadow: inset 3px 0 0 var(--eco-copilot); }
+  .chip[data-eco="OpenCode"][aria-pressed="true"]     { box-shadow: inset 3px 0 0 var(--eco-opencode); }
+  .chip[data-eco="Codex"][aria-pressed="true"]        { box-shadow: inset 3px 0 0 var(--eco-codex); }
   .chip[data-eco="Claude"][aria-pressed="true"] svg *{ stroke:var(--paper); fill:var(--paper); }
 
   /* Search */
@@ -384,6 +388,8 @@
   .card[data-eco="Gemini"]       { --eco-color: var(--eco-gemini); }
   .card[data-eco="Perplexity"]   { --eco-color: var(--eco-perplexity); }
   .card[data-eco="Copilot"]      { --eco-color: var(--eco-copilot); }
+  .card[data-eco="OpenCode"]     { --eco-color: var(--eco-opencode); }
+  .card[data-eco="Codex"]        { --eco-color: var(--eco-codex); }
 
   .card{
     grid-column: span 4;
@@ -413,7 +419,8 @@
   }
   .card.featured .id, .card.featured .cat, .card.featured .status, .card.featured .desc, .card.featured .eco-label{ color:var(--paper); }
   .card.featured .id{ color:var(--paper); opacity:.5; }
-  .card.featured .glyph svg *{ stroke:var(--paper); }
+  .card.featured .glyph svg *{ stroke:var(--paper); fill:none; }
+  .card.featured .glyph svg [fill]:not([fill="none"]){ fill:var(--paper); }
   .card.featured:hover{
     background: linear-gradient(150deg, #201C15 0%, #2A2418 100%);
     box-shadow: inset 4px 0 0 var(--highlight);
@@ -782,6 +789,8 @@
   .eco-cell[data-eco="Gemini"]      { --eco-color: var(--eco-gemini); }
   .eco-cell[data-eco="Perplexity"]  { --eco-color: var(--eco-perplexity); }
   .eco-cell[data-eco="Copilot"]     { --eco-color: var(--eco-copilot); }
+  .eco-cell[data-eco="OpenCode"]    { --eco-color: var(--eco-opencode); }
+  .eco-cell[data-eco="Codex"]       { --eco-color: var(--eco-codex); }
 
   .eco-cell{
     padding:26px 22px 22px;
@@ -1124,6 +1133,8 @@
     --eco-gemini:       #7A5AE0;
     --eco-perplexity:   #2DC4A8;
     --eco-copilot:      #3B9FE8;
+    --eco-opencode:     #38C96E;
+    --eco-codex:        #42DCA0;
   }
   [data-theme="dark"] .search-wrap:focus-within{
     box-shadow: 0 0 0 3px rgba(224,88,48,.18), 4px 4px 0 var(--accent);
@@ -1362,14 +1373,14 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "SkillsAllYouNeed for LLMs",
-  "description": "The open registry of AI skills — ready-to-use skill definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, and Copilot.",
+  "description": "The open registry of AI skills — ready-to-use skill definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, and Codex.",
   "url": "https://kishormorol.github.io/SkillsAllYouNeed/",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "creator": {
     "@type": "Person",
     "name": "Md. Kishor Morol"
   },
-  "keywords": ["AI skills","Claude","ChatGPT","Gemini","Perplexity","Copilot","LLM","prompt engineering"],
+  "keywords": ["AI skills","Claude","ChatGPT","Gemini","Perplexity","Copilot","OpenCode","Codex","LLM","prompt engineering"],
   "distribution": [
     {
       "@type": "DataDownload",
@@ -1409,10 +1420,10 @@
     </div>
     <div class="hero-body">
       <h1>Skills<em>All</em><br/>You<em>Need</em><span class="h1-sub"> for LLMs</span></h1>
-      <p class="hero-sub">The open registry of AI skills — ready-to-use skill definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, and Copilot. Copy into your project, drop into Settings, and go.</p>
+      <p class="hero-sub">The open registry of AI skills — ready-to-use skill definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, and Codex. Copy into your project, drop into Settings, and go.</p>
       <div class="hero-stats" aria-label="Registry stats">
         <div class="stat"><b id="hero-skill-count">0</b><span>skills</span></div>
-        <div class="stat"><b>6</b><span>ecosystems</span></div>
+        <div class="stat"><b>8</b><span>ecosystems</span></div>
         <div class="stat"><b>9</b><span>categories</span></div>
         <div class="stat"><b>Free</b><span>to use</span></div>
       </div>
@@ -1432,7 +1443,7 @@
     <div class="onboarding-inner">
       <div class="onboarding-title">New here?</div>
       <div class="onboarding-steps">
-        <div class="onboarding-step"><span class="step-num">1</span><span>Browse skills across Claude, ChatGPT, Gemini, Perplexity, Copilot &amp; more</span></div>
+        <div class="onboarding-step"><span class="step-num">1</span><span>Browse skills across Claude, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, Codex &amp; more</span></div>
         <div class="onboarding-step"><span class="step-num">2</span><span>Click any card — see the trigger phrase and how to activate it</span></div>
         <div class="onboarding-step"><span class="step-num">3</span><span>Save favourites ♥, export as JSON, or submit a missing skill</span></div>
       </div>
@@ -1453,7 +1464,7 @@
           <a id="sort-index" class="on" tabindex="0" role="button">index</a>&nbsp;|&nbsp;
           <a id="sort-recent" tabindex="0" role="button">recent</a>
         </span><br/>
-        6 ecosystems · 9 categories<br/>
+        8 ecosystems · 9 categories<br/>
         click any card to open
       </div>
     </div>
@@ -1569,7 +1580,7 @@
 
     <div class="end">
       <span>© 2026 · SkillsAllYouNeed · CC BY 4.0</span>
-      <span>skills · 6 ecosystems · 9 categories</span>
+      <span>skills · 8 ecosystems · 9 categories</span>
       <span>kishormorol.github.io/SkillsAllYouNeed</span>
     </div>
   </footer>
@@ -1618,6 +1629,8 @@
             <option>Gemini</option>
             <option>Perplexity</option>
             <option>Copilot</option>
+            <option>OpenCode</option>
+            <option>Codex</option>
           </select>
         </div>
       </div>
@@ -1701,21 +1714,11 @@
 
 /* ───── Ecosystem glyphs (original geometric marks) ───── */
 const GLYPHS = {
-  "Claude": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
-    <circle cx="16" cy="16" r="13" />
-    <path d="M16 3 A 13 13 0 0 1 16 29" />
-    <path d="M16 8 A 8 8 0 0 1 16 24" />
-    <line x1="3" y1="16" x2="29" y2="16" />
-  </svg>`,
-  "Claude Code": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
-    <rect x="3" y="3" width="26" height="26" />
-    <path d="M9 12 L13 16 L9 20" />
-    <line x1="17" y1="20" x2="23" y2="20" />
-  </svg>`,
-  "ChatGPT": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
-    <circle cx="16" cy="16" r="13" />
-    <polygon points="16,5 27,12 23,25 9,25 5,12" />
-  </svg>`,
+  "Claude": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 257" preserveAspectRatio="xMidYMid"><path fill="currentColor" stroke="none" d="m50.228 170.321 50.357-28.257.843-2.463-.843-1.361h-2.462l-8.426-.518-28.775-.778-24.952-1.037-24.175-1.296-6.092-1.297L0 125.796l.583-3.759 5.12-3.434 7.324.648 16.202 1.101 24.304 1.685 17.629 1.037 26.118 2.722h4.148l.583-1.685-1.426-1.037-1.101-1.037-25.147-17.045-27.22-18.017-14.258-10.37-7.713-5.25-3.888-4.925-1.685-10.758 7-7.713 9.397.649 2.398.648 9.527 7.323 20.35 15.75L94.817 91.9l3.889 3.24 1.555-1.102.195-.777-1.75-2.917-14.453-26.118-15.425-26.572-6.87-11.018-1.814-6.61c-.648-2.723-1.102-4.991-1.102-7.778l7.972-10.823L71.42 0 82.05 1.426l4.472 3.888 6.61 15.101 10.694 23.786 16.591 32.34 4.861 9.592 2.592 8.879.973 2.722h1.685v-1.556l1.36-18.211 2.528-22.36 2.463-28.776.843-8.1 4.018-9.722 7.971-5.25 6.222 2.981 5.12 7.324-.713 4.73-3.046 19.768-5.962 30.98-3.889 20.739h2.268l2.593-2.593 10.499-13.934 17.628-22.036 7.778-8.749 9.073-9.657 5.833-4.601h11.018l8.1 12.055-3.628 12.443-11.342 14.388-9.398 12.184-13.48 18.147-8.426 14.518.778 1.166 2.01-.194 30.46-6.481 16.462-2.982 19.637-3.37 8.88 4.148.971 4.213-3.5 8.62-20.998 5.184-24.628 4.926-36.682 8.685-.454.324.519.648 16.526 1.555 7.065.389h17.304l32.21 2.398 8.426 5.574 5.055 6.805-.843 5.184-12.962 6.611-17.498-4.148-40.83-9.721-14-3.5h-1.944v1.167l11.666 11.406 21.387 19.314 26.767 24.887 1.36 6.157-3.434 4.86-3.63-.518-23.526-17.693-9.073-7.972-20.545-17.304h-1.36v1.814l4.73 6.935 25.017 37.59 1.296 11.536-1.814 3.76-6.481 2.268-7.13-1.297-14.647-20.544-15.1-23.138-12.185-20.739-1.49.843-7.194 77.448-3.37 3.953-7.778 2.981-6.48-4.925-3.436-7.972 3.435-15.749 4.148-20.544 3.37-16.333 3.046-20.285 1.815-6.74-.13-.454-1.49.194-15.295 20.999-23.267 31.433-18.406 19.702-4.407 1.75-7.648-3.954.713-7.064 4.277-6.286 25.47-32.405 15.36-20.092 9.917-11.6-.065-1.686h-.583L44.07 198.125l-12.055 1.555-5.185-4.86.648-7.972 2.463-2.593 20.35-13.999-.064.065Z"/></svg>`,
+  "Claude Code": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Claude Code</title><path clip-rule="evenodd" d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z" fill="currentColor" stroke="none" fill-rule="evenodd"/></svg>`,
+  "ChatGPT": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" fill-rule="evenodd"><title>OpenAI (ChatGPT)</title><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"/></svg>`,
+  "OpenCode": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="16" x2="15" y2="16"/><line x1="7" y1="9" x2="11" y2="9"/></svg>`,
+  "Codex": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M8.086.457a6.105 6.105 0 013.046-.415c1.333.153 2.521.72 3.564 1.7a.117.117 0 00.107.029c1.408-.346 2.762-.224 4.061.366l.063.03.154.076c1.357.703 2.33 1.77 2.918 3.198.278.679.418 1.388.421 2.126a5.655 5.655 0 01-.18 1.631.167.167 0 00.04.155 5.982 5.982 0 011.578 2.891c.385 1.901-.01 3.615-1.183 5.14l-.182.22a6.063 6.063 0 01-2.934 1.851.162.162 0 00-.108.102c-.255.736-.511 1.364-.987 1.992-1.199 1.582-2.962 2.462-4.948 2.451-1.583-.008-2.986-.587-4.21-1.736a.145.145 0 00-.14-.032c-.518.167-1.04.191-1.604.185a5.924 5.924 0 01-2.595-.622 6.058 6.058 0 01-2.146-1.781c-.203-.269-.404-.522-.551-.821a7.74 7.74 0 01-.495-1.283 6.11 6.11 0 01-.017-3.064.166.166 0 00.008-.074.115.115 0 00-.037-.064 5.958 5.958 0 01-1.38-2.202 5.196 5.196 0 01-.333-1.589 6.915 6.915 0 01.188-2.132c.45-1.484 1.309-2.648 2.577-3.493.282-.188.55-.334.802-.438.286-.12.573-.22.861-.304a.129.129 0 00.087-.087A6.016 6.016 0 015.635 2.31C6.315 1.464 7.132.846 8.086.457zm-.804 7.85a.848.848 0 00-1.473.842l1.694 2.965-1.688 2.848a.849.849 0 001.46.864l1.94-3.272a.849.849 0 00.007-.854l-1.94-3.393zm5.446 6.24a.849.849 0 000 1.695h4.848a.849.849 0 000-1.696h-4.848z"/></svg>`,
   "Gemini": `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
     <polygon points="16,3 20,13 29,16 20,19 16,29 12,19 3,16 12,13" />
     <circle cx="16" cy="16" r="3" />
@@ -2423,6 +2426,120 @@ const SKILLS = [
     example:"Pick the 'aws-skills' pack, drop it in `.claude/skills/`, and Claude Code gains AWS CDK and cost-optimisation expertise.",
     source:"https://github.com/travisvn/awesome-claude-skills"},
 
+  /* ── OPENCODE ── */
+  {id:"oc-plan-mode", name:"Plan Mode", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"A read-only mode that disables all file writes so OpenCode can propose and iterate on an implementation plan before touching any code.",
+    trigger:"Press Tab to toggle Plan/Build mode",
+    example:"User presses Tab → types 'Refactor auth to use JWT' → OpenCode returns a 5-step plan with no file changes → user says 'also handle refresh tokens' → plan updates → Tab back to Build → 'implement it'",
+    source:"https://opencode.ai/docs/"},
+  {id:"oc-undo-redo", name:"Undo / Redo", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"Snapshot-based undo and redo that rolls back or reapplies all file changes the agent made during the last operation.",
+    trigger:"/undo or /redo in the TUI",
+    example:"Agent refactors the wrong module → user types /undo → all files restored to original state → user adds 'only touch auth.ts' → resubmits",
+    source:"https://opencode.ai/docs/config/"},
+  {id:"oc-agent-skills", name:"Agent Skills (SKILL.md)", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"Reusable instruction files the agent discovers and loads on-demand. Place a SKILL.md file in .opencode/skills/<name>/ to define a repeatable workflow.",
+    trigger:"Create .opencode/skills/<name>/SKILL.md with name and description frontmatter",
+    example:"Skill 'git-release' defines steps for tagging and writing changelogs → user asks 'cut a release for v2.1.0' → agent loads the skill and follows the steps exactly without improvising",
+    source:"https://opencode.ai/docs/skills/"},
+  {id:"oc-session-share", name:"Session Share", ecosystem:"OpenCode", category:"Sharing", status:"Stable",
+    description:"Generates a public shareable link to the full agent conversation including all prompts, reasoning steps, and file diffs.",
+    trigger:"/share in the TUI",
+    example:"Agent implements a new API endpoint → developer types /share → link copied → pasted in PR description so reviewers can see every decision the agent made",
+    source:"https://opencode.ai/docs/config/"},
+  {id:"oc-mcp", name:"MCP Server Integration", ecosystem:"OpenCode", category:"API", status:"Stable",
+    description:"Connect external tools — databases, APIs, internal systems — by configuring MCP (Model Context Protocol) servers in opencode.json.",
+    trigger:"Add an mcp key to opencode.json with server definitions",
+    example:"Configure a Postgres MCP server → ask 'show me users created this week' → agent queries the DB directly through the MCP tool without writing a script",
+    source:"https://opencode.ai/docs/config/"},
+  {id:"oc-custom-commands", name:"Custom Commands", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"Define custom slash commands for repetitive workflows as markdown files in .opencode/commands/ or in opencode.json.",
+    trigger:"Type /your-command-name in the TUI",
+    example:"Command 'fix-types' defined as 'Find all TypeScript type errors and fix them without changing logic' → user types /fix-types → agent runs the full workflow immediately",
+    source:"https://opencode.ai/docs/config/"},
+  {id:"oc-github-action", name:"GitHub Actions Integration", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"Trigger OpenCode in CI/CD by commenting /opencode or /oc on any GitHub issue or PR. Supports automatic PR review, issue triage, scheduled runs, and code-line comments.",
+    trigger:"Comment /opencode <task> or /oc <task> on a GitHub issue or PR",
+    example:"Reviewer comments '/opencode add input validation to the form fields in this PR' → agent runs in GitHub Actions → commits the changes → replies with a summary in the PR thread",
+    source:"https://opencode.ai/docs/github/"},
+  {id:"oc-custom-agents", name:"Custom Agents", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"Define specialized agents with their own model, system prompt, and tool permissions using markdown files in .opencode/agents/.",
+    trigger:"Create .opencode/agents/<name>.md with YAML frontmatter defining the agent",
+    example:"Agent 'security-reviewer' defined with strict read-only permissions and a system prompt focused on OWASP checks → user starts a session with it to audit a new endpoint before merging",
+    source:"https://opencode.ai/docs/agents/"},
+  {id:"oc-lsp", name:"LSP Integration", ecosystem:"OpenCode", category:"Agentic", status:"Beta",
+    description:"Connect Language Server Protocol servers so the agent can use go-to-definition, find references, and get real-time diagnostics instead of guessing from file content alone.",
+    trigger:"Add an lsp key to opencode.json with server definitions",
+    example:"Agent needs to rename a function → instead of grep-searching for usages, it calls the LSP find-references tool and gets exact locations including dynamic call sites",
+    source:"https://opencode.ai/docs/config/"},
+  {id:"oc-plugins", name:"Plugins", ecosystem:"OpenCode", category:"API", status:"Beta",
+    description:"Extend OpenCode with custom executable tools the LLM can call — beyond instructions. Place JS/TS files in .opencode/plugins/ or load from npm via the plugin key in opencode.json.",
+    trigger:"Place a plugin file in .opencode/plugins/ or add plugin key in opencode.json",
+    example:"Plugin defines a 'deploy-preview' tool that calls Vercel's API → agent runs tests, then calls deploy-preview → gets the URL and pastes it into the PR description",
+    source:"https://opencode.ai/docs/config/"},
+
+  /* ── CODEX ── */
+  {id:"cx-plan-mode", name:"Plan Mode", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"A read-only planning mode where Codex proposes an implementation plan without writing any files. Use it to iterate on approach before committing to execution.",
+    trigger:"$plan or toggle Plan Mode in the thread composer",
+    example:"User types $plan → 'Migrate this Express API to Fastify' → Codex returns a 7-step migration plan → user asks 'keep the existing middleware' → plan updates → user says 'go ahead and implement it'",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-goal-mode", name:"Goal Mode", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Long-running autonomous task execution toward a measurable finish line. Codex keeps working, across hours or days, until the goal's success criterion is met.",
+    trigger:"/goal in the thread composer",
+    example:"User sets goal: 'Migrate the Python CLI to Rust, done when all existing tests pass' → Codex works for hours, committing incremental changes → pauses when it needs a decision → user resumes after lunch",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-agent-skills", name:"Agent Skills (SKILL.md)", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Reusable workflow packages with instructions, scripts, and resources. Codex auto-discovers skills from .agents/skills/ and loads the right one when your task matches.",
+    trigger:"Type $skill-name or $ to browse skills; or describe a task that matches a skill's description",
+    example:"Skill 'linear-pr' packages steps for creating a Linear ticket and linking a PR → user asks 'create a ticket for this bug and open a PR' → Codex loads the skill and follows the exact steps",
+    source:"https://developers.openai.com/codex/skills/"},
+  {id:"cx-skill-creator", name:"Skill Creator", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"A built-in system skill that interviews you about a workflow and generates a ready-to-use SKILL.md file for it.",
+    trigger:"$skill-creator",
+    example:"User types $skill-creator → answers 3 questions about their deploy workflow → Codex writes a complete SKILL.md with instructions and saves it to .agents/skills/deploy/",
+    source:"https://developers.openai.com/codex/skills/"},
+  {id:"cx-skill-installer", name:"Skill Installer", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"A built-in system skill that installs curated third-party skills from the community skills registry into your local Codex setup.",
+    trigger:"$skill-installer <skill-name>",
+    example:"User types '$skill-installer linear' → Codex installs the Linear skill → user can now say '$linear create a ticket for this issue' in any thread",
+    source:"https://developers.openai.com/codex/skills/"},
+  {id:"cx-thread-automations", name:"Thread Automations", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Scheduled recurring wake-up calls that return to the same Codex thread on a cron-like schedule, keeping a workflow running while you're away.",
+    trigger:"Set up via Settings → Automations; attach to a pinned thread",
+    example:"Chief-of-Staff thread set to run every 30 minutes: checks Slack and Gmail for unanswered messages, researches answers, drafts replies — user reviews on return",
+    source:"https://developers.openai.com/codex/app/automations/"},
+  {id:"cx-durable-threads", name:"Durable Threads (Pinned)", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Long-running Codex threads that preserve working context, decisions, and preferences across repeated sessions. Accessible instantly via Cmd+1 through Cmd+9.",
+    trigger:"Pin a thread via the thread menu; use Cmd+1–9 to jump back",
+    example:"User pins a 'Release Thread' → each sprint, opens it with Cmd+1 → Codex already knows the team's release process, past blockers, and preferences → picks up where it left off",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-worktree", name:"Worktree Mode", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Isolate Codex changes in a Git worktree so the agent can work on a parallel branch without touching your current working files.",
+    trigger:"Choose 'Worktree' when starting a new thread in the Codex app",
+    example:"User starts a Worktree thread → asks Codex to try a risky refactor → Codex works in isolation → user reviews the diff → decides to merge or discard without any cleanup needed",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-mcp", name:"MCP Server Integration", ecosystem:"Codex", category:"API", status:"Stable",
+    description:"Connect external tools and services via Model Context Protocol servers. Shared across Codex app, CLI, and IDE Extension automatically.",
+    trigger:"Open Settings → MCP in the Codex app or configure in CLI config",
+    example:"Add the OpenAI Docs MCP server → ask 'how do I use streaming with the Responses API?' → Codex fetches live docs through the MCP tool and answers with the exact current syntax",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-voice-input", name:"Voice Input", ecosystem:"Codex", category:"Visual", status:"Stable",
+    description:"Dictate prompts directly into Codex using your microphone. Especially useful for vague or rough thoughts that are natural to say but awkward to type.",
+    trigger:"Hold Ctrl+M while the composer is visible",
+    example:"User holds Ctrl+M → says 'I think there's a race condition somewhere in the auth flow, it only happens under load, go look' → Codex transcribes and starts investigating",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-steering-queuing", name:"Steering & Queuing", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Steering interrupts an in-flight task with new direction before it finishes. Queuing adds the next task to run after the current step completes. Both keep you close to the work as it unfolds.",
+    trigger:"Type or speak mid-task to steer; add a follow-up message to queue",
+    example:"Codex is reviewing a page → user steers: 'make that header smaller' → Codex adjusts mid-task. Then user queues: 'once done, send the preview link to the reviewer in Slack'",
+    source:"https://developers.openai.com/codex/app/features/"},
+  {id:"cx-shared-memory", name:"Shared Memory (AGENTS.md + Vault)", ecosystem:"Codex", category:"Agentic", status:"Stable",
+    description:"Durable context stored outside any single thread so future sessions can resume from something explicit. Define it via AGENTS.md and a structured vault folder of plain files.",
+    trigger:"Create AGENTS.md at the repo root or vault root with memory routing instructions",
+    example:"AGENTS.md tells Codex to update vault/people/ and vault/projects/ after every session → next session picks up the last decision, owner, and blocker without re-explaining the full context",
+    source:"https://developers.openai.com/codex/memories/"},
+
 ];
 
 /* ───── How-to-use lookup (keyed by skill id) ───── */
@@ -2549,6 +2666,32 @@ const HOWTO = {
   "cc-skill-ai-research":    "Clone `Orchestra-Research/AI-research-SKILLs` and copy desired skill folders to `.claude/skills/`. Adds systematic literature review, hypothesis generation, and experiment design workflows.",
   "cc-skill-cybersecurity":  "Clone `mukul975/Anthropic-Cybersecurity-Skills` and copy skill folders to `.claude/skills/`. Equips Claude Code with threat modelling, OWASP audit, and secure-code-review workflows.",
   "cc-skill-awesome-collection": "Browse `travisvn/awesome-claude-skills` on GitHub, pick any skill pack you need, and copy its folder to `.claude/skills/`. The README groups 100+ packs by domain for easy discovery.",
+
+  /* OPENCODE */
+  "oc-plan-mode":        "Press Tab in the TUI to toggle between Plan and Build mode. The lower-right indicator shows the current mode.",
+  "oc-undo-redo":        "After an agent makes changes you don't want, type /undo. All file edits are reverted. Refine your prompt and resubmit. Type /redo to reapply undone changes.",
+  "oc-agent-skills":     "Create .opencode/skills/<name>/SKILL.md with YAML frontmatter (name, description) and step-by-step instructions. The agent auto-discovers and loads it when the task matches.",
+  "oc-session-share":    "After a session, type /share. OpenCode generates a link and copies it to clipboard. Paste it in a PR description or Slack so teammates can review the full agent reasoning.",
+  "oc-mcp":              "In your project's opencode.json, add an 'mcp' object. Each key is a server name with type, command, and args. OpenCode loads the servers and the agent can call their tools directly.",
+  "oc-custom-commands":  "Create .opencode/commands/your-command.md with a prompt template, or add a 'command' key in opencode.json. Then invoke it with /command-name in the TUI.",
+  "oc-github-action":    "Run 'opencode github install' in your project to set up the GitHub App and workflow. Or manually add the opencode.yml workflow and store API keys as GitHub secrets.",
+  "oc-custom-agents":    "Create .opencode/agents/reviewer.md with YAML frontmatter specifying model, description, and permissions. Set a default agent via default_agent in opencode.json.",
+  "oc-lsp":              "In opencode.json, add an 'lsp' object with your language server config (e.g., typescript-language-server for TS/JS). OpenCode uses the LSP to give the agent precise symbol resolution.",
+  "oc-plugins":          "Create .opencode/plugins/my-tool.ts with a tool definition and handler. Or add 'plugin' in opencode.json pointing to an npm package. The agent sees the tool and can call it like any built-in.",
+
+  /* CODEX */
+  "cx-plan-mode":        "Type $plan or select Plan Mode. Describe the task. Codex returns a structured plan with no file changes. Iterate until satisfied, then switch to execution mode.",
+  "cx-goal-mode":        "Type /goal and define a concrete, verifiable objective (e.g. 'all unit tests pass after migrating auth to Rust'). Codex works continuously, checking in for approval or steering as needed. Pause and resume anytime.",
+  "cx-agent-skills":     "Create .agents/skills/<name>/SKILL.md with name and description frontmatter. Or install curated skills via $skill-installer. Codex includes skills in context and selects them implicitly or on explicit $mention.",
+  "cx-skill-creator":    "Type $skill-creator in any thread. Answer questions about what the skill does, when it triggers, and whether it needs scripts. Codex generates the SKILL.md and saves it to the correct location.",
+  "cx-skill-installer":  "Type $skill-installer followed by the skill name (e.g., $skill-installer linear). Codex downloads and installs the skill. Restart Codex if it doesn't appear immediately.",
+  "cx-thread-automations":"Open Settings → Automations. Create an automation tied to a thread. Set the schedule (e.g., every 30 minutes). Define what Codex should check or do each time it wakes. It runs without your presence.",
+  "cx-durable-threads":  "Start a thread for a recurring workflow (e.g., release management). Pin it. Use Cmd+1 to return to it instantly. Codex remembers all prior decisions and context from previous visits.",
+  "cx-worktree":         "When creating a thread, select Worktree instead of Local. Codex creates a new Git worktree and works there. Your main working directory is untouched. Review the diff in the built-in diff pane before merging.",
+  "cx-mcp":              "In Codex app Settings, open the MCP section. Enable a recommended server or add a custom one. Configuration syncs across CLI and IDE Extension automatically.",
+  "cx-voice-input":      "Hold Ctrl+M and speak. Codex transcribes your voice. Edit the transcript if needed, then send. Works well for stream-of-consciousness task dumps before the task is fully formed.",
+  "cx-steering-queuing": "While Codex is working, type a correction to steer it immediately. Or type a new instruction that starts with 'once done' or 'after that' to queue it for after the current step.",
+  "cx-shared-memory":    "Create AGENTS.md with instructions on how Codex should update your vault (people, projects, decisions, TODOs). Store the vault in Git, Dropbox, or any sync layer. Future threads start with this context already loaded.",
 };
 
 /* ───── Merge custom skills from localStorage into SKILLS ───── */
@@ -2561,41 +2704,41 @@ const HOWTO = {
 
 /* ───── Comparison matrix ───── */
 const MATRIX_ROWS = [
-  /* capability                           Claude  CC    GPT   Gemini  Perpl.  Copilot */
-  ["Standalone document/code panel",    "y","n","y","n","n","p"],
-  ["Inline diagram/chart rendering",    "y","n","p","n","n","p"],
-  ["Code execution sandbox",            "y","y","y","y","n","p"],
-  ["Native image generation",           "p","n","y","n","n","y"],
-  ["Video generation",                  "n","n","p","n","n","n"],
-  ["Web search",                        "y","p","y","p","y","y"],
-  ["Cross‑chat memory",                 "y","y","y","y","y","p"],
-  ["Custom skills / instructions",      "y","y","y","y","p","p"],
-  ["Projects / workspaces",             "y","y","y","p","y","n"],
-  ["MCP / third‑party connectors",      "y","y","y","p","n","p"],
-  ["Voice conversation",                "p","n","y","n","n","p"],
-  ["Browser automation agent",          "p","n","y","n","p","n"],
-  ["Terminal / CLI agent",              "n","y","n","y","n","n"],
-  ["IDE plugin",                        "n","y","n","y","n","y"],
-  ["Scheduled / recurring tasks",       "n","n","y","n","n","n"],
-  ["Public marketplace of agents",      "n","n","y","n","n","n"],
+  /* capability                           Claude  CC    GPT   Gemini  Perpl.  Copilot  OC     CX */
+  ["Standalone document/code panel",    "y","n","y","n","n","p","n","y"],
+  ["Inline diagram/chart rendering",    "y","n","p","n","n","p","n","n"],
+  ["Code execution sandbox",            "y","y","y","y","n","p","y","y"],
+  ["Native image generation",           "p","n","y","n","n","y","n","y"],
+  ["Video generation",                  "n","n","p","n","n","n","n","n"],
+  ["Web search",                        "y","p","y","p","y","y","y","y"],
+  ["Cross‑chat memory",                 "y","y","y","y","y","p","n","p"],
+  ["Custom skills / instructions",      "y","y","y","y","p","p","y","y"],
+  ["Projects / workspaces",             "y","y","y","p","y","n","n","y"],
+  ["MCP / third‑party connectors",      "y","y","y","p","n","p","y","y"],
+  ["Voice conversation",                "p","n","y","n","n","p","n","p"],
+  ["Browser automation agent",          "p","n","y","n","p","n","n","y"],
+  ["Terminal / CLI agent",              "n","y","n","y","n","n","y","y"],
+  ["IDE plugin",                        "n","y","n","y","n","y","y","y"],
+  ["Scheduled / recurring tasks",       "n","n","y","n","n","n","n","y"],
+  ["Public marketplace of agents",      "n","n","y","n","n","n","n","n"],
   /* v1.1 additions */
-  ["Proactive / scheduled briefs",      "n","n","y","n","n","n"],
-  ["Inline interactive UI generation",  "y","n","p","n","n","p"],
-  ["Spreadsheet agent (Excel/Sheets)",  "y","n","p","n","n","y"],
-  ["Desktop control agent",             "y","n","n","n","n","n"],
-  ["Browser extension agent",           "y","n","p","n","n","n"],
-  ["Repo‑level instruction file",       "n","y","n","y","n","n"],
-  ["Plan‑before‑act mode",              "n","y","p","p","n","n"],
-  ["Meeting recording & transcription", "n","n","y","n","n","y"],
-  ["Prompt caching (API)",              "y","y","n","n","n","n"],
-  ["Structured JSON outputs (API)",     "y","y","y","y","y","n"],
-  ["Realtime voice API",                "n","n","y","n","n","n"],
-  ["Incognito / ephemeral chat",        "y","n","p","n","n","n"],
+  ["Proactive / scheduled briefs",      "n","n","y","n","n","n","n","y"],
+  ["Inline interactive UI generation",  "y","n","p","n","n","p","n","n"],
+  ["Spreadsheet agent (Excel/Sheets)",  "y","n","p","n","n","y","n","n"],
+  ["Desktop control agent",             "y","n","n","n","n","n","n","y"],
+  ["Browser extension agent",           "y","n","p","n","n","n","n","p"],
+  ["Repo‑level instruction file",       "n","y","n","y","n","n","y","y"],
+  ["Plan‑before‑act mode",              "n","y","p","p","n","n","y","y"],
+  ["Meeting recording & transcription", "n","n","y","n","n","y","n","n"],
+  ["Prompt caching (API)",              "y","y","n","n","n","n","n","n"],
+  ["Structured JSON outputs (API)",     "y","y","y","y","y","n","n","n"],
+  ["Realtime voice API",                "n","n","y","n","n","n","n","n"],
+  ["Incognito / ephemeral chat",        "y","n","p","n","n","n","n","n"],
   /* v1.3 additions */
-  ["Extended / deep thinking",          "y","n","p","n","n","n"],
-  ["Real‑time cited deep research",     "p","n","y","p","y","p"],
-  ["Collaborative shared Pages/docs",   "p","n","n","n","y","y"],
-  ["Source‑scoped search focus",        "n","n","n","n","y","n"],
+  ["Extended / deep thinking",          "y","n","p","n","n","n","p","y"],
+  ["Real‑time cited deep research",     "p","n","y","p","y","p","n","n"],
+  ["Collaborative shared Pages/docs",   "p","n","n","n","y","y","p","n"],
+  ["Source‑scoped search focus",        "n","n","n","n","y","n","n","n"],
 ];
 
 /* ───── References ───── */
@@ -2616,7 +2759,7 @@ const REFS = [
 ];
 
 /* ───── Categories & status (derived) ───── */
-const ECOSYSTEMS = ["Claude","Claude Code","ChatGPT","Gemini","Perplexity","Copilot"];
+const ECOSYSTEMS = ["Claude","Claude Code","ChatGPT","Gemini","Perplexity","Copilot","OpenCode","Codex"];
 const CATEGORIES = ["Document","Code","Web","Data","Memory","Integration","Visual","Agentic","API"];
 const STATUSES   = ["Stable","Beta","Deprecated"];
 
@@ -2632,7 +2775,13 @@ const NEW_IDS = new Set([
   "cl-extended-thinking","gpt-deep-research",
   "pp-pro-search","pp-spaces","pp-pages","pp-focus","pp-assistant",
   "mc-365","mc-designer","mc-pages","mc-notebook",
-  "api-anthropic-thinking","api-perplexity-sonar"
+  "api-anthropic-thinking","api-perplexity-sonar",
+  /* OpenCode + Codex */
+  "oc-plan-mode","oc-undo-redo","oc-agent-skills","oc-session-share","oc-mcp",
+  "oc-custom-commands","oc-github-action","oc-custom-agents","oc-lsp","oc-plugins",
+  "cx-plan-mode","cx-goal-mode","cx-agent-skills","cx-skill-creator","cx-skill-installer",
+  "cx-thread-automations","cx-durable-threads","cx-worktree","cx-mcp","cx-voice-input",
+  "cx-steering-queuing","cx-shared-memory"
 ]);
 
 /* ───── Favorites (localStorage) ───── */
@@ -2664,7 +2813,9 @@ const ECO_BLURB = {
   "ChatGPT":     "OpenAI's flagship assistant — canvas, custom GPTs, voice mode, connectors and a public marketplace.",
   "Gemini":      "Google's AI assistant across web, mobile and Workspace — Gems, Deep Research, Imagen, Veo, and the Gemini API.",
   "Perplexity":  "Real‑time answer engine with cited web search — Pro Search, Spaces, Pages, Focus modes, and the Sonar API.",
-  "Copilot":     "Microsoft's AI assistant embedded across Windows, Microsoft 365, Bing, and the Edge browser."
+  "Copilot":     "Microsoft's AI assistant embedded across Windows, Microsoft 365, Bing, and the Edge browser.",
+  "OpenCode":    "Anomaly's open-source terminal AI coding agent — Plan/Build modes, custom agents, plugins, MCP, LSP, and GitHub Actions integration.",
+  "Codex":       "OpenAI's CLI + desktop coding agent — Goal Mode, durable pinned threads, Worktrees, Automations, Computer Use, and shared memory."
 };
 
 /* ───── Helpers ───── */
@@ -3247,7 +3398,7 @@ $("#reset").addEventListener("click", ()=>{
 /* ───── Add Skill modal ───── */
 const ECO_PREFIX = {
   "Claude":"cl","Claude Code":"cc","ChatGPT":"gpt","Gemini":"gm",
-  "Perplexity":"pp","Copilot":"mc"
+  "Perplexity":"pp","Copilot":"mc","OpenCode":"oc","Codex":"cx"
 };
 function genId(eco, name){
   const prefix = ECO_PREFIX[eco] || "xx";
