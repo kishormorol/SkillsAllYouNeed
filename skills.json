@@ -1,16 +1,18 @@
 {
-  "version": "1.3",
-  "generated": "2026-05-25",
-  "count": 124,
+  "version": "1.4",
+  "generated": "2026-05-27",
+  "count": 146,
   "ecosystems": [
     "ChatGPT",
     "Claude",
     "Claude Code",
+    "Codex",
     "Copilot",
     "Gemini",
+    "OpenCode",
     "Perplexity"
   ],
-  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, and Copilot.",
+  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, and Codex.",
   "license": "CC BY 4.0",
   "source": "https://kishormorol.github.io/SkillsAllYouNeed/",
   "skills": [
@@ -1390,6 +1392,248 @@
       "trigger": "Browse and clone individual skill folders from the repo",
       "example": "Pick the 'aws-skills' pack, drop it in `.claude/skills/`, and Claude Code gains AWS CDK and cost-optimisation expertise.",
       "source": "https://github.com/travisvn/awesome-claude-skills"
+    },
+    {
+      "id": "oc-plan-mode",
+      "name": "Plan Mode",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "A read-only mode that disables all file writes so OpenCode can propose and iterate on an implementation plan before touching any code.",
+      "trigger": "Press Tab to toggle Plan/Build mode",
+      "example": "User presses Tab -> types 'Refactor auth to use JWT' -> OpenCode returns a 5-step plan with no file changes -> user says 'also handle refresh tokens' -> plan updates -> Tab back to Build -> 'implement it'",
+      "source": "https://opencode.ai/docs/"
+    },
+    {
+      "id": "oc-undo-redo",
+      "name": "Undo / Redo",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Snapshot-based undo and redo that rolls back or reapplies all file changes the agent made during the last operation.",
+      "trigger": "/undo or /redo in the TUI",
+      "example": "Agent refactors the wrong module -> user types /undo -> all files restored to original state -> user adds 'only touch auth.ts' -> resubmits",
+      "source": "https://opencode.ai/docs/config/"
+    },
+    {
+      "id": "oc-agent-skills",
+      "name": "Agent Skills (SKILL.md)",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Reusable instruction files the agent discovers and loads on demand. Place a SKILL.md file in .opencode/skills/<name>/ to define a repeatable workflow.",
+      "trigger": "Create .opencode/skills/<name>/SKILL.md with name and description frontmatter",
+      "example": "Skill 'git-release' defines steps for tagging and writing changelogs -> user asks 'cut a release for v2.1.0' -> agent loads the skill and follows the steps exactly",
+      "source": "https://opencode.ai/docs/skills/"
+    },
+    {
+      "id": "oc-session-share",
+      "name": "Session Share",
+      "ecosystem": "OpenCode",
+      "category": "Sharing",
+      "status": "Stable",
+      "description": "Generates a public shareable link to the full agent conversation including all prompts, reasoning steps, and file diffs.",
+      "trigger": "/share in the TUI",
+      "example": "Agent implements a new API endpoint -> developer types /share -> link copied -> pasted in PR description so reviewers can see every decision the agent made",
+      "source": "https://opencode.ai/docs/config/"
+    },
+    {
+      "id": "oc-mcp",
+      "name": "MCP Server Integration",
+      "ecosystem": "OpenCode",
+      "category": "API",
+      "status": "Stable",
+      "description": "Connect external tools via MCP (Model Context Protocol) servers by configuring them in opencode.json.",
+      "trigger": "Add an mcp key to opencode.json with server definitions",
+      "example": "Configure a Postgres MCP server -> ask 'show me users created this week' -> agent queries the DB directly through the MCP tool",
+      "source": "https://opencode.ai/docs/config/"
+    },
+    {
+      "id": "oc-custom-commands",
+      "name": "Custom Commands",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Define custom slash commands for repetitive workflows as markdown files in .opencode/commands/ or in opencode.json.",
+      "trigger": "Type /your-command-name in the TUI",
+      "example": "Command 'fix-types' defined as 'Find all TypeScript type errors and fix them' -> user types /fix-types -> agent runs the full workflow immediately",
+      "source": "https://opencode.ai/docs/config/"
+    },
+    {
+      "id": "oc-github-action",
+      "name": "GitHub Actions Integration",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Trigger OpenCode in CI/CD by commenting /opencode or /oc on any GitHub issue or PR. Supports automatic PR review, issue triage, and scheduled runs.",
+      "trigger": "Comment /opencode <task> or /oc <task> on a GitHub issue or PR",
+      "example": "Reviewer comments '/opencode add input validation to the form fields' -> agent runs in GitHub Actions -> commits the changes -> replies with a summary",
+      "source": "https://opencode.ai/docs/github/"
+    },
+    {
+      "id": "oc-custom-agents",
+      "name": "Custom Agents",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Define specialized agents with their own model, system prompt, and tool permissions using markdown files in .opencode/agents/.",
+      "trigger": "Create .opencode/agents/<name>.md with YAML frontmatter defining the agent",
+      "example": "Agent 'security-reviewer' defined with read-only permissions and a system prompt focused on OWASP checks -> user audits a new endpoint before merging",
+      "source": "https://opencode.ai/docs/agents/"
+    },
+    {
+      "id": "oc-lsp",
+      "name": "LSP Integration",
+      "ecosystem": "OpenCode",
+      "category": "Agentic",
+      "status": "Beta",
+      "description": "Connect Language Server Protocol servers so the agent can use go-to-definition, find references, and get real-time diagnostics.",
+      "trigger": "Add an lsp key to opencode.json with server definitions",
+      "example": "Agent needs to rename a function -> calls the LSP find-references tool and gets exact locations including dynamic call sites",
+      "source": "https://opencode.ai/docs/config/"
+    },
+    {
+      "id": "oc-plugins",
+      "name": "Plugins",
+      "ecosystem": "OpenCode",
+      "category": "API",
+      "status": "Beta",
+      "description": "Extend OpenCode with custom executable tools the LLM can call. Place JS/TS files in .opencode/plugins/ or load from npm via the plugin key in opencode.json.",
+      "trigger": "Place a plugin file in .opencode/plugins/ or add plugin key in opencode.json",
+      "example": "Plugin defines a 'deploy-preview' tool that calls Vercel's API -> agent runs tests, then calls deploy-preview -> gets the URL and pastes it into the PR description",
+      "source": "https://opencode.ai/docs/config/"
+    },
+    {
+      "id": "cx-plan-mode",
+      "name": "Plan Mode",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "A read-only planning mode where Codex proposes an implementation plan without writing any files. Iterate on approach before committing to execution.",
+      "trigger": "$plan or toggle Plan Mode in the thread composer",
+      "example": "User types $plan -> 'Migrate this Express API to Fastify' -> Codex returns a 7-step migration plan -> user asks 'keep the existing middleware' -> plan updates -> user says 'go ahead'",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-goal-mode",
+      "name": "Goal Mode",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Long-running autonomous task execution toward a measurable finish line. Codex keeps working, across hours or days, until the goal's success criterion is met.",
+      "trigger": "/goal in the thread composer",
+      "example": "User sets goal: 'Migrate the Python CLI to Rust, done when all existing tests pass' -> Codex works for hours -> pauses when it needs a decision -> user resumes after lunch",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-agent-skills",
+      "name": "Agent Skills (SKILL.md)",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Reusable workflow packages with instructions, scripts, and resources. Codex auto-discovers skills from .agents/skills/ and loads the right one when your task matches.",
+      "trigger": "Type $skill-name or $ to browse skills; or describe a task that matches a skill's description",
+      "example": "Skill 'linear-pr' packages steps for creating a Linear ticket and linking a PR -> user asks 'create a ticket for this bug and open a PR' -> Codex loads the skill and follows the exact steps",
+      "source": "https://developers.openai.com/codex/skills/"
+    },
+    {
+      "id": "cx-skill-creator",
+      "name": "Skill Creator",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "A built-in system skill that interviews you about a workflow and generates a ready-to-use SKILL.md file for it.",
+      "trigger": "$skill-creator",
+      "example": "User types $skill-creator -> answers 3 questions about their deploy workflow -> Codex writes a complete SKILL.md with instructions and saves it to .agents/skills/deploy/",
+      "source": "https://developers.openai.com/codex/skills/"
+    },
+    {
+      "id": "cx-skill-installer",
+      "name": "Skill Installer",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "A built-in system skill that installs curated third-party skills from the community skills registry into your local Codex setup.",
+      "trigger": "$skill-installer <skill-name>",
+      "example": "User types '$skill-installer linear' -> Codex installs the Linear skill -> user can now say '$linear create a ticket for this issue' in any thread",
+      "source": "https://developers.openai.com/codex/skills/"
+    },
+    {
+      "id": "cx-thread-automations",
+      "name": "Thread Automations",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Scheduled recurring wake-up calls that return to the same Codex thread on a cron-like schedule, keeping a workflow running while you're away.",
+      "trigger": "Set up via Settings -> Automations; attach to a pinned thread",
+      "example": "Chief-of-Staff thread set to run every 30 minutes: checks Slack and Gmail for unanswered messages, researches answers, drafts replies",
+      "source": "https://developers.openai.com/codex/app/automations/"
+    },
+    {
+      "id": "cx-durable-threads",
+      "name": "Durable Threads (Pinned)",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Long-running Codex threads that preserve working context, decisions, and preferences across repeated sessions. Accessible instantly via Cmd+1 through Cmd+9.",
+      "trigger": "Pin a thread via the thread menu; use Cmd+1-9 to jump back",
+      "example": "User pins a 'Release Thread' -> each sprint, opens it with Cmd+1 -> Codex already knows the team's release process, past blockers, and preferences",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-worktree",
+      "name": "Worktree Mode",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Isolate Codex changes in a Git worktree so the agent can work on a parallel branch without touching your current working files.",
+      "trigger": "Choose 'Worktree' when starting a new thread in the Codex app",
+      "example": "User starts a Worktree thread -> asks Codex to try a risky refactor -> Codex works in isolation -> user reviews the diff -> decides to merge or discard",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-mcp",
+      "name": "MCP Server Integration",
+      "ecosystem": "Codex",
+      "category": "API",
+      "status": "Stable",
+      "description": "Connect external tools and services via Model Context Protocol servers. Shared across Codex app, CLI, and IDE Extension automatically.",
+      "trigger": "Open Settings -> MCP in the Codex app or configure in CLI config",
+      "example": "Add the OpenAI Docs MCP server -> ask 'how do I use streaming with the Responses API?' -> Codex fetches live docs through the MCP tool",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-voice-input",
+      "name": "Voice Input",
+      "ecosystem": "Codex",
+      "category": "Visual",
+      "status": "Stable",
+      "description": "Dictate prompts directly into Codex using your microphone. Useful for vague or rough thoughts that are natural to say but awkward to type.",
+      "trigger": "Hold Ctrl+M while the composer is visible",
+      "example": "User holds Ctrl+M -> says 'I think there's a race condition somewhere in the auth flow, go look' -> Codex transcribes and starts investigating",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-steering-queuing",
+      "name": "Steering & Queuing",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Steering interrupts an in-flight task with new direction before it finishes. Queuing adds the next task to run after the current step completes.",
+      "trigger": "Type or speak mid-task to steer; add a follow-up message to queue",
+      "example": "Codex is reviewing a page -> user steers: 'make that header smaller' -> Codex adjusts mid-task. User queues: 'once done, send the preview link to the reviewer in Slack'",
+      "source": "https://developers.openai.com/codex/app/features/"
+    },
+    {
+      "id": "cx-shared-memory",
+      "name": "Shared Memory (AGENTS.md + Vault)",
+      "ecosystem": "Codex",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Durable context stored outside any single thread so future sessions can resume from something explicit. Define it via AGENTS.md and a structured vault folder.",
+      "trigger": "Create AGENTS.md at the repo root or vault root with memory routing instructions",
+      "example": "AGENTS.md tells Codex to update vault/people/ and vault/projects/ after every session -> next session picks up the last decision, owner, and blocker",
+      "source": "https://developers.openai.com/codex/memories/"
     }
   ]
 }
