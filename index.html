@@ -70,7 +70,7 @@
     --eco-perplexity:   #1B9E86;
     --eco-copilot:      #0078D4;
     --eco-opencode:     #14B85A;
-    --eco-codex:        #19C37D;
+    --eco-codex:        #D97706;
   }
 
   *{ box-sizing:border-box; }
@@ -1133,7 +1133,7 @@
     --eco-perplexity:   #2DC4A8;
     --eco-copilot:      #3B9FE8;
     --eco-opencode:     #38C96E;
-    --eco-codex:        #42DCA0;
+    --eco-codex:        #F59E0B;
   }
   [data-theme="dark"] .card.featured{
     background: linear-gradient(150deg, #1F1C14 0%, #0D0B08 100%);
@@ -2442,7 +2442,7 @@ const SKILLS = [
     trigger:"Create .opencode/skills/<name>/SKILL.md with name and description frontmatter",
     example:"Skill 'git-release' defines steps for tagging and writing changelogs → user asks 'cut a release for v2.1.0' → agent loads the skill and follows the steps exactly without improvising",
     source:"https://opencode.ai/docs/skills/"},
-  {id:"oc-session-share", name:"Session Share", ecosystem:"OpenCode", category:"Sharing", status:"Stable",
+  {id:"oc-session-share", name:"Session Share", ecosystem:"OpenCode", category:"Integration", status:"Stable",
     description:"Generates a public shareable link to the full agent conversation including all prompts, reasoning steps, and file diffs.",
     trigger:"/share in the TUI",
     example:"Agent implements a new API endpoint → developer types /share → link copied → pasted in PR description so reviewers can see every decision the agent made",
@@ -2524,7 +2524,7 @@ const SKILLS = [
     trigger:"Open Settings → MCP in the Codex app or configure in CLI config",
     example:"Add the OpenAI Docs MCP server → ask 'how do I use streaming with the Responses API?' → Codex fetches live docs through the MCP tool and answers with the exact current syntax",
     source:"https://developers.openai.com/codex/app/features/"},
-  {id:"cx-voice-input", name:"Voice Input", ecosystem:"Codex", category:"Visual", status:"Stable",
+  {id:"cx-voice-input", name:"Voice Input", ecosystem:"Codex", category:"Agentic", status:"Stable",
     description:"Dictate prompts directly into Codex using your microphone. Especially useful for vague or rough thoughts that are natural to say but awkward to type.",
     trigger:"Hold Ctrl+M while the composer is visible",
     example:"User holds Ctrl+M → says 'I think there's a race condition somewhere in the auth flow, it only happens under load, go look' → Codex transcribes and starts investigating",
@@ -2704,41 +2704,41 @@ const HOWTO = {
 
 /* ───── Comparison matrix ───── */
 const MATRIX_ROWS = [
-  /* capability                           Claude  CC    GPT   Gemini  Perpl.  Copilot  OC     CX */
-  ["Standalone document/code panel",    "y","n","y","n","n","p","n","y"],
-  ["Inline diagram/chart rendering",    "y","n","p","n","n","p","n","n"],
-  ["Code execution sandbox",            "y","y","y","y","n","p","y","y"],
-  ["Native image generation",           "p","n","y","n","n","y","n","y"],
+  /* capability                           Claude  CC    GPT   Codex  OC    Gemini  Perpl.  Copilot */
+  ["Standalone document/code panel",    "y","n","y","y","n","n","n","p"],
+  ["Inline diagram/chart rendering",    "y","n","p","n","n","n","n","p"],
+  ["Code execution sandbox",            "y","y","y","y","y","y","n","p"],
+  ["Native image generation",           "p","n","y","y","n","n","n","y"],
   ["Video generation",                  "n","n","p","n","n","n","n","n"],
-  ["Web search",                        "y","p","y","p","y","y","y","y"],
-  ["Cross‑chat memory",                 "y","y","y","y","y","p","n","p"],
-  ["Custom skills / instructions",      "y","y","y","y","p","p","y","y"],
-  ["Projects / workspaces",             "y","y","y","p","y","n","n","y"],
-  ["MCP / third‑party connectors",      "y","y","y","p","n","p","y","y"],
-  ["Voice conversation",                "p","n","y","n","n","p","n","p"],
-  ["Browser automation agent",          "p","n","y","n","p","n","n","y"],
-  ["Terminal / CLI agent",              "n","y","n","y","n","n","y","y"],
-  ["IDE plugin",                        "n","y","n","y","n","y","y","y"],
-  ["Scheduled / recurring tasks",       "n","n","y","n","n","n","n","y"],
+  ["Web search",                        "y","p","y","y","y","p","y","y"],
+  ["Cross‑chat memory",                 "y","y","y","p","n","y","y","p"],
+  ["Custom skills / instructions",      "y","y","y","y","y","y","p","p"],
+  ["Projects / workspaces",             "y","y","y","y","n","p","y","n"],
+  ["MCP / third‑party connectors",      "y","y","y","y","y","p","n","p"],
+  ["Voice conversation",                "p","n","y","p","n","n","n","p"],
+  ["Browser automation agent",          "p","n","y","y","n","n","p","n"],
+  ["Terminal / CLI agent",              "n","y","n","y","y","y","n","n"],
+  ["IDE plugin",                        "n","y","n","y","y","y","n","y"],
+  ["Scheduled / recurring tasks",       "n","n","y","y","n","n","n","n"],
   ["Public marketplace of agents",      "n","n","y","n","n","n","n","n"],
   /* v1.1 additions */
-  ["Proactive / scheduled briefs",      "n","n","y","n","n","n","n","y"],
-  ["Inline interactive UI generation",  "y","n","p","n","n","p","n","n"],
-  ["Spreadsheet agent (Excel/Sheets)",  "y","n","p","n","n","y","n","n"],
-  ["Desktop control agent",             "y","n","n","n","n","n","n","y"],
-  ["Browser extension agent",           "y","n","p","n","n","n","n","p"],
-  ["Repo‑level instruction file",       "n","y","n","y","n","n","y","y"],
-  ["Plan‑before‑act mode",              "n","y","p","p","n","n","y","y"],
-  ["Meeting recording & transcription", "n","n","y","n","n","y","n","n"],
+  ["Proactive / scheduled briefs",      "n","n","y","y","n","n","n","n"],
+  ["Inline interactive UI generation",  "y","n","p","n","n","n","n","p"],
+  ["Spreadsheet agent (Excel/Sheets)",  "y","n","p","n","n","n","n","y"],
+  ["Desktop control agent",             "y","n","n","y","n","n","n","n"],
+  ["Browser extension agent",           "y","n","p","p","n","n","n","n"],
+  ["Repo‑level instruction file",       "n","y","n","y","y","y","n","n"],
+  ["Plan‑before‑act mode",              "n","y","p","y","y","p","n","n"],
+  ["Meeting recording & transcription", "n","n","y","n","n","n","n","y"],
   ["Prompt caching (API)",              "y","y","n","n","n","n","n","n"],
-  ["Structured JSON outputs (API)",     "y","y","y","y","y","n","n","n"],
+  ["Structured JSON outputs (API)",     "y","y","y","n","n","y","y","n"],
   ["Realtime voice API",                "n","n","y","n","n","n","n","n"],
   ["Incognito / ephemeral chat",        "y","n","p","n","n","n","n","n"],
   /* v1.3 additions */
-  ["Extended / deep thinking",          "y","n","p","n","n","n","p","y"],
-  ["Real‑time cited deep research",     "p","n","y","p","y","p","n","n"],
-  ["Collaborative shared Pages/docs",   "p","n","n","n","y","y","p","n"],
-  ["Source‑scoped search focus",        "n","n","n","n","y","n","n","n"],
+  ["Extended / deep thinking",          "y","n","p","y","p","n","n","n"],
+  ["Real‑time cited deep research",     "p","n","y","n","n","p","y","p"],
+  ["Collaborative shared Pages/docs",   "p","n","n","n","p","n","y","y"],
+  ["Source‑scoped search focus",        "n","n","n","n","n","n","y","n"],
 ];
 
 /* ───── References ───── */
