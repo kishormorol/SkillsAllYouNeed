@@ -69,7 +69,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - Saved filter shows only your bookmarked skills
 - Web Share API integration — native share sheet on mobile
 - **Export JSON ↓** — downloads currently visible skills as a structured JSON file
-- **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 124 skills (CC BY 4.0)
+- **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 146 skills (CC BY 4.0)
 
 ### Keyboard shortcuts
 | Key | Action |
@@ -164,6 +164,18 @@ Found a missing skill? Spotted an error? Two ways to help:
 2. **Fork and PR** — add entries directly to the `SKILLS` array in `index.html` and update `skills.json`
 
 Every entry needs: `id`, `name`, `ecosystem`, `category`, `status`, `description`, `trigger`, `howto`, `example`, `source`.
+
+---
+
+## Contributors
+
+Thanks to everyone who has helped grow the registry:
+
+| Contributor | What they added |
+|-------------|----------------|
+| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) |
+
+Want to see your name here? [Open a PR](https://github.com/kishormorol/SkillsAllYouNeed/compare) adding skills or fixing entries.
 
 ---
 
