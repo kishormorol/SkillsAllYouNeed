@@ -592,10 +592,6 @@ $("#reset").addEventListener("click", ()=>{
 });
 
 /* ───── Add Skill modal ───── */
-const ECO_PREFIX = {
-  "Claude":"cl","Claude Code":"cc","ChatGPT":"gpt","Gemini":"gm",
-  "Perplexity":"pp","Microsoft 365 Copilot":"mc",  "Antigravity":"ag","GitHub Copilot":"ghc","OpenCode":"oc","Codex":"cx"
-};
 function genId(eco, name){
   const prefix = ECO_PREFIX[eco] || "xx";
   const slug = name.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
