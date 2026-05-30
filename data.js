@@ -84,6 +84,7 @@ const ECO_PREFIX = Object.fromEntries(Object.entries(ECO).map(([k,v])=>[k,v.pref
 /* ───── Inject eco CSS selectors ───── */
 (function(){
   const css = Object.entries(ECO).map(([eco,{prefix}])=>{
+    if(eco === "Claude") return ""; /* Claude handled in styles.css */
     const v = `var(--eco-${prefix})`;
     return `.chip[data-eco="${eco}"][aria-pressed="true"]{box-shadow:inset 3px 0 0 ${v};}`
          + `.card[data-eco="${eco}"]{--eco-color:${v};}`
