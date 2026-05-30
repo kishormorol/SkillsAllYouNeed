@@ -4,7 +4,7 @@
   <!-- Main registry page -->
   <url>
     <loc>https://kishormorol.github.io/SkillsAllYouNeed/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Static API / corpus download -->
   <url>
     <loc>https://kishormorol.github.io/SkillsAllYouNeed/skills.json</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
