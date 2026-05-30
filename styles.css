@@ -25,7 +25,7 @@
     --gutter: clamp(20px, 3.2vw, 44px);
 
     /* Per-ecosystem brand colours */
-    --eco-claude:       #d97757;   /* warm terracotta */
+    --eco-claude:       #d97757;
     --eco-claude-code:  #d97757;
     --eco-chatgpt:      #1A7A44;
     --eco-gemini:       #4527A0;
@@ -114,11 +114,13 @@
   .star-btn:hover .star-count{ color:var(--paper); border-color:rgba(255,255,255,.2); }
   [data-theme="dark"] .star-btn{ background:rgba(255,255,255,.05); }
 
-  .hero-body{ padding:56px 0 52px; position:relative; background:var(--paper); }
-  /* hero accent glow — smooth elliptical dissolve from left edge */
-  .hero-body::after{
-    content:""; position:absolute; inset:0; pointer-events:none;
-    background: radial-gradient(ellipse 70% 90% at 0% 60%, rgba(199,64,30,.06) 0%, transparent 100%);
+  .hero-body{ padding:56px 0 52px; position:relative; z-index:0; }
+  /* blurred orange glow behind hero area */
+  .hero-body::before{
+    content:""; position:absolute; z-index:-1; pointer-events:none;
+    left:-5%; top:10%; width:65%; height:80%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(217,119,87,.09) 0%, transparent 70%);
+    filter: blur(48px);
   }
   .hero-body h1{
     font-family:var(--serif-display);
@@ -146,15 +148,12 @@
   }
   .hero-stats{
     display:flex; gap:0; margin-bottom:36px; flex-wrap:wrap;
-    border:1px solid var(--rule-soft);
-    width:fit-content;
   }
   .hero-stats .stat{
     display:flex; flex-direction:column; gap:3px;
     padding:16px 32px 14px;
-    border-right:1px solid var(--rule-soft);
   }
-  .hero-stats .stat:last-child{ border-right:none; }
+  .hero-stats .stat:last-child{ }
   .hero-stats .stat b{
     font-family:var(--serif-display);
     font-size: clamp(32px, 3.8vw, 48px);
