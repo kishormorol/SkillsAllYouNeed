@@ -1156,8 +1156,8 @@
       repeating-linear-gradient(0deg, rgba(240,237,227,.01) 0 1px, transparent 1px 3px),
       repeating-linear-gradient(90deg, rgba(240,237,227,.007) 0 1px, transparent 1px 4px);
   }
-  [data-theme="dark"] .hero-body::after{
-    background: radial-gradient(ellipse 70% 90% at 0% 60%, rgba(224,88,48,.08) 0%, transparent 100%);
+  [data-theme="dark"] .hero-body::before{
+    background: radial-gradient(ellipse at 30% 50%, rgba(217,119,87,.12) 0%, transparent 70%);
   }
   /* dark-mode toggle button */
   .dark-toggle{
