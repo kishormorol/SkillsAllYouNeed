@@ -1,7 +1,5 @@
 const $  = (sel,root=document) => root.querySelector(sel);
 const $$ = (sel,root=document) => Array.from(root.querySelectorAll(sel));
-const escapeHTML = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const codeBacktick = s => s.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
 
 /* ───── Build chips ───── */
 function buildChips(){

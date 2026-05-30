@@ -1170,3 +1170,5 @@ const ECO_BLURB = {
 };
 
 /* ───── Helpers ───── */
+const escapeHTML = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const codeBacktick = s => s.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
