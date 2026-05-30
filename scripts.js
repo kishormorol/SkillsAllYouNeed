@@ -1,6 +1,22 @@
 const $  = (sel,root=document) => root.querySelector(sel);
 const $$ = (sel,root=document) => Array.from(root.querySelectorAll(sel));
 
+/* ───── Smooth scroll with ease-in-out ───── */
+function smoothScrollTo(el, offset = 0) {
+  const start = window.scrollY;
+  const end = el.getBoundingClientRect().top + start + offset;
+  const duration = 400;
+  const startTime = performance.now();
+  function step(now) {
+    const elapsed = (now - startTime) / duration;
+    const t = Math.min(elapsed, 1);
+    const ease = t < .5 ? 2*t*t : -1+(4-2*t)*t; // easeInOutQuad
+    window.scrollTo(0, start + (end - start) * ease);
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 /* ───── Build chips ───── */
 function buildChips(){
   const ecoBox = $("#eco-chips"); ecoBox.innerHTML = "";
@@ -352,7 +368,7 @@ function buildEcoStrip(){
         c.setAttribute("aria-pressed", c.dataset.eco === eco ? "true" : "false");
       });
       render();
-      $("#grid").scrollIntoView({behavior:"smooth", block:"start"});
+      smoothScrollTo($("#grid"), -20);
     });
     wrap.appendChild(cell);
   });
@@ -758,7 +774,7 @@ setTimeout(()=>{
       }
       /* "clear" just resets — already done above */
       render();
-      document.getElementById("catalog-section").scrollIntoView({behavior:"smooth", block:"start"});
+      smoothScrollTo(document.getElementById("catalog-section"), -20);
     });
   });
 
