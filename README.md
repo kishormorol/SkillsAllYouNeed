@@ -179,7 +179,7 @@ Thanks to everyone who has helped grow the registry:
 
 | Contributor | What they added |
 |-------------|----------------|
-| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) |
+| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) |
 
 Want to see your name here? [Open a PR](https://github.com/kishormorol/SkillsAllYouNeed/compare) adding skills or fixing entries.
 
