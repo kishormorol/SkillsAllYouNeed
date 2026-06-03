@@ -35,6 +35,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  /* swap fallback fonts for web fonts once the font files have loaded, so first paint never flashes the wrong face */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      document.documentElement.classList.add("fonts-loaded");
+    });
+  }
+</script>
 <link rel="stylesheet" href="styles.css">
 
 
