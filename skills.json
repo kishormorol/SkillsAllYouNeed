@@ -1,18 +1,20 @@
 {
-  "version": "1.4",
-  "generated": "2026-05-27",
-  "count": 146,
+  "version": "1.5",
+  "generated": "2026-05-30",
+  "count": 155,
   "ecosystems": [
     "ChatGPT",
     "Claude",
     "Claude Code",
     "Codex",
-    "Copilot",
+    "Microsoft 365 Copilot",
     "Gemini",
     "OpenCode",
-    "Perplexity"
+    "Perplexity",
+    "GitHub Copilot",
+    "Antigravity"
   ],
-  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Copilot, OpenCode, and Codex.",
+  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Microsoft 365 Copilot, OpenCode, Codex, GitHub Copilot, and Antigravity.",
   "license": "CC BY 4.0",
   "source": "https://kishormorol.github.io/SkillsAllYouNeed/",
   "skills": [
@@ -1115,7 +1117,7 @@
     {
       "id": "mc-365",
       "name": "Copilot in Microsoft 365",
-      "ecosystem": "Copilot",
+      "ecosystem": "Microsoft 365 Copilot",
       "category": "Integration",
       "status": "Stable",
       "description": "AI assistant embedded natively in Word, Excel, PowerPoint, Outlook, and Teams — drafts, summarises, rewrites, and analyses content in context.",
@@ -1127,7 +1129,7 @@
     {
       "id": "mc-designer",
       "name": "Copilot Designer",
-      "ecosystem": "Copilot",
+      "ecosystem": "Microsoft 365 Copilot",
       "category": "Visual",
       "status": "Stable",
       "description": "AI image‑generation tool integrated into Microsoft 365 and Bing, powered by DALL·E 4, for creating graphics from text prompts.",
@@ -1139,7 +1141,7 @@
     {
       "id": "mc-pages",
       "name": "Copilot Pages",
-      "ecosystem": "Copilot",
+      "ecosystem": "Microsoft 365 Copilot",
       "category": "Document",
       "status": "Stable",
       "description": "Persistent, editable collaborative documents created from Copilot chat responses — a living canvas that teams can extend and share.",
@@ -1151,7 +1153,7 @@
     {
       "id": "mc-notebook",
       "name": "Copilot Notebook",
-      "ecosystem": "Copilot",
+      "ecosystem": "Microsoft 365 Copilot",
       "category": "Code",
       "status": "Stable",
       "description": "Long‑context document workspace in Microsoft Copilot that accepts up to 18 000 words of input, ideal for detailed analysis and iterative drafting.",
@@ -1159,6 +1161,114 @@
       "howto": "Open copilot.microsoft.com and click the Notebook tab. Paste in a long document, dataset, or set of notes (up to ~18 000 words) and then ask questions or request rewrites. The context persists for the session so you can iterate freely.",
       "example": "A consultant pastes a 12 000‑word RFP into Notebook and asks Copilot to extract all scoring criteria, then to draft responses for each criterion.",
       "source": "https://support.microsoft.com/en-us/topic/what-is-copilot-notebook"
+    },
+    {
+      "id": "ghc-completions",
+      "name": "Code Completion",
+      "ecosystem": "GitHub Copilot",
+      "category": "Code",
+      "status": "Stable",
+      "description": "AI‑powered inline code suggestions inside VS Code, JetBrains, Xcode, and other IDEs — ghost‑text predictions, multi‑line completions, and next‑edit suggestions that adapt to your codebase context.",
+      "trigger": "Start typing in any supported IDE; Copilot suggests completions inline automatically",
+      "howto": "Install the Copilot extension in your IDE, sign in with a GitHub account, and start typing. Copilot provides inline suggestions that you accept with Tab. Use Ctrl+Enter (or Cmd+Enter on macOS) to see alternative suggestions in a dedicated panel.",
+      "example": "Type a function signature in a Python file and Copilot instantly suggests the full implementation matching the existing code style and nearby imports.",
+      "source": "https://docs.github.com/en/copilot/concepts/completions/code-suggestions"
+    },
+    {
+      "id": "ghc-chat",
+      "name": "Copilot Chat",
+      "ecosystem": "GitHub Copilot",
+      "category": "Code",
+      "status": "Stable",
+      "description": "Conversational AI chat inside the IDE for natural‑language code explanations, refactoring suggestions, bug diagnosis, and test generation.",
+      "trigger": "Ctrl+I (inline chat), Ctrl+Shift+I (chat panel) · /explain, /fix, /tests, /doc slash commands",
+      "howto": "Open the Copilot Chat panel in your IDE. Ask questions about your codebase. Use Ctrl+I for inline chat that edits code directly at the cursor.",
+      "example": "Select a complex regular expression and type '/explain'; Copilot breaks it down step by step in plain English, then offers a simpler alternative.",
+      "source": "https://docs.github.com/en/copilot/concepts/chat"
+    },
+    {
+      "id": "ghc-cli",
+      "name": "Copilot CLI",
+      "ecosystem": "GitHub Copilot",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Terminal‑native AI agent with a TUI — interactive plan mode, autopilot for autonomous multi‑step tasks, programmatic -p mode for scripting, and GitHub integration for PRs and issues.",
+      "trigger": "copilot command in terminal · copilot -p 'one‑shot task' · Shift+Tab to cycle plan/autopilot modes",
+      "howto": "Install via gh copilot extension or direct download. Run 'copilot' for interactive TUI mode. Use 'copilot -p ...' for scripted automation. Press Shift+Tab to switch between ask, plan, and autopilot modes.",
+      "example": "'copilot -p \"Create a PR to add a Node script that outputs user info\"' creates a branch, writes the file, commits, and opens the PR without interactive approval.",
+      "source": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli"
+    },
+    {
+      "id": "ghc-cloud-agent",
+      "name": "Cloud Agent",
+      "ecosystem": "GitHub Copilot",
+      "category": "Agentic",
+      "status": "Beta",
+      "description": "Autonomous coding agent that runs in a cloud sandbox — carries out research, planning, and multi‑file coding tasks independently.",
+      "trigger": "'/agent' in Copilot Chat · assign an issue with @copilot · GitHub Copilot App in pull requests",
+      "howto": "In a GitHub issue or PR, type '/agent' followed by your instruction. The cloud agent spawns a sandboxed environment, reads the codebase, plans changes, writes and tests code, and reports back with a summary and diff.",
+      "example": "'@copilot Add idempotency keys to all write endpoints in the payment service' — the agent explores the codebase, identifies 7 endpoints, writes the changes, creates a PR with tests, and requests your review.",
+      "source": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent"
+    },
+    {
+      "id": "ghc-code-review",
+      "name": "Code Review",
+      "ecosystem": "GitHub Copilot",
+      "category": "Code",
+      "status": "Stable",
+      "description": "AI‑driven pull‑request review — catches logic errors, style issues, and security concerns before human review, with inline comments and suggested fixes directly in the PR diff.",
+      "trigger": "Open a PR on GitHub and click 'Review with Copilot' · automatic on PR creation in configured repos",
+      "howto": "Navigate to any pull request on GitHub and click the 'Review with Copilot' button. Copilot scans the diff, flags issues with severity levels, and leaves inline suggestions.",
+      "example": "Copilot catches a potential null dereference in a new endpoint, suggests a guard clause, and links to the project's existing error‑handling pattern in a similar function.",
+      "source": "https://docs.github.com/en/copilot/concepts/agents/code-review"
+    },
+    {
+      "id": "ag-projects",
+      "name": "Projects & Worktrees",
+      "ecosystem": "Antigravity",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Multi‑folder workspaces with scoped permissions and isolated Git worktrees — agents operate in background branches without touching your working copy.",
+      "trigger": "Create a Project in the sidebar · New Worktree mode in the setup modal",
+      "howto": "Click the folder with + icon in the left sidebar, create a New Project, add local folders or Git repos. Choose Local Mode or New Worktree Mode when starting an agent.",
+      "example": "A developer creates a Project for a monorepo with 3 folders, sets permissive security for the trusted internal repo and restrictive for the third‑party dependency, and spawns an agent in a worktree to safely prototype a refactor.",
+      "source": "https://antigravity.google/download"
+    },
+    {
+      "id": "ag-cli",
+      "name": "Antigravity CLI (agy)",
+      "ecosystem": "Antigravity",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Keyboard‑driven TUI (agy) for the terminal — plan mode, multi‑step reasoning, artifact reviews, SSH support, and shared settings sync with Antigravity 2.0.",
+      "trigger": "`agy` command in terminal · `agy -p \"task\"` for programmatic one‑shot",
+      "howto": "Install via curl script. Run 'agy' in any project directory. Press Shift+Tab to cycle between ask and plan modes. Use 'ctrl+r' to review artifacts. Press 'ctrl+g' to edit prompts in your $EDITOR.",
+      "example": "Over SSH, a developer runs `agy` and pastes the OAuth URL into a browser, pastes the code back into the terminal, and instantly gets a full agent session.",
+      "source": "https://antigravity.google/docs/cli-getting-started"
+    },
+    {
+      "id": "ag-scheduler",
+      "name": "Scheduled Tasks",
+      "ecosystem": "Antigravity",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Time‑based triggers for recurring agent tasks — schedule prompts to run while you are away, with repeatable minute‑level triggers using Gemini 3.5 Flash.",
+      "trigger": "`/schedule` slash command · set repeat interval in the scheduler panel",
+      "howto": "Type `/schedule` followed by a task description and set the repeat interval. The task runs at the specified cadence. View and manage all active scheduled tasks from the panel.",
+      "example": "A maintainer schedules a nightly task: 'Check open PRs for merge conflicts, rebase any that have conflicts, and post a summary in the team channel.'",
+      "source": "https://antigravity.google/download"
+    },
+    {
+      "id": "ag-artifacts",
+      "name": "Artifacts & Co‑steering",
+      "ecosystem": "Antigravity",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Structured deliverables with human‑in‑the‑loop review — implementation plans, walkthroughs, code diffs, and browser recordings that the agent presents at milestones for inline feedback.",
+      "trigger": "Agent automatically produces artifacts during plan mode · Press `ctrl+r` in CLI to review",
+      "howto": "When the agent produces an artifact (plan, diff, walkthrough), review it in the sidebar or CLI review pane. Leave inline comments on specific lines. The agent iterates based on your comments before writing any code.",
+      "example": "The agent proposes a 10‑file refactoring plan. The user comments on 3 lines. The agent revises the plan and re‑requests review before any files are modified.",
+      "source": "https://antigravity.google/docs/cli-artifacts"
     },
     {
       "id": "api-anthropic-thinking",
