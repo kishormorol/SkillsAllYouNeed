@@ -35,6 +35,7 @@
     --eco-codex:        #19C37D;
     --eco-github-copilot: #24292F;
     --eco-antigravity: #4285F4;
+    --eco-pi: #5B6470;
   }
 
   *{ box-sizing:border-box; }
@@ -1105,6 +1106,7 @@
     --eco-codex:        #F59E0B;
     --eco-github-copilot: #8B949E;
     --eco-antigravity: #8AB4F8;
+    --eco-pi: #9BA4AE;
   }
   [data-theme="dark"] .card.featured{
     background: linear-gradient(150deg, #1F1C14 0%, #0D0B08 100%);
