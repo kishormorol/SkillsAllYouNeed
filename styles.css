@@ -17,9 +17,9 @@
     --accent-deep:  #9E2D11;
     --highlight:    #F5D77A;   /* archival manila tab */
 
-    --serif-display: "Instrument Serif", "Source Serif 4", Georgia, serif;
-    --serif-body:    "Newsreader", "Source Serif 4", Georgia, serif;
-    --mono:          "JetBrains Mono", ui-monospace, "Menlo", monospace;
+    --serif-display: Georgia, "Source Serif 4", serif;
+    --serif-body:    Georgia, "Source Serif 4", serif;
+    --mono:          ui-monospace, "Menlo", monospace;
 
     --grid-max: 1320px;
     --gutter: clamp(20px, 3.2vw, 44px);
@@ -40,6 +40,11 @@
   *{ box-sizing:border-box; }
   html{ scroll-behavior: smooth; }
   html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); }
+  .fonts-loaded{
+    --serif-display: "Instrument Serif", "Source Serif 4", Georgia, serif;
+    --serif-body:    "Newsreader", "Source Serif 4", Georgia, serif;
+    --mono:          "JetBrains Mono", ui-monospace, "Menlo", monospace;
+  }
   body{
     font-family:var(--serif-body);
     font-size:17px;
