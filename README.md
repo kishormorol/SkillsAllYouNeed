@@ -88,7 +88,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 ### Other
 - 🌙 Dark mode (persisted in `localStorage`)
 - 📱 PWA-ready — installable on mobile and desktop
-- Comparison matrix: 33 capability rows × 11 ecosystems
+- Comparison matrix: 32 capability rows × 11 ecosystems
 - JSON-LD structured data (`schema.org/Dataset`) for search engine rich results
 - Full print stylesheet — single column, page numbers, expanded content
 - Scroll-to-top button, onboarding strip (shown once), ecosystem deep-dive strip
