@@ -1,7 +1,7 @@
 {
-  "version": "1.5",
-  "generated": "2026-05-30",
-  "count": 155,
+  "version": "1.6",
+  "generated": "2026-06-03",
+  "count": 163,
   "ecosystems": [
     "ChatGPT",
     "Claude",
@@ -12,9 +12,10 @@
     "OpenCode",
     "Perplexity",
     "GitHub Copilot",
-    "Antigravity"
+    "Antigravity",
+    "Pi"
   ],
-  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Microsoft 365 Copilot, OpenCode, Codex, GitHub Copilot, and Antigravity.",
+  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Microsoft 365 Copilot, OpenCode, Codex, GitHub Copilot, Antigravity, and Pi.",
   "license": "CC BY 4.0",
   "source": "https://kishormorol.github.io/SkillsAllYouNeed/",
   "skills": [
@@ -1744,6 +1745,94 @@
       "trigger": "Create AGENTS.md at the repo root or vault root with memory routing instructions",
       "example": "AGENTS.md tells Codex to update vault/people/ and vault/projects/ after every session -> next session picks up the last decision, owner, and blocker",
       "source": "https://developers.openai.com/codex/memories/"
+    },
+    {
+      "id": "pi-compaction",
+      "name": "Compaction",
+      "ecosystem": "Pi",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Auto-summarises older context when it approaches the model's window so long sessions stay alive without losing the work, with a structured goal, progress, and file-tracker format the model can pick up from.",
+      "trigger": "/compact · auto when contextWindow - reserveTokens is exceeded",
+      "example": "A two-hour debugging session auto-compacts at the 70% mark, preserving the goal, completed work, in-progress items, and modified files in a summary the next prompt can resume from without re-reading anything.",
+      "source": "https://pi.dev/docs/latest/compaction"
+    },
+    {
+      "id": "pi-extensions",
+      "name": "Extensions",
+      "ecosystem": "Pi",
+      "category": "Code",
+      "status": "Stable",
+      "description": "TypeScript modules that register custom tools, slash commands, event handlers, and TUI components on the ExtensionAPI, with full access to the session, settings, and provider layer.",
+      "trigger": "export default function (pi: ExtensionAPI) { ... } in an extensions/ folder",
+      "example": "An extension hooks session_before_compact to generate summaries with your own model, replacing the default LLM call and keeping the LLM-agnostic summarization pipeline.",
+      "source": "https://pi.dev/docs/latest/extensions"
+    },
+    {
+      "id": "pi-skills",
+      "name": "Skills (Agent Skills standard)",
+      "ecosystem": "Pi",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Self-contained capability packages that follow the Agent Skills spec and load on demand with progressive disclosure, so only the descriptions are always in context and full instructions arrive when matched.",
+      "trigger": "Drop a SKILL.md into ~/.pi/agent/skills/ or .pi/skills/ · /skill:name",
+      "example": "A brave-search skill registers as /skill:brave-search, the system prompt lists it alongside other skills, and the model loads the full SKILL.md only when the task actually needs a web lookup.",
+      "source": "https://pi.dev/docs/latest/skills"
+    },
+    {
+      "id": "pi-prompt-templates",
+      "name": "Prompt templates",
+      "ecosystem": "Pi",
+      "category": "Code",
+      "status": "Stable",
+      "description": "Reusable markdown prompts that expand from slash commands, parameterised with $1, $2 positional args and $ARGUMENTS for the full input, shipped with the agent or defined in prompts/ directories.",
+      "trigger": "/template-name with args · register a .md file under prompts/",
+      "example": "/review-pr diff expands a saved template that diffs the current branch, scans for anti-patterns, and produces a structured code review every time without re-writing the prompt from scratch.",
+      "source": "https://pi.dev/docs/latest/prompt-templates"
+    },
+    {
+      "id": "pi-packages",
+      "name": "Pi packages",
+      "ecosystem": "Pi",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Bundle and share extensions, skills, prompt templates, and themes through npm or git so a single install brings the whole capability surface, with optional per-resource filtering.",
+      "trigger": "pi install npm:@you/your-pkg · pi install git:github.com/you/repo@v1 · pi install ./path",
+      "example": "pi install npm:@badlogic/pi-brave-search adds the search skill and the matching extension in one shot, pinned to a specific version, and the project auto-installs its missing packages on next startup.",
+      "source": "https://pi.dev/docs/latest/packages"
+    },
+    {
+      "id": "pi-sessions",
+      "name": "Sessions",
+      "ecosystem": "Pi",
+      "category": "Memory",
+      "status": "Stable",
+      "description": "Persistent JSONL sessions with /tree branching, /fork, /clone, named sessions, searchable /resume, and one-click export to HTML or a private GitHub gist with a read-only share link.",
+      "trigger": "pi -c · /resume · /tree · /fork · /share · /export",
+      "example": "pi -r opens a searchable picker of every past session in the current project, then /share publishes a chosen session as a private GitHub gist and returns a read-only HTML link the team can browse.",
+      "source": "https://pi.dev/docs/latest/sessions"
+    },
+    {
+      "id": "pi-multi-provider",
+      "name": "Multi-provider",
+      "ecosystem": "Pi",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "One CLI for every major model — Anthropic, OpenAI, Google, Groq, DeepSeek, Mistral, Cerebras, plus ChatGPT Plus, Claude Pro, and GitHub Copilot subscriptions through /login.",
+      "trigger": "export ANTHROPIC_API_KEY=... · /login · --model <id>",
+      "example": "Run /login to authenticate with ChatGPT Plus for OpenAI Codex, then switch to Claude Pro for the next session — no code changes, no swapping CLIs, no rewriting prompts to fit a different harness.",
+      "source": "https://pi.dev/docs/latest/providers"
+    },
+    {
+      "id": "pi-custom-providers",
+      "name": "Custom providers",
+      "ecosystem": "Pi",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Register your own model API via pi.registerProvider() for corporate proxies, self-hosted deployments, OAuth flows, and non-standard LLM APIs, with full streaming and tool-calling support.",
+      "trigger": "pi.registerProvider(\"my-provider\", { baseUrl, apiKey, api, models })",
+      "example": "An extension routes Anthropic traffic through a corporate gateway by registering the existing provider with a custom baseUrl and auth headers, so every request leaves the network through the approved path.",
+      "source": "https://pi.dev/docs/latest/custom-provider"
     }
   ]
 }

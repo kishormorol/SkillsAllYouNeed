@@ -1,10 +1,10 @@
 # SkillsAllYouNeed for LLMs
 
-> The open registry of AI skills — ready-to-use capability definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Microsoft 365 Copilot, OpenCode, Codex, GitHub Copilot, and Antigravity.
+> The open registry of AI skills — ready-to-use capability definitions for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Microsoft 365 Copilot, OpenCode, Codex, GitHub Copilot, Antigravity, and Pi.
 
 [![Live site](https://img.shields.io/badge/live%20site-kishormorol.github.io%2FSkillsAllYouNeed-C7401E?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
-[![Skills](https://img.shields.io/badge/skills-155-15130E?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
-[![Ecosystems](https://img.shields.io/badge/ecosystems-10-1B5296?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
+[![Skills](https://img.shields.io/badge/skills-163-15130E?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
+[![Ecosystems](https://img.shields.io/badge/ecosystems-11-1B5296?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-4527A0?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![API](https://img.shields.io/badge/API-skills.json-1A7A44?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)
 
@@ -20,7 +20,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 
 ---
 
-## Ecosystems covered (155 skills)
+## Ecosystems covered (163 skills)
 
 | Ecosystem | Skills | Highlights |
 |-----------|--------|------------|
@@ -34,6 +34,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 | **Codex** | CLI + desktop agent | Plan/Goal modes, Worktrees, Automations, Computer Use, Skills |
 | **GitHub Copilot** | IDE + CLI agent | Code Completion, Chat, CLI, Cloud Agent, Code Review |
 | **Antigravity** | Google coding agent | Projects & Worktrees, agy CLI, Scheduled Tasks, Artifacts |
+| **Pi** | minimal terminal coding harness | Compaction, Extensions, Skills, Prompt templates, Pi packages, Multi-provider |
 
 ---
 
@@ -58,7 +59,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - Sort by index order or recent (Beta-first)
 
 ### Cards & detail sheet
-- 155 skill cards in an asymmetric 12-column editorial grid
+- 163 skill cards in an asymmetric 12-column editorial grid
 - Per-ecosystem brand colors (vermillion, navy, green, purple, teal, blue)
 - **Click any card** → full detail sheet with description, trigger, how-to, worked example, and source
 - **Related skills** — up to 4 cross-links by category and ecosystem inside every sheet
@@ -71,7 +72,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - Saved filter shows only your bookmarked skills
 - Web Share API integration — native share sheet on mobile
 - **Export JSON ↓** — downloads currently visible skills as a structured JSON file
-- **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 155 skills (CC BY 4.0)
+- **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 163 skills (CC BY 4.0)
 
 ### Keyboard shortcuts
 | Key | Action |
@@ -87,7 +88,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 ### Other
 - 🌙 Dark mode (persisted in `localStorage`)
 - 📱 PWA-ready — installable on mobile and desktop
-- Comparison matrix: 32 capability rows × 10 ecosystems
+- Comparison matrix: 32 capability rows × 11 ecosystems
 - JSON-LD structured data (`schema.org/Dataset`) for search engine rich results
 - Full print stylesheet — single column, page numbers, expanded content
 - Scroll-to-top button, onboarding strip (shown once), ecosystem deep-dive strip
@@ -117,7 +118,7 @@ favicon.svg  ← brand icon
 
 ## Use the JSON API
 
-All 155 skills are available as a static JSON endpoint:
+All 163 skills are available as a static JSON endpoint:
 
 ```
 GET https://kishormorol.github.io/SkillsAllYouNeed/skills.json
@@ -125,9 +126,9 @@ GET https://kishormorol.github.io/SkillsAllYouNeed/skills.json
 
 ```json
 {
-  "version": "1.5",
-  "count": 155,
-  "ecosystems": ["ChatGPT", "Claude", "Claude Code", "Codex", "Microsoft 365 Copilot", "Gemini", "OpenCode", "Perplexity", "GitHub Copilot", "Antigravity"],
+  "version": "1.6",
+  "count": 163,
+  "ecosystems": ["ChatGPT", "Claude", "Claude Code", "Codex", "Microsoft 365 Copilot", "Gemini", "OpenCode", "Perplexity", "GitHub Copilot", "Antigravity", "Pi"],
   "license": "CC BY 4.0",
   "skills": [
     {
@@ -179,7 +180,7 @@ Thanks to everyone who has helped grow the registry:
 
 | Contributor | What they added |
 |-------------|----------------|
-| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) |
+| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) · Pi ecosystem, 8 skills, font flash fix, complete matrix columns (v1.6) |
 
 Want to see your name here? [Open a PR](https://github.com/kishormorol/SkillsAllYouNeed/compare) adding skills or fixing entries.
 

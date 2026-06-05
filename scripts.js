@@ -823,7 +823,9 @@ setTimeout(()=>{
     strip.style.display = "block";
   }
   document.getElementById("onboarding-dismiss").addEventListener("click", ()=>{
-    strip.style.display = "none";
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    strip.classList.add("is-leaving");
+    setTimeout(()=>{ strip.style.display = "none"; }, reduced ? 0 : 180);
     localStorage.setItem("sayn-onboarding-seen", "1");
   });
 })();
