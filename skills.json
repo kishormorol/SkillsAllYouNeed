@@ -1,21 +1,23 @@
 {
-  "version": "1.6",
-  "generated": "2026-06-03",
-  "count": 163,
+  "version": "1.7",
+  "generated": "2026-07-26",
+  "count": 181,
   "ecosystems": [
-    "ChatGPT",
     "Claude",
     "Claude Code",
+    "ChatGPT",
     "Codex",
-    "Microsoft 365 Copilot",
-    "Gemini",
     "OpenCode",
+    "Cursor",
+    "Gemini",
     "Perplexity",
+    "Microsoft 365 Copilot",
     "GitHub Copilot",
     "Antigravity",
+    "Kiro",
     "Pi"
   ],
-  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Gemini, Perplexity, Microsoft 365 Copilot, OpenCode, Codex, GitHub Copilot, Antigravity, and Pi.",
+  "description": "SkillsAllYouNeed — open registry of AI skills for Claude, Claude Code, ChatGPT, Codex, OpenCode, Cursor, Gemini, Perplexity, Microsoft 365 Copilot, GitHub Copilot, Antigravity, Kiro, and Pi.",
   "license": "CC BY 4.0",
   "source": "https://kishormorol.github.io/SkillsAllYouNeed/",
   "skills": [
@@ -28,7 +30,8 @@
       "description": "Standalone code or document outputs that render live in a dedicated side panel — HTML, React, SVG, Markdown, or Mermaid.",
       "trigger": "“Build me a React calculator” · “Make me an SVG diagram”",
       "example": "A request for an interactive component opens a side panel with a runnable preview the user can iterate on.",
-      "source": "https://www.anthropic.com/news/artifacts"
+      "source": "https://www.anthropic.com/news/artifacts",
+      "howto": "Open claude.ai and make your request — Claude renders the output in a side panel automatically. No toggle needed."
     },
     {
       "id": "cl-visualizer",
@@ -39,7 +42,8 @@
       "description": "Inline SVG diagrams, charts, and interactive widgets streamed directly into the body of a chat reply.",
       "trigger": "“Show me a chart of…” · “Draw a flow diagram of…”",
       "example": "A complexity question is answered with an inline annotated SVG instead of plain prose.",
-      "source": "https://www.anthropic.com/news/visualizer"
+      "source": "https://www.anthropic.com/news/visualizer",
+      "howto": "Ask Claude to \"show\" or \"draw\" something. It streams an inline SVG or chart directly into the reply."
     },
     {
       "id": "cl-code-exec",
@@ -50,7 +54,8 @@
       "description": "Sandboxed Linux container that runs code and produces real files (.docx, .pptx, .xlsx, .pdf, images).",
       "trigger": "“Run this Python” · “Generate a PPTX from this outline”",
       "example": "Claude executes a pandas notebook against an uploaded CSV and returns a real .xlsx report.",
-      "source": "https://www.anthropic.com/news/code-execution"
+      "source": "https://www.anthropic.com/news/code-execution",
+      "howto": "Attach a file or ask Claude to run code. It opens a sandboxed Linux container and returns real downloadable output files."
     },
     {
       "id": "cl-skills",
@@ -61,7 +66,8 @@
       "description": "Modular instruction packs Claude loads on demand — docx, pptx, xlsx, pdf, frontend‑design, brainstorming, skill‑creator and more.",
       "trigger": "Triggered automatically by request type",
       "example": "“Make me a deck about Q2” loads the pptx skill, which knows how to produce a real, editable presentation.",
-      "source": "https://www.anthropic.com/news/skills"
+      "source": "https://www.anthropic.com/news/skills",
+      "howto": "Skills load automatically based on your request type — just ask (e.g. \"make a deck\" loads the pptx skill). No manual toggle."
     },
     {
       "id": "cl-projects",
@@ -72,7 +78,8 @@
       "description": "Persistent workspaces with custom instructions and a shared knowledge base of uploaded files.",
       "trigger": "Create from the sidebar; pin chats inside",
       "example": "A “Q2 Planning” project keeps the brief, the deck, and prior chats together with consistent custom instructions.",
-      "source": "https://www.anthropic.com/news/projects"
+      "source": "https://www.anthropic.com/news/projects",
+      "howto": "claude.ai sidebar → New Project → add custom instructions and upload knowledge files. All chats inside share the same context."
     },
     {
       "id": "cl-memory",
@@ -83,7 +90,8 @@
       "description": "Persistent, user‑editable facts that travel across every conversation.",
       "trigger": "“Remember that I…” · settings → Memory",
       "example": "Claude recalls your stack, tone preferences, and timezone in every new chat without re‑priming.",
-      "source": "https://www.anthropic.com/news/memory"
+      "source": "https://www.anthropic.com/news/memory",
+      "howto": "Say \"remember that I…\" or go to Settings → Memory to view, edit, or delete stored facts."
     },
     {
       "id": "cl-past-search",
@@ -94,7 +102,8 @@
       "description": "Built‑in conversation_search and recent_chats tools let Claude reference prior conversations.",
       "trigger": "“What did we decide about… last week?”",
       "example": "Claude finds a prior thread and quotes the conclusion verbatim in a new chat.",
-      "source": "https://www.anthropic.com/news/past-search"
+      "source": "https://www.anthropic.com/news/past-search",
+      "howto": "Ask \"what did we discuss about X?\" — Claude automatically uses conversation_search to find relevant prior threads."
     },
     {
       "id": "cl-web",
@@ -105,7 +114,8 @@
       "description": "Search the live web for current information, with attributed sources.",
       "trigger": "Any question with a freshness need",
       "example": "“What's the latest in the case of X v. Y?” returns a synthesised answer with cited sources.",
-      "source": "https://www.anthropic.com/news/web-search"
+      "source": "https://www.anthropic.com/news/web-search",
+      "howto": "Ask any time-sensitive question. Claude decides when to search; no toggle needed. Cited sources appear in the reply."
     },
     {
       "id": "cl-mcp",
@@ -116,7 +126,8 @@
       "description": "Third‑party app integrations — Google Drive, Gmail, Slack, GitHub, Asana, Notion, Linear, HubSpot, Zapier and more.",
       "trigger": "Settings → Connectors → enable",
       "example": "“Summarise this morning's Linear updates and email Maria a digest” chains MCP servers end‑to‑end.",
-      "source": "https://www.anthropic.com/news/connectors"
+      "source": "https://www.anthropic.com/news/connectors",
+      "howto": "Settings → Connectors → enable a connector (e.g. Google Drive). Then reference it naturally in your prompt."
     },
     {
       "id": "cl-styles",
@@ -127,7 +138,8 @@
       "description": "Custom output personalities — concise, formal, code‑first — applied per chat or globally.",
       "trigger": "Sidebar → choose or author a Style",
       "example": "A “Brutally Concise” style strips every preamble from every reply.",
-      "source": "https://www.anthropic.com/news/styles"
+      "source": "https://www.anthropic.com/news/styles",
+      "howto": "Sidebar → Styles → choose a preset or click + to author your own. The style applies to all replies in that chat."
     },
     {
       "id": "cl-imagegen",
@@ -138,7 +150,8 @@
       "description": "Image creation through connected services (e.g. via MCP), surfaced inline in Claude.",
       "trigger": "“Generate an image of…”",
       "example": "A request for a hero illustration returns a rendered PNG inside the conversation.",
-      "source": "https://www.anthropic.com/news/imagegen"
+      "source": "https://www.anthropic.com/news/imagegen",
+      "howto": "Connect an image-generation MCP server via Settings → Connectors, then say \"generate an image of…\"."
     },
     {
       "id": "cl-voice",
@@ -149,7 +162,8 @@
       "description": "Spoken back‑and‑forth conversation on the mobile app.",
       "trigger": "Microphone icon (mobile)",
       "example": "A walking conversation about a draft, with Claude responding in natural voice.",
-      "source": "https://www.anthropic.com/news/voice"
+      "source": "https://www.anthropic.com/news/voice",
+      "howto": "Open the Claude iOS or Android app and tap the microphone icon to start a spoken conversation."
     },
     {
       "id": "cc-cli",
@@ -160,7 +174,8 @@
       "description": "Agentic coding from the command line — read, write, run, commit, all inside your terminal.",
       "trigger": "$ claude",
       "example": "Ask for a refactor and Claude Code edits files in place, runs tests, and shows a diff before committing.",
-      "source": "https://www.anthropic.com/claude-code"
+      "source": "https://www.anthropic.com/claude-code",
+      "howto": "Install: `npm install -g @anthropic-ai/claude-code` then run `claude` inside any project directory."
     },
     {
       "id": "cc-plan",
@@ -171,7 +186,8 @@
       "description": "Read‑only exploration phase that produces a plan before any change is made to your repo.",
       "trigger": "Shift+Tab in interactive mode",
       "example": "On a large refactor request, Claude maps the call graph first, then proposes a step‑by‑step diff plan.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/plan-mode"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/plan-mode",
+      "howto": "In interactive mode press Shift+Tab to enter Plan Mode. Claude maps the codebase before touching any files."
     },
     {
       "id": "cc-subagents",
@@ -182,7 +198,8 @@
       "description": "Spawn specialised child agents (verifier, researcher, formatter) with their own scoped context.",
       "trigger": "From within a plan or hook",
       "example": "A verifier subagent reviews the main agent's output in a fresh context window and reports back.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/subagents"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/subagents",
+      "howto": "Reference the Agent tool in a prompt or hook — Claude Code spawns and coordinates child agents automatically."
     },
     {
       "id": "cc-hooks",
@@ -193,7 +210,8 @@
       "description": "Lifecycle scripts — PreToolUse, PostToolUse, SessionStart — that fire deterministically around agent steps.",
       "trigger": ".claude/hooks/*",
       "example": "A PostToolUse hook runs eslint --fix every time the agent writes a JS file.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/hooks"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/hooks",
+      "howto": "Create `.claude/hooks/` in your repo. Add shell scripts named after lifecycle events, e.g. `PostToolUse.sh`."
     },
     {
       "id": "cc-slash",
@@ -204,7 +222,8 @@
       "description": "Reusable, parameterised prompt templates invoked with /command.",
       "trigger": "/test · /commit · custom /…",
       "example": "/review @file generates a structured code review every time without re‑writing the prompt.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/slash-commands"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/slash-commands",
+      "howto": "Type `/command` in the prompt. Store custom commands as Markdown files in `.claude/commands/`."
     },
     {
       "id": "cc-claude-md",
@@ -215,7 +234,8 @@
       "description": "Repo‑level instruction file Claude Code reads on every session to learn your conventions.",
       "trigger": "Drop a CLAUDE.md at repo root",
       "example": "A CLAUDE.md pins your test runner, module aliases, and the “no any types” rule across all sessions.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/memory",
+      "howto": "Create a `CLAUDE.md` file at your repo root. Claude Code reads it at the start of every session automatically."
     },
     {
       "id": "cc-mcp",
@@ -226,7 +246,8 @@
       "description": "Connect to external tools via Model Context Protocol — databases, ticket trackers, search APIs.",
       "trigger": "claude mcp add …",
       "example": "A Postgres MCP lets Claude Code run SELECT queries against your dev database during a debug session.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/mcp"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/mcp",
+      "howto": "Run `claude mcp add <name> <command>` or edit `~/.claude/mcp.json`. Restart Claude Code to load new servers."
     },
     {
       "id": "cc-vscode",
@@ -237,7 +258,8 @@
       "description": "Claude Code rendered as a side panel inside Visual Studio Code with diff‑aware UI.",
       "trigger": "Install from the marketplace",
       "example": "A diff appears inline in the editor; you accept or reject hunks visually.",
-      "source": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code"
+      "source": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code",
+      "howto": "Install \"Claude Code\" from the VS Code Marketplace. A panel appears in the sidebar — open it to start."
     },
     {
       "id": "cc-jetbrains",
@@ -248,7 +270,8 @@
       "description": "Claude Code inside IntelliJ, PyCharm, GoLand, WebStorm, and the rest of the JetBrains family.",
       "trigger": "Install from JetBrains Marketplace",
       "example": "Trigger Claude on a failing test from the gutter; it proposes a patch in‑line.",
-      "source": "https://plugins.jetbrains.com/plugin/claude-code"
+      "source": "https://plugins.jetbrains.com/plugin/claude-code",
+      "howto": "Install \"Claude Code\" from JetBrains Marketplace. Open the tool window from the right sidebar."
     },
     {
       "id": "cc-slack",
@@ -259,7 +282,8 @@
       "description": "Kick off coding tasks from any Slack channel; results post back as threaded replies.",
       "trigger": "@claude in any channel",
       "example": "A bug report in #frontend is handed to @claude, which opens a PR and links it back in‑thread.",
-      "source": "https://www.anthropic.com/news/claude-code-slack"
+      "source": "https://www.anthropic.com/news/claude-code-slack",
+      "howto": "Install the Claude Code Slack app from the Anthropic integrations page, then @mention Claude in any channel."
     },
     {
       "id": "cc-actions",
@@ -270,7 +294,8 @@
       "description": "Run Claude Code inside CI/CD pipelines — review PRs, triage issues, generate release notes.",
       "trigger": "anthropic/claude-code-action in workflow",
       "example": "Every PR gets an automated review comment with concrete change suggestions.",
-      "source": "https://github.com/anthropics/claude-code-action"
+      "source": "https://github.com/anthropics/claude-code-action",
+      "howto": "Add `uses: anthropics/claude-code-action@v1` to a step in your `.github/workflows/*.yml` file."
     },
     {
       "id": "gpt-canvas",
@@ -281,7 +306,8 @@
       "description": "Side‑panel collaborative document and code editor with inline review comments.",
       "trigger": "“Open this in canvas”",
       "example": "A draft essay is opened in canvas where ChatGPT can suggest targeted edits to specific paragraphs.",
-      "source": "https://openai.com/index/introducing-canvas/"
+      "source": "https://openai.com/index/introducing-canvas/",
+      "howto": "Say \"open this in canvas\" or click the canvas icon in the toolbar. ChatGPT opens a collaborative side editor."
     },
     {
       "id": "gpt-customs",
@@ -292,7 +318,8 @@
       "description": "User‑authored assistants with custom instructions, knowledge files, and tool selection.",
       "trigger": "Explore GPTs → Create",
       "example": "A “Tax FAQ” GPT with the firm's policy PDFs answers staff questions in a consistent voice.",
-      "source": "https://openai.com/index/introducing-gpts/"
+      "source": "https://openai.com/index/introducing-gpts/",
+      "howto": "chatgpt.com → Explore GPTs → + Create → configure name, instructions, knowledge files, and tools."
     },
     {
       "id": "gpt-actions",
@@ -303,7 +330,8 @@
       "description": "REST API calls from a Custom GPT, declared via an OpenAPI schema and authenticated per‑call.",
       "trigger": "Authored in GPT builder → Actions",
       "example": "A travel GPT calls a flight‑search API live during the chat to return real itineraries.",
-      "source": "https://platform.openai.com/docs/actions"
+      "source": "https://platform.openai.com/docs/actions",
+      "howto": "In GPT Builder → Configure → Actions → paste your OpenAPI 3.1 schema. Add an auth method if required."
     },
     {
       "id": "gpt-dalle",
@@ -314,7 +342,8 @@
       "description": "Native image generation built into the chat surface, with iterative editing.",
       "trigger": "“Generate an image of…”",
       "example": "A brief is turned into a hero image, then nudged with “same composition, warmer light”.",
-      "source": "https://openai.com/dall-e-3"
+      "source": "https://openai.com/dall-e-3",
+      "howto": "Say \"generate an image of…\" — DALL·E 3 is built in. No setup required. Iterate with follow-up prompts."
     },
     {
       "id": "gpt-ada",
@@ -325,7 +354,8 @@
       "description": "Python sandbox for working with uploaded files — pandas, matplotlib, scikit‑learn, ffmpeg.",
       "trigger": "Upload a file or “run python”",
       "example": "A CSV upload is profiled, cleaned, and charted, with each step shown as runnable code.",
-      "source": "https://openai.com/blog/advanced-data-analysis"
+      "source": "https://openai.com/blog/advanced-data-analysis",
+      "howto": "Upload a file (CSV, Excel, PDF) or say \"run python\". The sandbox activates and returns charts or cleaned data."
     },
     {
       "id": "gpt-browse",
@@ -336,7 +366,8 @@
       "description": "Built‑in web search and page fetch, citing sources in‑line.",
       "trigger": "Any freshness‑sensitive question",
       "example": "A research question returns a synthesised answer with footnote‑style citations.",
-      "source": "https://openai.com/blog/browsing"
+      "source": "https://openai.com/blog/browsing",
+      "howto": "Ask any time-sensitive question. ChatGPT browses automatically when it detects a freshness need."
     },
     {
       "id": "gpt-memory",
@@ -347,7 +378,8 @@
       "description": "Persistent facts the model remembers across chats; user‑editable from settings.",
       "trigger": "“Remember that I…”",
       "example": "The model recalls your industry and writing voice across new conversations.",
-      "source": "https://openai.com/blog/memory"
+      "source": "https://openai.com/blog/memory",
+      "howto": "Say \"remember that I…\" or go to Settings → Personalization → Manage memories to view or delete stored facts."
     },
     {
       "id": "gpt-projects",
@@ -358,7 +390,8 @@
       "description": "Folders that group chats with their own custom instructions and shared files.",
       "trigger": "Sidebar → New Project",
       "example": "A “Thesis” project keeps every draft, reference PDF, and reviewer chat in one place.",
-      "source": "https://openai.com/blog/projects"
+      "source": "https://openai.com/blog/projects",
+      "howto": "chatgpt.com sidebar → New Project → name it → add custom instructions and upload shared files."
     },
     {
       "id": "gpt-connectors",
@@ -369,7 +402,8 @@
       "description": "First‑party integrations with Google Drive, GitHub, Outlook, SharePoint, Box, Dropbox, Gmail, Linear and more.",
       "trigger": "Settings → Connectors",
       "example": "“Find the Q3 deck in my Drive and summarise the financial section” pulls live from Drive.",
-      "source": "https://openai.com/blog/connectors"
+      "source": "https://openai.com/blog/connectors",
+      "howto": "Settings → Connectors → connect Google Drive, GitHub, Outlook, etc. Reference them naturally in prompts."
     },
     {
       "id": "gpt-voice",
@@ -380,7 +414,8 @@
       "description": "Real‑time, low‑latency voice conversation with intonation and interruption.",
       "trigger": "Voice icon (mobile/desktop)",
       "example": "A hands‑free brainstorm in the car; ChatGPT pauses when interrupted and picks up where it left off.",
-      "source": "https://openai.com/blog/voice-mode"
+      "source": "https://openai.com/blog/voice-mode",
+      "howto": "Mobile or desktop app → tap the waveform icon. Advanced Voice Mode responds in natural speech with low latency."
     },
     {
       "id": "gpt-store",
@@ -391,7 +426,8 @@
       "description": "Public marketplace of Custom GPTs published by other users and partners.",
       "trigger": "Explore GPTs",
       "example": "A user installs a public “Code Tutor” GPT instead of building their own.",
-      "source": "https://openai.com/blog/gpt-store"
+      "source": "https://openai.com/blog/gpt-store",
+      "howto": "chatgpt.com → Explore GPTs → search the marketplace and click Use to install any published GPT."
     },
     {
       "id": "gpt-sora",
@@ -402,7 +438,8 @@
       "description": "Video generation, where regionally available, surfaced from inside the chat surface.",
       "trigger": "“Generate a video of…”",
       "example": "A scene description returns a short generated video clip rendered into the chat.",
-      "source": "https://openai.com/sora"
+      "source": "https://openai.com/sora",
+      "howto": "chatgpt.com → Sora tab (where available) → describe your scene → select duration and aspect ratio."
     },
     {
       "id": "gpt-operator",
@@ -413,7 +450,8 @@
       "description": "Browser‑driving agent that completes multi‑step tasks on the live web on the user's behalf.",
       "trigger": "Operator surface · agent toggle",
       "example": "“Book me a window seat on the cheapest direct flight” is carried out across multiple airline sites.",
-      "source": "https://openai.com/operator"
+      "source": "https://openai.com/operator",
+      "howto": "operator.chatgpt.com (Plus/Pro) → describe the web task → Operator drives a real browser to complete it."
     },
     {
       "id": "gpt-tasks",
@@ -424,7 +462,8 @@
       "description": "Recurring or scheduled prompts that fire on a cadence and post their result back to the chat.",
       "trigger": "“Every Monday at 9am, …”",
       "example": "A weekly Monday brief summarising the user's calendar and inbox arrives on its own.",
-      "source": "https://openai.com/blog/tasks"
+      "source": "https://openai.com/blog/tasks",
+      "howto": "Say \"every Monday at 9am, send me a brief on…\" — ChatGPT schedules it automatically. Manage in Settings → Tasks."
     },
     {
       "id": "cl-research",
@@ -435,7 +474,8 @@
       "description": "Multi‑step agentic research across the live web, returning a structured report with citations.",
       "trigger": "Research mode toggle in the composer",
       "example": "“Research the state of small‑molecule GLP‑1 agonists.” returns a multi‑section brief with linked sources.",
-      "source": "https://www.anthropic.com/news/research"
+      "source": "https://www.anthropic.com/news/research",
+      "howto": "Toggle \"Research mode\" in the Claude composer → ask your question. Claude browses and returns a multi-section cited report."
     },
     {
       "id": "cl-computer-use",
@@ -446,7 +486,8 @@
       "description": "Claude controls a real browser or desktop on the user's behalf via screenshots and mouse/keyboard input.",
       "trigger": "Claude in Chrome · Computer Use API",
       "example": "“File this expense in Concur” is carried out by Claude visibly driving the browser.",
-      "source": "https://www.anthropic.com/news/computer-use"
+      "source": "https://www.anthropic.com/news/computer-use",
+      "howto": "Enable in Settings, or call the API with `tools:[{type:\"computer_use_20250124\"}]` and header `anthropic-beta: computer-use-2025-01-24`."
     },
     {
       "id": "cl-files",
@@ -457,7 +498,8 @@
       "description": "Drag‑and‑drop PDFs, DOCX, XLSX, images, audio, and code; the full content is parsed into context.",
       "trigger": "Drag onto the composer · paperclip icon",
       "example": "A 200‑page PDF is dropped in, and Claude answers questions citing specific page numbers.",
-      "source": "https://www.anthropic.com/news/files"
+      "source": "https://www.anthropic.com/news/files",
+      "howto": "Drag any file onto the Claude composer or click the paperclip icon. Supports PDF, DOCX, XLSX, images, audio, and code."
     },
     {
       "id": "cl-imagine",
@@ -468,7 +510,8 @@
       "description": "Generates interactive UI — sliders, forms, calculators — on the fly from a single prompt, inline.",
       "trigger": "“Imagine a UI for…” · Imagine surface",
       "example": "“Imagine a mortgage calculator with PMI” renders a working widget inside the reply.",
-      "source": "https://www.anthropic.com/news/imagine"
+      "source": "https://www.anthropic.com/news/imagine",
+      "howto": "Say \"Imagine a UI for…\" in Claude. The Imagine surface renders a live interactive widget inline in the reply."
     },
     {
       "id": "cl-widgets",
@@ -479,7 +522,8 @@
       "description": "First‑party UI cards — recipe, map, weather, message composer, places, image search, sports — rendered inline.",
       "trigger": "Triggered by intent (e.g. recipe or weather query)",
       "example": "“Weekend in Lisbon” surfaces a places card with photos and a map alongside the prose answer.",
-      "source": "https://www.anthropic.com/news/widgets"
+      "source": "https://www.anthropic.com/news/widgets",
+      "howto": "Just ask a question that triggers a widget — e.g. \"weekend in Paris\" or \"nearest coffee shops\". No setup needed."
     },
     {
       "id": "cl-excel",
@@ -490,7 +534,8 @@
       "description": "Spreadsheet agent installed inside Microsoft Excel — edits formulas, builds models, explains cells.",
       "trigger": "Excel add‑in · Claude side panel",
       "example": "“Build a 5‑year DCF from this revenue tab” is executed in the workbook with auditable formulas.",
-      "source": "https://www.anthropic.com/excel"
+      "source": "https://www.anthropic.com/excel",
+      "howto": "Install the Claude add-in from the Microsoft Excel Add-ins store → open the Claude side panel inside Excel."
     },
     {
       "id": "cl-chrome",
@@ -501,7 +546,8 @@
       "description": "Browser extension that lets Claude read the active tab, drive forms, and complete multi‑tab workflows.",
       "trigger": "Chrome extension toolbar",
       "example": "“Reorder the same coffee as last Tuesday” completes the basket and checkout without further prompting.",
-      "source": "https://www.anthropic.com/chrome"
+      "source": "https://www.anthropic.com/chrome",
+      "howto": "Install the Claude Chrome extension from the Chrome Web Store → click the Claude icon in the browser toolbar."
     },
     {
       "id": "cl-cowork",
@@ -512,7 +558,8 @@
       "description": "Desktop file and task automation aimed at non‑developers — batch rename, reorganize, OCR, summarise.",
       "trigger": "Cowork app · right‑click “Ask Claude”",
       "example": "“Move every invoice older than 90 days into /Archive” runs as a vetted file action on the user's Mac.",
-      "source": "https://www.anthropic.com/cowork"
+      "source": "https://www.anthropic.com/cowork",
+      "howto": "Download the Cowork desktop app → right-click any file or folder → select \"Ask Claude\"."
     },
     {
       "id": "cl-incognito",
@@ -523,7 +570,8 @@
       "description": "Chats that bypass Memory and aren't retained after the window closes — useful for sensitive drafts.",
       "trigger": "Sidebar → New incognito chat",
       "example": "A salary negotiation draft is iterated on without polluting the user's persistent memory.",
-      "source": "https://www.anthropic.com/news/incognito"
+      "source": "https://www.anthropic.com/news/incognito",
+      "howto": "Claude sidebar → New incognito chat. The session is not stored and does not write to Memory."
     },
     {
       "id": "cc-output-styles",
@@ -534,7 +582,8 @@
       "description": "Configurable agent voice and format presets that pin Claude Code's tone and verbosity per project.",
       "trigger": "/output-style · settings file",
       "example": "A “diff‑only, no preamble” style strips every explanation in a busy repo.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/output-styles"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/output-styles",
+      "howto": "Run `/output-style` in a session or set `output_style` in `.claude/settings.json` for a project-wide default."
     },
     {
       "id": "cc-permissions",
@@ -545,7 +594,8 @@
       "description": "Plan / Accept‑Edits / Bypass / Auto — fine‑grained control over what the agent may do without prompting.",
       "trigger": "Shift+Tab cycles modes",
       "example": "Accept‑Edits lets Claude make file changes freely, but still requires approval to run shell commands.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/permissions"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/permissions",
+      "howto": "Press Shift+Tab to cycle modes: Plan → Accept-Edits → Bypass → Auto. The current mode is shown in the prompt."
     },
     {
       "id": "cc-background",
@@ -556,7 +606,8 @@
       "description": "Long‑running tasks spawned with & that continue while you keep working; they report back on completion.",
       "trigger": "Append & to any task prompt",
       "example": "“Run the full test suite & ” returns control immediately and posts the result when finished.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/background"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/background",
+      "howto": "Append `&` to any task: `\"run the full test suite &\"`. Claude Code returns control immediately and notifies you on completion."
     },
     {
       "id": "cc-skills",
@@ -567,7 +618,8 @@
       "description": "Reusable agent skills identical in shape to Claude.ai Skills, scoped to a repo or user profile.",
       "trigger": "~/.claude/skills/ · .claude/skills/",
       "example": "A `release-notes` skill always assembles the changelog the way the team likes it.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/skills",
+      "howto": "Add `.md` skill files to `~/.claude/skills/` (global) or `.claude/skills/` (per-repo). Invoke with `/skill-name`."
     },
     {
       "id": "cc-cost",
@@ -578,7 +630,8 @@
       "description": "/cost shows tokens and dollars spent per session; /compact reduces context; /clear resets the window.",
       "trigger": "/cost · /compact · /clear",
       "example": "At the end of a long session, /cost reports a $1.42 spend and which tools consumed the most tokens.",
-      "source": "https://docs.anthropic.com/en/docs/claude-code/usage"
+      "source": "https://docs.anthropic.com/en/docs/claude-code/usage",
+      "howto": "Type `/cost` at any point in a session to see token usage and dollar spend. Use `/compact` to trim context."
     },
     {
       "id": "gpt-pulse",
@@ -589,7 +642,8 @@
       "description": "Proactive daily brief that draws on Memory, Projects, and Connectors to deliver an unprompted morning digest.",
       "trigger": "Pulse opt‑in · sidebar",
       "example": "Each morning a card lists overnight calendar changes, key emails, and follow‑ups Pulse thinks you'll want.",
-      "source": "https://openai.com/blog/pulse"
+      "source": "https://openai.com/blog/pulse",
+      "howto": "Opt in via the ChatGPT sidebar → Pulse. Set your preferred delivery time and topics. It delivers each morning unprompted."
     },
     {
       "id": "gpt-study",
@@ -600,7 +654,8 @@
       "description": "Socratic‑tutor mode that withholds answers and instead guides the user through derivations and checks.",
       "trigger": "Tools menu → Study Mode",
       "example": "A linear‑algebra question is met with leading sub‑questions instead of a direct solution.",
-      "source": "https://openai.com/blog/study-mode"
+      "source": "https://openai.com/blog/study-mode",
+      "howto": "Tools menu → Study Mode, or ask \"quiz me on…\" / \"explain this without giving the answer\"."
     },
     {
       "id": "gpt-record",
@@ -611,7 +666,8 @@
       "description": "Live meeting recording with real‑time transcription and a structured notes summary at the end.",
       "trigger": "Record button (desktop / mobile)",
       "example": "A 30‑minute call yields a transcript, action items, and a one‑paragraph executive summary.",
-      "source": "https://openai.com/blog/record-mode"
+      "source": "https://openai.com/blog/record-mode",
+      "howto": "Click the Record button in the desktop or mobile app during or after a meeting. A summary is generated when you stop."
     },
     {
       "id": "gpt-shopping",
@@ -622,7 +678,8 @@
       "description": "Comparison shopping with structured product cards — specs, prices, reviews surfaced inline.",
       "trigger": "“Compare A vs B vs C” · product intent",
       "example": "“Best sub‑$2,000 OLED TV for a bright room” returns a compact comparison card with pros and cons.",
-      "source": "https://openai.com/blog/shopping"
+      "source": "https://openai.com/blog/shopping",
+      "howto": "Ask \"compare X vs Y vs Z\" or phrase a product intent question. ChatGPT returns structured comparison cards."
     },
     {
       "id": "gpt-library",
@@ -633,7 +690,8 @@
       "description": "Personal gallery of generated images and creations, organised by chat, with re‑edit and download.",
       "trigger": "Sidebar → Library",
       "example": "Every DALL·E 3 image from the past month is browseable in a grid and re‑openable in canvas.",
-      "source": "https://openai.com/blog/library"
+      "source": "https://openai.com/blog/library",
+      "howto": "chatgpt.com sidebar → Library. All DALL·E images are browseable by date; click any to re-open in canvas."
     },
     {
       "id": "gpt-realtime",
@@ -644,7 +702,8 @@
       "description": "Developer‑facing voice‑to‑voice low‑latency API powering custom real‑time agents.",
       "trigger": "WebSocket / WebRTC endpoint",
       "example": "A customer‑support voice agent responds with sub‑second latency and natural barge‑in.",
-      "source": "https://platform.openai.com/docs/guides/realtime"
+      "source": "https://platform.openai.com/docs/guides/realtime",
+      "howto": "Connect via WebSocket: `wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview` with your API key as a Bearer token."
     },
     {
       "id": "gpt-assistants",
@@ -655,7 +714,8 @@
       "description": "Predecessor to the Responses API — a server‑side primitive for stateful tool‑using agents.",
       "trigger": "POST /v1/assistants (legacy)",
       "example": "Existing Assistants deployments remain accessible but new builds should target Responses.",
-      "source": "https://platform.openai.com/docs/assistants/migration"
+      "source": "https://platform.openai.com/docs/assistants/migration",
+      "howto": "Existing builds: `POST /v1/assistants` (legacy). For new builds, migrate to the Responses API instead."
     },
     {
       "id": "gpt-responses",
@@ -666,7 +726,8 @@
       "description": "Successor to Chat Completions designed for agentic flows — stateful, tool‑aware, multi‑turn.",
       "trigger": "POST /v1/responses",
       "example": "A multi‑tool agent loop is expressed as a single Responses call instead of a hand‑rolled state machine.",
-      "source": "https://platform.openai.com/docs/guides/responses"
+      "source": "https://platform.openai.com/docs/guides/responses",
+      "howto": "`POST /v1/responses` with a `tools` array. The stateful successor to Assistants for new agentic builds."
     },
     {
       "id": "gpt-structured",
@@ -677,7 +738,8 @@
       "description": "Strict JSON‑Schema‑enforced outputs that never violate the supplied schema.",
       "trigger": "response_format: { type: \"json_schema\" }",
       "example": "A pricing extractor returns a guaranteed‑valid object that parses cleanly into a typed struct.",
-      "source": "https://platform.openai.com/docs/guides/structured-outputs"
+      "source": "https://platform.openai.com/docs/guides/structured-outputs",
+      "howto": "Add `response_format:{type:\"json_schema\",json_schema:{name:\"...\",schema:{...}}}` to your API call."
     },
     {
       "id": "api-anthropic-computer",
@@ -688,7 +750,8 @@
       "description": "API surface that exposes Computer Use — screenshots in, mouse/keyboard out — to any application.",
       "trigger": "Beta tool: computer-use-2025-01",
       "example": "A vendor builds a QA bot that drives a staging site end‑to‑end through the Computer Use API.",
-      "source": "https://docs.anthropic.com/en/docs/build-with-claude/computer-use"
+      "source": "https://docs.anthropic.com/en/docs/build-with-claude/computer-use",
+      "howto": "Request with `tools:[{type:\"computer_use_20250124\",name:\"computer\",display_width_px:1024,display_height_px:768}]` + header `anthropic-beta: computer-use-2025-01-24`."
     },
     {
       "id": "api-anthropic-files",
@@ -699,7 +762,8 @@
       "description": "Upload, reuse, and reference files across Messages and Batch requests without re‑transmitting bytes.",
       "trigger": "POST /v1/files",
       "example": "A 40 MB transcript is uploaded once and referenced by ID in dozens of downstream summarisation calls.",
-      "source": "https://docs.anthropic.com/en/api/files"
+      "source": "https://docs.anthropic.com/en/api/files",
+      "howto": "`POST /v1/files` multipart with your file → use the returned `file_id` in a `document` content block on future requests."
     },
     {
       "id": "api-anthropic-batch",
@@ -710,7 +774,8 @@
       "description": "Submit thousands of Messages requests as a batch at substantially reduced cost and 24‑hour SLA.",
       "trigger": "POST /v1/messages/batches",
       "example": "An overnight classification job of 100k records is submitted as a single batch at 50% price.",
-      "source": "https://docs.anthropic.com/en/api/message-batches"
+      "source": "https://docs.anthropic.com/en/api/message-batches",
+      "howto": "`POST /v1/messages/batches` with a `requests` array (up to 10,000 items). Poll the returned batch `id` for status."
     },
     {
       "id": "api-anthropic-cache",
@@ -721,7 +786,8 @@
       "description": "Cache long system prompts and documents across calls to slash latency and per‑token cost.",
       "trigger": "cache_control: {type: \"ephemeral\"}",
       "example": "A 50k‑token system prompt is cached once and reused across a thousand follow‑up turns.",
-      "source": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
+      "source": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+      "howto": "Add `\"cache_control\":{\"type\":\"ephemeral\"}` to any content block. First request populates the cache; subsequent calls hit it."
     },
     {
       "id": "api-anthropic-pdf",
@@ -732,7 +798,8 @@
       "description": "Native PDF understanding in the Messages API — text and visual layout, no separate OCR step.",
       "trigger": "document content block · application/pdf",
       "example": "A multi‑column scientific paper is summarised with figure references preserved.",
-      "source": "https://docs.anthropic.com/en/docs/build-with-claude/pdf-support"
+      "source": "https://docs.anthropic.com/en/docs/build-with-claude/pdf-support",
+      "howto": "Send a `document` content block: `{type:\"document\",source:{type:\"base64\",media_type:\"application/pdf\",data:\"<base64>\"}}` ."
     },
     {
       "id": "api-anthropic-mcp-conn",
@@ -743,7 +810,8 @@
       "description": "Server‑side connector hosting that lets Claude reach MCP servers without the client managing transport.",
       "trigger": "mcp_servers: […] on Messages",
       "example": "An app gives Claude a hosted Jira MCP without shipping any custom transport code.",
-      "source": "https://docs.anthropic.com/en/docs/agents-and-tools/mcp"
+      "source": "https://docs.anthropic.com/en/docs/agents-and-tools/mcp",
+      "howto": "Add `mcp_servers:[{\"type\":\"url\",\"url\":\"https://your-mcp.com\",\"name\":\"my-tool\"}]` to your Messages API request body."
     },
     {
       "id": "api-openai-realtime",
@@ -754,7 +822,8 @@
       "description": "Bi‑directional voice‑to‑voice API with sub‑second latency and interruption support.",
       "trigger": "WebRTC or WebSocket session",
       "example": "A drive‑thru voice ordering kiosk responds in real time, with natural barge‑in.",
-      "source": "https://platform.openai.com/docs/guides/realtime"
+      "source": "https://platform.openai.com/docs/guides/realtime",
+      "howto": "Connect: `new WebSocket('wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview',['realtime','openai-insecure-api-key.KEY'])`."
     },
     {
       "id": "api-openai-batch",
@@ -765,7 +834,8 @@
       "description": "Asynchronous batch submission of completions and embeddings at half the per‑token price.",
       "trigger": "POST /v1/batches",
       "example": "A million‑row labelling pass is submitted as a JSONL file and returned within the SLA window.",
-      "source": "https://platform.openai.com/docs/guides/batch"
+      "source": "https://platform.openai.com/docs/guides/batch",
+      "howto": "`POST /v1/batches` with a JSONL file of `{custom_id, method, url, body}` objects. Poll `GET /v1/batches/{id}` for status."
     },
     {
       "id": "api-openai-vision",
@@ -776,7 +846,8 @@
       "description": "Multimodal image understanding through the Responses and Chat APIs — inline image_url inputs.",
       "trigger": "input_image content block",
       "example": "A receipt photo is OCR'd, line‑itemised, and posted into an expenses system in one call.",
-      "source": "https://platform.openai.com/docs/guides/vision"
+      "source": "https://platform.openai.com/docs/guides/vision",
+      "howto": "Include `{type:\"image_url\",image_url:{url:\"data:image/jpeg;base64,...\"}}` in the `content` array of a user message."
     },
     {
       "id": "api-openai-fine-tuning",
@@ -787,7 +858,8 @@
       "description": "Supervised fine‑tuning and preference fine‑tuning surfaces for tailoring models to a domain.",
       "trigger": "POST /v1/fine_tuning/jobs",
       "example": "A medical‑coding model is tuned on a curated corpus and outperforms zero‑shot on the firm's task.",
-      "source": "https://platform.openai.com/docs/guides/fine-tuning"
+      "source": "https://platform.openai.com/docs/guides/fine-tuning",
+      "howto": "Upload a JSONL training file via `POST /v1/files`, then `POST /v1/fine_tuning/jobs` with the file ID and base model name."
     },
     {
       "id": "gm-gems",
@@ -798,7 +870,8 @@
       "description": "Custom AI experts with a persona, instructions, and optional knowledge files — Gemini’s equivalent of Custom GPTs.",
       "trigger": "Sidebar → Gem manager → New Gem",
       "example": "A “Research Assistant” Gem is configured to always cite primary sources and respond in academic register.",
-      "source": "https://gemini.google.com/gems"
+      "source": "https://gemini.google.com/gems",
+      "howto": "gemini.google.com → Gem manager (sidebar) → New Gem → give it a name, persona instructions, and optional knowledge files."
     },
     {
       "id": "gm-deep-research",
@@ -809,7 +882,8 @@
       "description": "Multi‑step autonomous research agent that browses the web, synthesises sources, and returns a cited long‑form report.",
       "trigger": "“Deep Research” button · research X in depth",
       "example": "A competitive landscape question returns a 10‑page report with 40 cited sources, generated in minutes.",
-      "source": "https://blog.google/products/gemini/google-gemini-deep-research"
+      "source": "https://blog.google/products/gemini/google-gemini-deep-research",
+      "howto": "Click the \"Deep Research\" button above the Gemini composer, then ask your research question. A cited multi-page report is returned."
     },
     {
       "id": "gm-live",
@@ -820,7 +894,8 @@
       "description": "Real‑time, low‑latency voice and video conversation — point your camera and talk to Gemini about what it sees.",
       "trigger": "Microphone / camera icon in the mobile app",
       "example": "A user holds their phone up to a broken circuit board and describes the fault aloud; Gemini diagnoses it live.",
-      "source": "https://deepmind.google/technologies/gemini/live"
+      "source": "https://deepmind.google/technologies/gemini/live",
+      "howto": "Open Gemini on iOS or Android → tap the camera/microphone icon to enter Live mode. Point and speak."
     },
     {
       "id": "gm-imagegen",
@@ -831,7 +906,8 @@
       "description": "Native high‑fidelity image generation powered by Imagen 3, available directly in the chat surface.",
       "trigger": "“Generate an image of…” · “Create a picture of…”",
       "example": "A product‑mockup prompt returns a photorealistic render with accurate text and fine details.",
-      "source": "https://deepmind.google/technologies/imagen"
+      "source": "https://deepmind.google/technologies/imagen",
+      "howto": "Say \"generate an image of…\" or \"create a picture of…\" in Gemini. Imagen 3 is built in — no setup required."
     },
     {
       "id": "gm-veo",
@@ -842,7 +918,8 @@
       "description": "AI‑powered video generation from text prompts, surfaced inside Gemini Advanced for eligible users.",
       "trigger": "“Generate a video of…”",
       "example": "A nature‑documentary‑style prompt returns an 8‑second clip with cinematic camera movement.",
-      "source": "https://deepmind.google/technologies/veo"
+      "source": "https://deepmind.google/technologies/veo",
+      "howto": "Gemini Advanced → say \"generate a video of…\" (regional availability varies). Select duration and style if prompted."
     },
     {
       "id": "gm-canvas",
@@ -853,7 +930,8 @@
       "description": "Side‑panel collaborative editing surface for long‑form documents and code — with inline revision and one‑click copy.",
       "trigger": "Canvas icon in the toolbar · open in Canvas",
       "example": "A 2,000‑word report draft is opened in Canvas; the user highlights a paragraph and asks Gemini to shorten it.",
-      "source": "https://workspace.google.com/blog/gemini-canvas"
+      "source": "https://workspace.google.com/blog/gemini-canvas",
+      "howto": "Click the Canvas icon in the Gemini toolbar or say \"open in canvas\". Gemini opens a collaborative document editor."
     },
     {
       "id": "gm-files",
@@ -864,7 +942,8 @@
       "description": "Upload and analyse documents (PDF, DOCX), images, audio, and video directly in the conversation.",
       "trigger": "Paperclip icon · drag‑and‑drop into chat",
       "example": "A 100‑page PDF contract is uploaded and summarised with key obligations extracted as a bullet list.",
-      "source": "https://support.google.com/gemini/answer/file-upload"
+      "source": "https://support.google.com/gemini/answer/file-upload",
+      "howto": "Click the paperclip icon in the Gemini composer or drag and drop a file. Supports PDF, DOCX, images, audio, and video."
     },
     {
       "id": "gm-notebooklm",
@@ -875,7 +954,8 @@
       "description": "Document‑grounded research assistant that answers only from your uploaded sources and can generate Audio Overviews (podcast‑style summaries).",
       "trigger": "notebooklm.google.com · upload sources",
       "example": "A researcher uploads 15 papers; NotebookLM answers questions with inline citations and generates a podcast episode summary.",
-      "source": "https://notebooklm.google.com"
+      "source": "https://notebooklm.google.com",
+      "howto": "notebooklm.google.com → New notebook → upload sources (PDFs, URLs, Docs) → ask questions or generate an Audio Overview."
     },
     {
       "id": "gm-web-search",
@@ -886,7 +966,8 @@
       "description": "Real‑time Google Search grounding — Gemini queries the live web and cites its sources inline.",
       "trigger": "Any freshness‑sensitive question",
       "example": "“What did the Fed announce today?” returns a synthesised answer with linked news sources.",
-      "source": "https://support.google.com/gemini/answer/web-search"
+      "source": "https://support.google.com/gemini/answer/web-search",
+      "howto": "Ask any time-sensitive question. Google Search grounding is on by default — cited sources appear inline in the reply."
     },
     {
       "id": "gm-code-exec",
@@ -897,7 +978,8 @@
       "description": "Python sandbox that runs code, produces charts, and manipulates uploaded files — powered by a Colab‑style kernel.",
       "trigger": "Run this code · upload a CSV and ask to analyse",
       "example": "An uploaded sales spreadsheet is cleaned with pandas, then a matplotlib chart is generated and returned.",
-      "source": "https://ai.google.dev/gemini-api/docs/code-execution"
+      "source": "https://ai.google.dev/gemini-api/docs/code-execution",
+      "howto": "Upload a file or ask Gemini to run code. It executes Python in a Colab-style sandbox and returns results or charts."
     },
     {
       "id": "gm-data-analysis",
@@ -908,7 +990,8 @@
       "description": "Conversational data analysis over uploaded spreadsheets and CSVs — summary statistics, charts, and trend commentary.",
       "trigger": "Upload a file → Analyse this data",
       "example": "A marketing CSV is profiled with descriptive stats, an outlier is flagged, and a revenue‑trend chart is produced.",
-      "source": "https://workspace.google.com/blog/gemini-data-analysis"
+      "source": "https://workspace.google.com/blog/gemini-data-analysis",
+      "howto": "Upload a CSV or spreadsheet → ask \"summarise this\" or \"show me a trend chart\". Gemini uses pandas and matplotlib internally."
     },
     {
       "id": "gm-workspace",
@@ -919,7 +1002,8 @@
       "description": "Gemini embedded across Google Docs, Sheets, Slides, Gmail, and Meet — drafting, summarising, and formatting inside each app.",
       "trigger": "Help me write · Summarise in Docs / Gmail · side panel in Sheets / Slides",
       "example": "“Summarise this email thread and draft a follow‑up” runs inside Gmail, returning a reply draft in seconds.",
-      "source": "https://workspace.google.com/blog/gemini-for-workspace"
+      "source": "https://workspace.google.com/blog/gemini-for-workspace",
+      "howto": "In Google Docs, Gmail, or Sheets → click \"Help me write\" or open the Gemini side panel. No extra install needed."
     },
     {
       "id": "gm-extensions",
@@ -930,7 +1014,8 @@
       "description": "First‑party connectors to Google Search, Maps, YouTube, Hotels, Flights, and Workspace that Gemini queries during a conversation.",
       "trigger": "Settings → Extensions → enable; or implicit from context",
       "example": "“Find me a 4‑star hotel near the Colosseum for next Friday” uses the Hotels extension to return live results.",
-      "source": "https://support.google.com/gemini/answer/extensions"
+      "source": "https://support.google.com/gemini/answer/extensions",
+      "howto": "gemini.google.com → Settings → Extensions → enable the Google apps you want (Search, Maps, YouTube, Workspace, etc.)."
     },
     {
       "id": "gm-astra",
@@ -941,7 +1026,8 @@
       "description": "Real‑time multimodal agent that uses the phone camera as a continuous input stream — see, hear, and act on the live world.",
       "trigger": "Astra mode in Gemini mobile app",
       "example": "A user pans across a whiteboard diagram; Astra explains each component and suggests improvements verbally.",
-      "source": "https://deepmind.google/technologies/gemini/project-astra"
+      "source": "https://deepmind.google/technologies/gemini/project-astra",
+      "howto": "Open Gemini on mobile → tap the Astra button → point your camera and speak. Astra responds to what it sees in real time."
     },
     {
       "id": "gm-memory",
@@ -952,7 +1038,8 @@
       "description": "Persistent cross‑conversation facts Gemini learns and recalls to personalise future responses.",
       "trigger": "“Remember that I…” · settings → Memory",
       "example": "Gemini recalls that a user prefers metric units and a formal tone across every new conversation.",
-      "source": "https://support.google.com/gemini/answer/memory"
+      "source": "https://support.google.com/gemini/answer/memory",
+      "howto": "Say \"remember that I…\" in Gemini, or go to gemini.google.com → Settings → Memory to view or delete stored facts."
     },
     {
       "id": "gm-projects",
@@ -963,7 +1050,8 @@
       "description": "Persistent workspaces that group related chats and shared context — Gemini remembers the background across all conversations inside a project.",
       "trigger": "Sidebar → New Project",
       "example": "A “Thesis” project keeps all research chats, uploaded PDFs, and draft notes under one persistent context.",
-      "source": "https://support.google.com/gemini/answer/projects"
+      "source": "https://support.google.com/gemini/answer/projects",
+      "howto": "gemini.google.com sidebar → New Project → name it and add background context. All chats inside share persistent memory."
     },
     {
       "id": "api-google-gemini",
@@ -974,7 +1062,8 @@
       "description": "Google AI Studio API giving programmatic access to Gemini models — function calling, multimodal inputs, streaming, and long‑context up to 1M tokens.",
       "trigger": "POST /v1beta/models/gemini-*:generateContent",
       "example": "An app sends a 500‑page PDF and a question in one API call; the model answers with references to specific pages.",
-      "source": "https://ai.google.dev/gemini-api/docs"
+      "source": "https://ai.google.dev/gemini-api/docs",
+      "howto": "`POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=YOUR_KEY` with a JSON body."
     },
     {
       "id": "api-google-grounding",
@@ -985,7 +1074,8 @@
       "description": "API‑level Google Search grounding that injects live web results into model responses with inline citations.",
       "trigger": "tools: [{googleSearch:{}}] in the API request",
       "example": "A product‑comparison request returns a structured answer sourced from current web pages, with cited URLs.",
-      "source": "https://ai.google.dev/gemini-api/docs/grounding"
+      "source": "https://ai.google.dev/gemini-api/docs/grounding",
+      "howto": "Add `\"tools\":[{\"google_search\":{}}]` to your Gemini API request body. Grounding uses your existing API key — no extra auth."
     },
     {
       "id": "api-google-vertex",
@@ -996,7 +1086,8 @@
       "description": "Enterprise‑grade Gemini access via Google Cloud — private endpoints, VPC‑SC, audit logs, and SLA‑backed throughput.",
       "trigger": "google.cloud.aiplatform",
       "example": "A regulated financial firm routes all model calls through Vertex for compliance logging and data residency.",
-      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview"
+      "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview",
+      "howto": "`pip install google-cloud-aiplatform` → `vertexai.init(project=...,location=...)` → `GenerativeModel(\"gemini-2.0-flash\").generate_content(...)`."
     },
     {
       "id": "api-google-files",
@@ -1007,7 +1098,8 @@
       "description": "Upload large files (up to 2 GB) once and reference them by URI across multiple API calls without re‑uploading.",
       "trigger": "POST /upload/v1beta/files",
       "example": "A 90‑minute audio interview is uploaded once; multiple summarise / transcribe calls reference the same file URI.",
-      "source": "https://ai.google.dev/gemini-api/docs/files"
+      "source": "https://ai.google.dev/gemini-api/docs/files",
+      "howto": "`POST https://generativelanguage.googleapis.com/upload/v1beta/files` with your file. Use the returned `uri` in a `file_data` part."
     },
     {
       "id": "api-google-code-exec",
@@ -1018,7 +1110,8 @@
       "description": "API‑level sandboxed Python execution tool that lets Gemini models run generated code and return results programmatically.",
       "trigger": "tools: [{codeExecution:{}}] in the API request",
       "example": "A model generates a data‑cleaning script, executes it against an uploaded CSV, and returns cleaned data in the same response.",
-      "source": "https://ai.google.dev/gemini-api/docs/code-execution"
+      "source": "https://ai.google.dev/gemini-api/docs/code-execution",
+      "howto": "Add `\"tools\":[{\"code_execution\":{}}]` to your Gemini API request. The model generates and runs Python, returning results inline."
     },
     {
       "id": "gm-chrome",
@@ -1029,7 +1122,8 @@
       "description": "Browser‑integrated Gemini assistant accessible from the Chrome address bar and side panel for page summarisation and Q&A.",
       "trigger": "Omnibox → @gemini · Ctrl+Shift+Space side panel",
       "example": "On a long news article, opening the side panel returns a three‑bullet summary and lets the user ask follow‑up questions.",
-      "source": "https://blog.google/products/chrome/google-chrome-gemini"
+      "source": "https://blog.google/products/chrome/google-chrome-gemini",
+      "howto": "Chrome address bar → type `@gemini` and press Tab, or press Ctrl+Shift+Space to open the Gemini side panel."
     },
     {
       "id": "cl-extended-thinking",
@@ -1116,6 +1210,30 @@
       "source": "https://www.perplexity.ai/hub/blog/perplexity-assistant"
     },
     {
+      "id": "pp-comet",
+      "name": "Comet Browser",
+      "ecosystem": "Perplexity",
+      "category": "Web",
+      "status": "Stable",
+      "description": "Perplexity's AI browser with an embedded assistant that can understand the current page, search, compare tabs, and conduct full browsing sessions.",
+      "trigger": "Open Comet → ask in the assistant sidebar",
+      "howto": "Install and open Comet. Use the assistant sidebar while browsing, or ask it to research, compare, summarise, and move across tabs while keeping the current browsing context.",
+      "example": "A user comparing CRM tools opens several pricing pages and asks Comet to extract seat limits, automation features, and contract terms into one sourced table.",
+      "source": "https://www.perplexity.ai/hub/blog/introducing-comet"
+    },
+    {
+      "id": "pp-comet-assistant",
+      "name": "Comet Assistant",
+      "ecosystem": "Perplexity",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Browser-native assistant with tools for perceiving and interacting with web environments, built for multi-step page tasks rather than one-off answers.",
+      "trigger": "Ask Comet Assistant to do a web task",
+      "howto": "Inside Comet, describe the outcome you want instead of each click. Review any confirmation prompts before it takes sensitive actions such as submitting forms or changing account state.",
+      "example": "Asked to plan a work trip, Comet Assistant searches flights and hotels across tabs, narrows choices, and leaves the final booking confirmation for the user.",
+      "source": "https://www.perplexity.ai/hub/blog/the-new-comet-assistant"
+    },
+    {
       "id": "mc-365",
       "name": "Copilot in Microsoft 365",
       "ecosystem": "Microsoft 365 Copilot",
@@ -1164,6 +1282,42 @@
       "source": "https://support.microsoft.com/en-us/topic/what-is-copilot-notebook"
     },
     {
+      "id": "mc-studio-agents",
+      "name": "Copilot Studio Agents",
+      "ecosystem": "Microsoft 365 Copilot",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Low-code environment for building custom Copilot agents with knowledge, topics, actions, channels, governance, and enterprise deployment controls.",
+      "trigger": "Copilot Studio → Create → New agent",
+      "howto": "Open Copilot Studio, create an agent, add instructions and knowledge sources, configure actions or topics, test it in the chat pane, then publish it to the target channel.",
+      "example": "An operations team builds an internal PTO agent that answers policy questions, checks SharePoint documents, and routes edge cases to HR.",
+      "source": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio"
+    },
+    {
+      "id": "mc-studio-skills",
+      "name": "Copilot Studio Skills",
+      "ecosystem": "Microsoft 365 Copilot",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Reusable pro-code skills that extend Copilot Studio agents with organization-specific capabilities deployed into the tenant.",
+      "trigger": "Copilot Studio agent → Skills → Add skill",
+      "howto": "Create and deploy the skill with pro-code tooling, then configure it inside a Copilot Studio agent so the agent can invoke that skill during conversations.",
+      "example": "A finance agent gets a custom purchase-order skill that validates vendor IDs and creates draft approvals in the company's internal system.",
+      "source": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-add-skills"
+    },
+    {
+      "id": "mc-agent-flows",
+      "name": "Agent Flows",
+      "ecosystem": "Microsoft 365 Copilot",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Copilot Studio automation flows that connect agent conversations to deterministic triggers, actions, and business processes.",
+      "trigger": "Copilot Studio → Agent flows → Create flow",
+      "howto": "Create an agent flow in Copilot Studio with a natural-language description or the visual designer. Choose triggers, add actions, test the flow, and connect it to the agent.",
+      "example": "A sales-support agent uses an agent flow to create a CRM follow-up task whenever a customer asks for renewal pricing.",
+      "source": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview"
+    },
+    {
       "id": "ghc-completions",
       "name": "Code Completion",
       "ecosystem": "GitHub Copilot",
@@ -1181,11 +1335,11 @@
       "ecosystem": "GitHub Copilot",
       "category": "Code",
       "status": "Stable",
-      "description": "Conversational AI chat inside the IDE for natural‑language code explanations, refactoring suggestions, bug diagnosis, and test generation.",
-      "trigger": "Ctrl+I (inline chat), Ctrl+Shift+I (chat panel) · /explain, /fix, /tests, /doc slash commands",
-      "howto": "Open the Copilot Chat panel in your IDE. Ask questions about your codebase. Use Ctrl+I for inline chat that edits code directly at the cursor.",
-      "example": "Select a complex regular expression and type '/explain'; Copilot breaks it down step by step in plain English, then offers a simpler alternative.",
-      "source": "https://docs.github.com/en/copilot/concepts/chat"
+      "description": "Conversational assistant with context attachments and environment-specific slash commands across supported GitHub and editor surfaces, plus MCP-powered skills on GitHub.",
+      "trigger": "Open Copilot Chat · type @ to attach context · type / to list commands available in the current environment",
+      "howto": "Ask a question in Copilot Chat, attach relevant context with @, and use the slash commands shown by the current environment. Common GitHub commands include /clear, /delete, /new, and /rename.",
+      "example": "Type /new to start a conversation, then use @ to attach an issue or pull request before entering your question.",
+      "source": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet"
     },
     {
       "id": "ghc-cli",
@@ -1193,22 +1347,22 @@
       "ecosystem": "GitHub Copilot",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Terminal‑native AI agent with a TUI — interactive plan mode, autopilot for autonomous multi‑step tasks, programmatic -p mode for scripting, and GitHub integration for PRs and issues.",
-      "trigger": "copilot command in terminal · copilot -p 'one‑shot task' · Shift+Tab to cycle plan/autopilot modes",
-      "howto": "Install via gh copilot extension or direct download. Run 'copilot' for interactive TUI mode. Use 'copilot -p ...' for scripted automation. Press Shift+Tab to switch between ask, plan, and autopilot modes.",
-      "example": "'copilot -p \"Create a PR to add a Node script that outputs user info\"' creates a branch, writes the file, commits, and opens the PR without interactive approval.",
-      "source": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli"
+      "description": "Command-line interface for asking Copilot questions and assigning coding tasks from a terminal, with interactive plan mode, autonomous autopilot, and programmatic use.",
+      "trigger": "Run copilot in a trusted code directory · press Shift+Tab to cycle to autopilot during an interactive session",
+      "howto": "Install Copilot CLI, navigate to a trusted code directory, run copilot, approve the directory, and use /login if prompted. Select autopilot with Shift+Tab for well-defined multi-step work; press Ctrl+C to stop it.",
+      "example": "Run copilot in a repository, ask it to write tests for a module, and select autopilot so it continues until the task completes, reaches a blocker or continuation limit, or is stopped.",
+      "source": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview"
     },
     {
       "id": "ghc-cloud-agent",
       "name": "Cloud Agent",
       "ecosystem": "GitHub Copilot",
       "category": "Agentic",
-      "status": "Beta",
-      "description": "Autonomous coding agent that runs in a cloud sandbox — carries out research, planning, and multi‑file coding tasks independently.",
-      "trigger": "'/agent' in Copilot Chat · assign an issue with @copilot · GitHub Copilot App in pull requests",
-      "howto": "In a GitHub issue or PR, type '/agent' followed by your instruction. The cloud agent spawns a sandboxed environment, reads the codebase, plans changes, writes and tests code, and reports back with a summary and diff.",
-      "example": "'@copilot Add idempotency keys to all write endpoints in the payment service' — the agent explores the codebase, identifies 7 endpoints, writes the changes, creates a PR with tests, and requests your review.",
+      "status": "Stable",
+      "description": "Background coding agent that can research a repository, plan changes, fix bugs, implement incremental features, improve tests and documentation, and work on a branch for review.",
+      "trigger": "Start a Copilot session from a supported GitHub or IDE surface · mention @copilot in an existing pull-request comment to request changes",
+      "howto": "Start a session with a task prompt. Copilot works in the background and makes changes on a branch. Review the diff, iterate, and either request a pull request in the prompt or create one from the session logs when finished.",
+      "example": "From a GitHub issue, start a session asking Copilot to improve test coverage, review the resulting branch diff, iterate if needed, and create a pull request.",
       "source": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent"
     },
     {
@@ -1217,10 +1371,10 @@
       "ecosystem": "GitHub Copilot",
       "category": "Code",
       "status": "Stable",
-      "description": "AI‑driven pull‑request review — catches logic errors, style issues, and security concerns before human review, with inline comments and suggested fixes directly in the PR diff.",
-      "trigger": "Open a PR on GitHub and click 'Review with Copilot' · automatic on PR creation in configured repos",
-      "howto": "Navigate to any pull request on GitHub and click the 'Review with Copilot' button. Copilot scans the diff, flags issues with severity levels, and leaves inline suggestions.",
-      "example": "Copilot catches a potential null dereference in a new endpoint, suggests a guard clause, and links to the project's existing error‑handling pattern in a similar function.",
+      "description": "Reviews code in any language from multiple angles, provides feedback, identifies issues, and suggests fixes that can be applied directly.",
+      "trigger": "Request a Copilot code review from a supported surface · enable automatic pull-request reviews",
+      "howto": "Request a review, inspect Copilot's feedback, and apply suggested changes when appropriate. Supported surfaces include GitHub.com, GitHub CLI, GitHub Mobile, VS Code, Visual Studio, Xcode, and JetBrains IDEs.",
+      "example": "Request Copilot review on a pull request, inspect an identified issue, and apply its suggested fix.",
       "source": "https://docs.github.com/en/copilot/concepts/agents/code-review"
     },
     {
@@ -1229,11 +1383,11 @@
       "ecosystem": "Antigravity",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Multi‑folder workspaces with scoped permissions and isolated Git worktrees — agents operate in background branches without touching your working copy.",
-      "trigger": "Create a Project in the sidebar · New Worktree mode in the setup modal",
-      "howto": "Click the folder with + icon in the left sidebar, create a New Project, add local folders or Git repos. Choose Local Mode or New Worktree Mode when starting an agent.",
-      "example": "A developer creates a Project for a monorepo with 3 folders, sets permissive security for the trusted internal repo and restrictive for the third‑party dependency, and spawns an agent in a worktree to safely prototype a refactor.",
-      "source": "https://antigravity.google/download"
+      "description": "Project workspaces with native Git worktrees, project-scoped security settings and permissions, and access to multiple folders in one conversation.",
+      "trigger": "Create or open a Project · configure folders, settings, permissions, or an isolated worktree",
+      "howto": "Create a Project, add the folders the agent needs, choose a security preset, and attach any required permission grants. Use a Git worktree when the agent should operate in an isolated background folder.",
+      "example": "A developer gives one Project access to two related repositories and starts risky refactoring work in an isolated Git worktree.",
+      "source": "https://antigravity.google/docs/features#projects"
     },
     {
       "id": "ag-cli",
@@ -1241,11 +1395,11 @@
       "ecosystem": "Antigravity",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Keyboard‑driven TUI (agy) for the terminal — plan mode, multi‑step reasoning, artifact reviews, SSH support, and shared settings sync with Antigravity 2.0.",
-      "trigger": "`agy` command in terminal · `agy -p \"task\"` for programmatic one‑shot",
-      "howto": "Install via curl script. Run 'agy' in any project directory. Press Shift+Tab to cycle between ask and plan modes. Use 'ctrl+r' to review artifacts. Press 'ctrl+g' to edit prompts in your $EDITOR.",
-      "example": "Over SSH, a developer runs `agy` and pastes the OAuth URL into a browser, pastes the code back into the terminal, and instantly gets a full agent session.",
-      "source": "https://antigravity.google/docs/cli-getting-started"
+      "description": "Keyboard-driven terminal interface with default, accept-edits, and plan modes, plus SSH, headless operation, artifact review, and settings shared with Antigravity 2.0.",
+      "trigger": "Run agy in a workspace · press Shift+Tab to cycle default, accept-edits, and plan modes",
+      "howto": "Install with `curl -fsSL https://antigravity.google/cli/install.sh | bash`, run `agy` in a project directory, and confirm workspace trust on first launch. Press Shift+Tab to choose default, accept-edits, or plan mode.",
+      "example": "Run `agy` over SSH, select plan mode with Shift+Tab, and ask it to outline a multi-file refactor before approving implementation.",
+      "source": "https://antigravity.google/docs/cli/getting-started"
     },
     {
       "id": "ag-scheduler",
@@ -1253,11 +1407,11 @@
       "ecosystem": "Antigravity",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Time‑based triggers for recurring agent tasks — schedule prompts to run while you are away, with repeatable minute‑level triggers using Gemini 3.5 Flash.",
-      "trigger": "`/schedule` slash command · set repeat interval in the scheduler panel",
-      "howto": "Type `/schedule` followed by a task description and set the repeat interval. The task runs at the specified cadence. View and manage all active scheduled tasks from the panel.",
-      "example": "A maintainer schedules a nightly task: 'Check open PRs for merge conflicts, rebase any that have conflicts, and post a summary in the team channel.'",
-      "source": "https://antigravity.google/download"
+      "description": "Time-based triggers that periodically send scheduled messages to project agents while you are away, using Gemini 3.5 Flash.",
+      "trigger": "Create a scheduled project message · set the minute on which it should repeat",
+      "howto": "Create a scheduled message for a Project, define the task, and set its periodic time trigger. Antigravity starts a conversation on the configured minute while you are away.",
+      "example": "A maintainer schedules a project agent to check open pull requests for merge conflicts at a recurring time and report the result.",
+      "source": "https://antigravity.google/docs/features#scheduled-tasks"
     },
     {
       "id": "ag-artifacts",
@@ -1265,11 +1419,167 @@
       "ecosystem": "Antigravity",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Structured deliverables with human‑in‑the‑loop review — implementation plans, walkthroughs, code diffs, and browser recordings that the agent presents at milestones for inline feedback.",
-      "trigger": "Agent automatically produces artifacts during plan mode · Press `ctrl+r` in CLI to review",
-      "howto": "When the agent produces an artifact (plan, diff, walkthrough), review it in the sidebar or CLI review pane. Leave inline comments on specific lines. The agent iterates based on your comments before writing any code.",
-      "example": "The agent proposes a 10‑file refactoring plan. The user comments on 3 lines. The agent revises the plan and re‑requests review before any files are modified.",
+      "description": "Review interface for implementation plans, code diffs, architecture diagrams, and visual media, with line-level comments and file-by-file approval or rejection.",
+      "trigger": "Open a generated artifact in the CLI review pane",
+      "howto": "Open the artifact review, navigate with the arrow keys, press p to preview, add inline comments, and use y or n to approve or reject a file. Shift+A approves all files and Shift+R rejects all files.",
+      "example": "Review a generated code diff, comment on a specific line, reject that file, and approve the remaining files before applying edits locally.",
       "source": "https://antigravity.google/docs/cli-artifacts"
+    },
+    {
+      "id": "cur-agent-mode",
+      "name": "Agent Mode",
+      "ecosystem": "Cursor",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Autonomous coding mode inside Cursor that reads the codebase, edits files, runs terminal commands, and iterates toward a stated engineering outcome.",
+      "trigger": "Cursor Agent pane → describe the task",
+      "howto": "Open Cursor's Agent pane from the editor, describe the task and constraints, then review proposed tool calls and diffs before accepting changes.",
+      "example": "A developer asks Agent Mode to add OAuth callback handling. Cursor finds the auth routes, edits three files, runs tests, and presents the patch for review.",
+      "source": "https://cursor.com/docs/agent/overview"
+    },
+    {
+      "id": "cur-plan-mode",
+      "name": "Plan Mode",
+      "ecosystem": "Cursor",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Read-first agent mode that builds an implementation plan before applying edits, useful for large or risky changes that need human review first.",
+      "trigger": "Switch Agent to Plan mode",
+      "howto": "Choose Plan mode before sending a task. Let Cursor inspect the repo and return a plan. Comment on the plan until it is safe, then move to implementation.",
+      "example": "Before migrating a billing service, Cursor maps the model, routes, and tests, then returns a staged migration plan without editing files.",
+      "source": "https://cursor.com/docs/agent/plan-mode"
+    },
+    {
+      "id": "cur-rules",
+      "name": "Rules",
+      "ecosystem": "Cursor",
+      "category": "Memory",
+      "status": "Stable",
+      "description": "Project and user-level instruction files that keep Cursor aligned with repository conventions, domain terminology, testing rules, and code style.",
+      "trigger": "Create or edit Cursor Rules",
+      "howto": "Define rules in Cursor's rules UI or repository rule files. Keep them short, scoped, and concrete so the agent receives durable context without bloating every prompt.",
+      "example": "A monorepo rule tells Cursor to use pnpm, avoid barrel exports, run the package-local tests, and never edit generated GraphQL types by hand.",
+      "source": "https://cursor.com/docs/rules"
+    },
+    {
+      "id": "cur-skills",
+      "name": "Skills",
+      "ecosystem": "Cursor",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Reusable task capability packs for Cursor agents, giving repeated workflows their own instructions, context, and activation criteria.",
+      "trigger": "Install or author a Cursor Skill",
+      "howto": "Open the Cursor Skills docs, create a skill for a repeated workflow, then reference it naturally or invoke it when the task matches its description.",
+      "example": "A release skill encodes the team's changelog, versioning, test, and publish steps so Cursor follows the same release harness every time.",
+      "source": "https://cursor.com/docs/skills"
+    },
+    {
+      "id": "cur-mcp",
+      "name": "MCP Servers",
+      "ecosystem": "Cursor",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Model Context Protocol integration that lets Cursor agents call external tools such as docs, databases, ticket systems, and internal APIs.",
+      "trigger": "Cursor Settings → MCP → add server",
+      "howto": "Add an MCP server in Cursor settings or project configuration, authenticate it if needed, then mention the connected tool in an agent task.",
+      "example": "A database MCP lets Cursor inspect a local Postgres schema before writing a migration, avoiding guesses about table names and constraints.",
+      "source": "https://cursor.com/docs/mcp"
+    },
+    {
+      "id": "cur-cloud-agent",
+      "name": "Cloud Agent",
+      "ecosystem": "Cursor",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Remote Cursor agent that runs coding tasks in managed environments, with setup, capabilities, runtime choices, mobile access, and self-hosted pool options.",
+      "trigger": "Cursor Cloud Agent → start task",
+      "howto": "Configure Cloud Agent, choose the runtime or machine pool, grant repository access, and submit a task. Review the streamed progress and resulting branch or diff.",
+      "example": "A manager starts a Cloud Agent from mobile to fix a flaky Playwright test; the agent reproduces it in the cloud and opens a reviewable patch.",
+      "source": "https://cursor.com/docs/cloud-agent"
+    },
+    {
+      "id": "cur-bugbot",
+      "name": "Bugbot",
+      "ecosystem": "Cursor",
+      "category": "Code",
+      "status": "Stable",
+      "description": "Automated Cursor code-review bot that scans changes for bugs and review issues before they reach or during pull-request review.",
+      "trigger": "Enable Bugbot for a repo or review flow",
+      "howto": "Open the Bugbot docs, enable the integration for the relevant repository or workflow, then review its comments alongside human code review.",
+      "example": "Bugbot flags a stale async cleanup in a React effect and links the finding to the exact changed line before the PR is merged.",
+      "source": "https://cursor.com/docs/bugbot"
+    },
+    {
+      "id": "cur-cli",
+      "name": "Cursor CLI",
+      "ecosystem": "Cursor",
+      "category": "Code",
+      "status": "Stable",
+      "description": "Terminal and headless interface for running Cursor agent workflows from scripts, shells, and CI-adjacent developer loops.",
+      "trigger": "Run agent for an interactive session · use agent -p for non-interactive output",
+      "howto": "Install with `curl https://cursor.com/install -fsS | bash`, verify with `agent --version`, then run `agent` interactively or `agent -p \"task\"` non-interactively.",
+      "example": "Run `agent -p \"find and fix performance issues\" --model \"gpt-5\"` for a non-interactive task, or `agent resume` to continue the latest conversation.",
+      "source": "https://cursor.com/docs/cli/overview"
+    },
+    {
+      "id": "kiro-specs",
+      "name": "Specs",
+      "ecosystem": "Kiro",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Spec-driven workflow that turns a prompt into requirements, design, and tasks before implementation, keeping product intent and engineering work linked.",
+      "trigger": "Kiro → Specs → create or refine a spec",
+      "howto": "Create a spec, review the generated requirements and design, then let Kiro produce tasks.md. Execute tasks only after the spec matches the intended behavior.",
+      "example": "A vague 'add team billing' request becomes acceptance criteria, architecture notes, and a sequenced task list before any files are changed.",
+      "source": "https://kiro.dev/docs/specs/"
+    },
+    {
+      "id": "kiro-task-execution",
+      "name": "Task Execution",
+      "ecosystem": "Kiro",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Task interface that analyzes tasks.md dependencies, sequences work, and lets agents implement spec tasks with traceability back to requirements.",
+      "trigger": "Open tasks.md in Kiro → Execute task",
+      "howto": "Review the generated task list, select a task, and let Kiro execute it. Keep tasks small enough that each one can be verified against the spec before moving on.",
+      "example": "Kiro implements the 'create subscription table' task, runs the migration checks, and marks the task complete while leaving later billing UI tasks untouched.",
+      "source": "https://kiro.dev/docs/specs/"
+    },
+    {
+      "id": "kiro-steering",
+      "name": "Steering",
+      "ecosystem": "Kiro",
+      "category": "Memory",
+      "status": "Stable",
+      "description": "Durable project directives, including AGENTS.md-compatible guidance, that keep Kiro aligned with architecture, conventions, and domain language.",
+      "trigger": "Add steering files or AGENTS.md",
+      "howto": "Write steering files or an AGENTS.md with concrete repository rules, architecture constraints, and verification commands. Kiro reads them as persistent project context.",
+      "example": "A steering file tells Kiro that API contracts live in OpenAPI first, migrations must be reversible, and every feature needs a contract test.",
+      "source": "https://kiro.dev/docs/steering/"
+    },
+    {
+      "id": "kiro-hooks",
+      "name": "Hooks",
+      "ecosystem": "Kiro",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Automated responses to IDE events such as file saves, file creation/deletion, prompt submission, and agent turns.",
+      "trigger": "Kiro → Hooks → configure event automation",
+      "howto": "Create a hook for the event you care about, define the automated action, and test it on a safe project before using it in active development.",
+      "example": "A save hook runs the formatter and updates generated docs whenever schema files change, so agent edits stay inside the team's harness.",
+      "source": "https://kiro.dev/docs/hooks/"
+    },
+    {
+      "id": "kiro-powers",
+      "name": "Powers",
+      "ecosystem": "Kiro",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Installable packages that give Kiro specialized knowledge and dynamically activated MCP tools through a POWER.md file, MCP configuration, and optional steering or hooks.",
+      "trigger": "Install a Power · describe a task that matches its keywords so Kiro activates it",
+      "howto": "Install the relevant Power, then describe the task normally. Kiro evaluates installed Powers, loads the matching POWER.md context and MCP tools, and can activate a different Power when the task changes.",
+      "example": "Ask Kiro to add a Supabase database and it activates the Supabase Power; when the task turns to payments, it can activate the Stripe Power instead.",
+      "source": "https://kiro.dev/docs/powers/"
     },
     {
       "id": "api-anthropic-thinking",
@@ -1304,7 +1614,8 @@
       "description": "Official Anthropic skill pack that generates polished, editable Word documents from a prompt — headings, tables, bullets, and tracked changes.",
       "trigger": "\"Write me a report on…\" · auto-discovered when a .docx output is needed",
       "example": "Ask for a technical spec; the skill produces a formatted .docx with sections, a TOC, and consistent heading styles.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/docx"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/docx",
+      "howto": "Clone `anthropics/skills` and copy the `skills/docx` folder to `.claude/skills/` in your repo. Claude Code auto-discovers it and gains Word document creation for any prompt requesting a .docx file."
     },
     {
       "id": "cc-skill-pptx",
@@ -1315,7 +1626,8 @@
       "description": "Official Anthropic skill pack that builds real, editable PowerPoint presentations with slide layouts, speaker notes, and branded styling.",
       "trigger": "\"Make me a deck about…\" · auto-discovered for presentation requests",
       "example": "A 10-slide investor deck with title, agenda, and chart slides is generated as a real .pptx file.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/pptx"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+      "howto": "Clone `anthropics/skills` and copy `skills/pptx` to `.claude/skills/`. Claude Code will generate fully-formatted PowerPoint files when you ask for a deck or presentation."
     },
     {
       "id": "cc-skill-xlsx",
@@ -1326,7 +1638,8 @@
       "description": "Official Anthropic skill pack that creates structured Excel workbooks with formulas, named ranges, charts, and multiple sheets.",
       "trigger": "\"Build me a budget spreadsheet\" · auto-discovered for data/table requests",
       "example": "A financial model with three sheets, linked formulas, and a chart is generated as a real .xlsx file.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/xlsx"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+      "howto": "Clone `anthropics/skills` and copy `skills/xlsx` to `.claude/skills/`. Ask Claude Code to produce a spreadsheet or data table — it writes a real .xlsx file."
     },
     {
       "id": "cc-skill-pdf",
@@ -1337,7 +1650,8 @@
       "description": "Official Anthropic skill pack that produces formatted PDF documents — reports, invoices, briefs — with consistent typography and layout.",
       "trigger": "\"Create a PDF report on…\" · auto-discovered for PDF output requests",
       "example": "A client-ready consulting brief is generated as a styled PDF with cover page and page numbers.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/pdf"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "howto": "Clone `anthropics/skills` and copy `skills/pdf` to `.claude/skills/`. Claude Code will convert or generate PDFs from any content you provide."
     },
     {
       "id": "cc-skill-frontend",
@@ -1348,7 +1662,8 @@
       "description": "Official Anthropic skill pack for designing production-quality web UIs — component libraries, responsive layouts, and design systems.",
       "trigger": "\"Design a landing page for…\" · \"Build a dashboard component\"",
       "example": "A marketing landing page is designed with hero, features, and CTA sections using modern HTML/CSS.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/frontend-design"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "howto": "Clone `anthropics/skills` and copy `skills/frontend-design` to `.claude/skills/`. Claude Code uses it to scaffold polished, accessible UI components and layouts."
     },
     {
       "id": "cc-skill-mcp-builder",
@@ -1359,7 +1674,8 @@
       "description": "Official Anthropic skill pack that scaffolds a working MCP server from a description — tools, resources, and transports included.",
       "trigger": "\"Build an MCP server that…\"",
       "example": "Describe a GitHub MCP server and receive a complete, runnable server with tool definitions and transport config.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+      "howto": "Clone `anthropics/skills` and copy `skills/mcp-builder` to `.claude/skills/`. Ask Claude Code to \"build an MCP server for X\" and it follows the full spec end-to-end."
     },
     {
       "id": "cc-skill-webapp-testing",
@@ -1370,7 +1686,8 @@
       "description": "Official Anthropic skill pack that writes and runs Playwright browser tests — end-to-end flows, accessibility checks, and screenshot assertions.",
       "trigger": "\"Test my login flow\" · \"Write e2e tests for…\"",
       "example": "Claude writes a full Playwright test suite for a checkout flow, runs it, and reports failures with annotated screenshots.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+      "howto": "Clone `anthropics/skills` and copy `skills/webapp-testing` to `.claude/skills/`. Claude Code uses Playwright to write and run browser tests against any web app."
     },
     {
       "id": "cc-skill-creator",
@@ -1381,7 +1698,8 @@
       "description": "Official Anthropic meta-skill that authors new SKILL.md files — writes the frontmatter, instructions, and references from a plain description.",
       "trigger": "\"Create a skill that…\"",
       "example": "Say \"Create a skill that reviews Python for PEP 8\" and receive a ready-to-use SKILL.md folder.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/skill-creator"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "howto": "Clone `anthropics/skills` and copy `skills/skill-creator` to `.claude/skills/`. Ask Claude Code to \"create a new skill for X\" — it scaffolds a valid SKILL.md pack automatically."
     },
     {
       "id": "cc-skill-algo-art",
@@ -1392,7 +1710,8 @@
       "description": "Official Anthropic creative skill that generates generative art scripts — SVG patterns, canvas animations, and mathematical visualisations.",
       "trigger": "\"Generate algorithmic art with…\" · \"Make a generative pattern\"",
       "example": "A Fibonacci spiral with colour gradients is produced as a self-contained HTML canvas animation.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+      "howto": "Clone `anthropics/skills` and copy `skills/algorithmic-art` to `.claude/skills/`. Ask for generative art — Claude Code writes and runs the code to produce SVG, canvas, or p5.js output."
     },
     {
       "id": "cc-skill-brand",
@@ -1403,7 +1722,8 @@
       "description": "Official Anthropic skill that enforces brand voice, tone, and visual rules across generated copy and designs.",
       "trigger": "\"Write in our brand voice\" · \"Check this copy against brand guidelines\"",
       "example": "Marketing copy is rewritten to match the brand's defined tone — concise, active, and jargon-free.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+      "howto": "Clone `anthropics/skills` and copy `skills/brand-guidelines` to `.claude/skills/`. Claude Code enforces your brand kit (colors, fonts, tone) across any design or copy task."
     },
     {
       "id": "cc-skill-internal-comms",
@@ -1414,7 +1734,8 @@
       "description": "Official Anthropic skill for drafting internal communications — all-hands updates, incident reports, and policy announcements.",
       "trigger": "\"Write an all-hands email about…\" · \"Draft an incident post-mortem\"",
       "example": "A major outage post-mortem is structured with timeline, root cause, and action items in the correct company format.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/internal-comms"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+      "howto": "Clone `anthropics/skills` and copy `skills/internal-comms` to `.claude/skills/`. Claude Code drafts memos, announcements, and all-hands updates in a consistent company voice."
     },
     {
       "id": "cc-skill-canvas-design",
@@ -1425,7 +1746,8 @@
       "description": "Official Anthropic skill for producing visual designs — diagrams, mockups, and styled layouts — inside Claude's canvas surface.",
       "trigger": "\"Design a…\" · canvas-mode requests",
       "example": "A mobile app mockup with navigation bar, card grid, and bottom tab bar is produced directly in canvas.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/canvas-design"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+      "howto": "Clone `anthropics/skills` and copy `skills/canvas-design` to `.claude/skills/`. Claude Code designs and exports canvas-based graphics for social media, slides, or print."
     },
     {
       "id": "cc-skill-claude-api",
@@ -1436,7 +1758,8 @@
       "description": "Official Anthropic skill that guides building with the Claude Messages API — prompt patterns, tool use, streaming, and batching best practices.",
       "trigger": "\"Build an app using the Claude API\" · \"How do I implement tool_use?\"",
       "example": "A customer-support bot is scaffolded with tool definitions, system prompt, and retry handling using the Claude SDK.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/claude-api"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
+      "howto": "Clone `anthropics/skills` and copy `skills/claude-api` to `.claude/skills/`. Claude Code writes idiomatic Anthropic SDK calls, handles streaming, and wires up tool use correctly."
     },
     {
       "id": "cc-skill-web-artifacts",
@@ -1447,7 +1770,8 @@
       "description": "Official Anthropic skill for building elaborate multi-component web artifacts — interactive dashboards, data visualisations, and mini-apps.",
       "trigger": "\"Build a rich web artifact with…\"",
       "example": "A multi-tab dashboard with live charts, a filterable data table, and a sidebar is produced as a self-contained HTML artifact.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+      "howto": "Clone `anthropics/skills` and copy `skills/web-artifacts-builder` to `.claude/skills/`. Claude Code builds self-contained HTML/CSS/JS artifacts ready to embed or deploy."
     },
     {
       "id": "cc-skill-slack-gif",
@@ -1458,7 +1782,8 @@
       "description": "Official Anthropic skill that generates animated GIFs formatted and sized for Slack — from text prompts or data.",
       "trigger": "\"Make a Slack GIF for…\"",
       "example": "An animated celebration GIF is generated for a team milestone and exported at Slack-optimal dimensions.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+      "howto": "Clone `anthropics/skills` and copy `skills/slack-gif-creator` to `.claude/skills/`. Describe a reaction — Claude Code generates and posts a custom GIF to Slack via the API."
     },
     {
       "id": "cc-skill-theme-factory",
@@ -1469,7 +1794,8 @@
       "description": "Official Anthropic skill that generates complete design tokens and theme files — colours, typography, spacing — for any brand or product.",
       "trigger": "\"Create a dark theme for…\" · \"Generate design tokens for…\"",
       "example": "A full dark-mode design system with CSS custom properties, Tailwind config, and component previews is generated from a brand brief.",
-      "source": "https://github.com/anthropics/skills/tree/main/skills/theme-factory"
+      "source": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+      "howto": "Clone `anthropics/skills` and copy `skills/theme-factory` to `.claude/skills/`. Ask Claude Code to \"create a dark/light theme\" and it outputs a complete CSS variable set."
     },
     {
       "id": "cc-skill-ai-research",
@@ -1480,7 +1806,8 @@
       "description": "Open-source library of 83+ structured research skills (Orchestra Research) — literature review, paper summarisation, experimental design, and citation management.",
       "trigger": "`npx @orchestra-research/ai-research-skills` · then invoke by task type",
       "example": "Ask Claude to review recent papers on RAG and receive a structured literature matrix with key findings and citation links.",
-      "source": "https://github.com/Orchestra-Research/AI-research-SKILLs"
+      "source": "https://github.com/Orchestra-Research/AI-research-SKILLs",
+      "howto": "Clone `Orchestra-Research/AI-research-SKILLs` and copy desired skill folders to `.claude/skills/`. Adds systematic literature review, hypothesis generation, and experiment design workflows."
     },
     {
       "id": "cc-skill-cybersecurity",
@@ -1491,7 +1818,8 @@
       "description": "Open-source library of 754 structured cybersecurity skills mapped to MITRE ATT&CK, NIST CSF 2.0, and D3FEND frameworks (mukul975).",
       "trigger": "Copy skill folder to `.claude/skills/` · invoke by security domain",
       "example": "Ask for a threat model for a web API and receive a structured report mapped to MITRE ATT&CK TTPs with mitigations.",
-      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
+      "source": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "howto": "Clone `mukul975/Anthropic-Cybersecurity-Skills` and copy skill folders to `.claude/skills/`. Equips Claude Code with threat modelling, OWASP audit, and secure-code-review workflows."
     },
     {
       "id": "cc-skill-awesome-collection",
@@ -1502,7 +1830,8 @@
       "description": "Community-curated registry of 100+ Claude Code SKILL.md packs — productivity, engineering, marketing, research, and domain-specific skills.",
       "trigger": "Browse and clone individual skill folders from the repo",
       "example": "Pick the 'aws-skills' pack, drop it in `.claude/skills/`, and Claude Code gains AWS CDK and cost-optimisation expertise.",
-      "source": "https://github.com/travisvn/awesome-claude-skills"
+      "source": "https://github.com/travisvn/awesome-claude-skills",
+      "howto": "Browse `travisvn/awesome-claude-skills` on GitHub, pick any skill pack you need, and copy its folder to `.claude/skills/`. The README groups 100+ packs by domain for easy discovery."
     },
     {
       "id": "oc-plan-mode",
@@ -1510,10 +1839,11 @@
       "ecosystem": "OpenCode",
       "category": "Agentic",
       "status": "Stable",
-      "description": "A read-only mode that disables all file writes so OpenCode can propose and iterate on an implementation plan before touching any code.",
-      "trigger": "Press Tab to toggle Plan/Build mode",
-      "example": "User presses Tab -> types 'Refactor auth to use JWT' -> OpenCode returns a 5-step plan with no file changes -> user says 'also handle refresh tokens' -> plan updates -> Tab back to Build -> 'implement it'",
-      "source": "https://opencode.ai/docs/"
+      "description": "A restricted primary agent for planning and analysis. By default, file edits and bash commands require approval; Plan is not strictly read-only.",
+      "trigger": "Press Tab, or use the configured switch_agent keybind, to cycle through primary agents and select Plan",
+      "example": "Select Plan and ask it to analyze a JWT migration. It proposes an implementation plan; any requested file edit or bash command requires approval. Switch to Build when ready to implement.",
+      "source": "https://opencode.ai/docs/agents/#use-plan",
+      "howto": "Press Tab, or use the configured `switch_agent` keybind, to cycle through primary agents and select Plan. Plan asks for approval before file edits or bash commands by default; configure those permissions as `deny` if strict read-only behavior is required."
     },
     {
       "id": "oc-undo-redo",
@@ -1521,10 +1851,11 @@
       "ecosystem": "OpenCode",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Snapshot-based undo and redo that rolls back or reapplies all file changes the agent made during the last operation.",
-      "trigger": "/undo or /redo in the TUI",
-      "example": "Agent refactors the wrong module -> user types /undo -> all files restored to original state -> user adds 'only touch auth.ts' -> resubmits",
-      "source": "https://opencode.ai/docs/config/"
+      "description": "Undo removes the latest user message, all subsequent responses, and associated file changes; redo restores a previously undone message. The project must be a Git repository.",
+      "trigger": "Type /undo or /redo in the TUI",
+      "example": "An unwanted refactor follows the latest prompt → /undo removes that prompt, subsequent responses, and associated file changes → refine the prompt, or use /redo to restore it.",
+      "source": "https://opencode.ai/docs/tui/",
+      "howto": "In a Git repository, type /undo to remove the latest user message, all subsequent responses, and associated file changes. Type /redo after /undo to restore the undone message and changes. The default keybinds are `ctrl+x u` and `ctrl+x r`."
     },
     {
       "id": "oc-agent-skills",
@@ -1532,21 +1863,23 @@
       "ecosystem": "OpenCode",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Reusable instruction files the agent discovers and loads on demand. Place a SKILL.md file in .opencode/skills/<name>/ to define a repeatable workflow.",
-      "trigger": "Create .opencode/skills/<name>/SKILL.md with name and description frontmatter",
-      "example": "Skill 'git-release' defines steps for tagging and writing changelogs -> user asks 'cut a release for v2.1.0' -> agent loads the skill and follows the steps exactly",
-      "source": "https://opencode.ai/docs/skills/"
+      "description": "Reusable SKILL.md instructions discovered from project or global OpenCode, Claude-compatible, and agent-compatible skill directories, then loaded on demand through the native skill tool.",
+      "trigger": "Create .opencode/skills/<name>/SKILL.md with required name and description frontmatter; the name must match its directory",
+      "example": "A git-release skill appears in the available-skills list → when release work is requested, the agent loads it through the skill tool and follows its instructions.",
+      "source": "https://opencode.ai/docs/skills/",
+      "howto": "Create `.opencode/skills/<name>/SKILL.md` with required `name` and `description` frontmatter. The lowercase hyphenated name must match its directory. OpenCode also discovers documented global, `.claude/skills/`, and `.agents/skills/` locations; the agent loads a selected skill on demand through the `skill` tool."
     },
     {
       "id": "oc-session-share",
       "name": "Session Share",
       "ecosystem": "OpenCode",
-      "category": "Integration",
+      "category": "Agentic",
       "status": "Stable",
-      "description": "Generates a public shareable link to the full agent conversation including all prompts, reasoning steps, and file diffs.",
-      "trigger": "/share in the TUI",
-      "example": "Agent implements a new API endpoint -> developer types /share -> link copied -> pasted in PR description so reviewers can see every decision the agent made",
-      "source": "https://opencode.ai/docs/config/"
+      "description": "Creates a public URL, syncs the session's conversation history to OpenCode's servers, and exposes its messages, responses, and session metadata until it is unshared.",
+      "trigger": "Type /share in the TUI",
+      "example": "After implementing an endpoint, type /share and place the copied public URL in the PR so reviewers can inspect the conversation; use /unshare when review is complete.",
+      "source": "https://opencode.ai/docs/share/",
+      "howto": "Type /share to create a public session URL and copy it to the clipboard. Review the conversation for sensitive information before sharing it. Shared history, messages, responses, and session metadata remain accessible until /unshare removes the link and related data."
     },
     {
       "id": "oc-mcp",
@@ -1554,10 +1887,11 @@
       "ecosystem": "OpenCode",
       "category": "API",
       "status": "Stable",
-      "description": "Connect external tools via MCP (Model Context Protocol) servers by configuring them in opencode.json.",
-      "trigger": "Add an mcp key to opencode.json with server definitions",
-      "example": "Configure a Postgres MCP server -> ask 'show me users created this week' -> agent queries the DB directly through the MCP tool",
-      "source": "https://opencode.ai/docs/config/"
+      "description": "Adds local or remote Model Context Protocol servers whose tools become available to the LLM alongside OpenCode's built-in tools.",
+      "trigger": "Add a named local or remote server definition under mcp in opencode.json or opencode.jsonc",
+      "example": "Configure a Postgres MCP server → ask 'show me users created this week' → agent queries the DB directly through the MCP tool without writing a script",
+      "source": "https://opencode.ai/docs/mcp-servers/",
+      "howto": "Add `mcp.<name>` to `opencode.json` or `opencode.jsonc`. A local server uses a `local` type and a command array; a remote server uses a `remote` type and a URL. MCP tools then appear alongside built-in tools. Set `enabled` to `false` to disable a server."
     },
     {
       "id": "oc-custom-commands",
@@ -1567,8 +1901,9 @@
       "status": "Stable",
       "description": "Define custom slash commands for repetitive workflows as markdown files in .opencode/commands/ or in opencode.json.",
       "trigger": "Type /your-command-name in the TUI",
-      "example": "Command 'fix-types' defined as 'Find all TypeScript type errors and fix them' -> user types /fix-types -> agent runs the full workflow immediately",
-      "source": "https://opencode.ai/docs/config/"
+      "example": "Command 'fix-types' defined as 'Find all TypeScript type errors and fix them without changing logic' → user types /fix-types → agent runs the full workflow immediately",
+      "source": "https://opencode.ai/docs/commands/",
+      "howto": "Create `.opencode/commands/<name>.md` or `~/.config/opencode/commands/<name>.md`; optional frontmatter can set `description`, `agent`, and `model`, while the body is the prompt template. Alternatively define `command.<name>` in `opencode.json`. Invoke it as `/<name>` and use `$ARGUMENTS` or positional arguments."
     },
     {
       "id": "oc-github-action",
@@ -1576,10 +1911,11 @@
       "ecosystem": "OpenCode",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Trigger OpenCode in CI/CD by commenting /opencode or /oc on any GitHub issue or PR. Supports automatic PR review, issue triage, and scheduled runs.",
+      "description": "Trigger OpenCode in CI/CD by commenting /opencode or /oc on any GitHub issue or PR. Supports automatic PR review, issue triage, scheduled runs, and code-line comments.",
       "trigger": "Comment /opencode <task> or /oc <task> on a GitHub issue or PR",
-      "example": "Reviewer comments '/opencode add input validation to the form fields' -> agent runs in GitHub Actions -> commits the changes -> replies with a summary",
-      "source": "https://opencode.ai/docs/github/"
+      "example": "Reviewer comments '/opencode add input validation to the form fields in this PR' → agent runs in GitHub Actions → commits the changes → replies with a summary in the PR thread",
+      "source": "https://opencode.ai/docs/github/",
+      "howto": "From a project in a GitHub repository, run `opencode github install`. The wizard installs the OpenCode GitHub App, creates the workflow, and sets up secrets. For manual setup, install the app, add `.github/workflows/opencode.yml`, and configure the required API-key secrets."
     },
     {
       "id": "oc-custom-agents",
@@ -1587,10 +1923,11 @@
       "ecosystem": "OpenCode",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Define specialized agents with their own model, system prompt, and tool permissions using markdown files in .opencode/agents/.",
-      "trigger": "Create .opencode/agents/<name>.md with YAML frontmatter defining the agent",
-      "example": "Agent 'security-reviewer' defined with read-only permissions and a system prompt focused on OWASP checks -> user audits a new endpoint before merging",
-      "source": "https://opencode.ai/docs/agents/"
+      "description": "Defines custom primary or subagents with their own prompt, model, appearance, and permission rules through opencode.json or markdown files.",
+      "trigger": "Run opencode agent create · or create .opencode/agents/<name>.md with the desired mode, model, prompt, and permissions",
+      "example": "Create a security-reviewer subagent with edit denied and a security-focused prompt → invoke it with @security-reviewer to audit an endpoint without changing files.",
+      "source": "https://opencode.ai/docs/agents/",
+      "howto": "Run `opencode agent create`, or create `.opencode/agents/<name>.md` project-locally or `~/.config/opencode/agents/<name>.md` globally. Supply the required `description`, choose a primary or subagent mode, and configure the model and permissions as needed."
     },
     {
       "id": "oc-lsp",
@@ -1598,10 +1935,11 @@
       "ecosystem": "OpenCode",
       "category": "Agentic",
       "status": "Beta",
-      "description": "Connect Language Server Protocol servers so the agent can use go-to-definition, find references, and get real-time diagnostics.",
-      "trigger": "Add an lsp key to opencode.json with server definitions",
-      "example": "Agent needs to rename a function -> calls the LSP find-references tool and gets exact locations including dynamic call sites",
-      "source": "https://opencode.ai/docs/config/"
+      "description": "Integrates language servers so OpenCode can use diagnostics as feedback for the agent.",
+      "trigger": "Set lsp to true for all built-in servers, or use an lsp object for built-in overrides and custom servers",
+      "example": "Enable the appropriate language server → after an edit, OpenCode receives compiler or type diagnostics and uses them as feedback when correcting the code.",
+      "source": "https://opencode.ai/docs/lsp/",
+      "howto": "Set `lsp` to true in `opencode.json` to enable all built-in LSP servers, or use an `lsp` object for overrides and custom servers. A custom entry uses command and extensions arrays. OpenCode uses resulting diagnostics as agent feedback."
     },
     {
       "id": "oc-plugins",
@@ -1609,10 +1947,11 @@
       "ecosystem": "OpenCode",
       "category": "API",
       "status": "Beta",
-      "description": "Extend OpenCode with custom executable tools the LLM can call. Place JS/TS files in .opencode/plugins/ or load from npm via the plugin key in opencode.json.",
-      "trigger": "Place a plugin file in .opencode/plugins/ or add plugin key in opencode.json",
-      "example": "Plugin defines a 'deploy-preview' tool that calls Vercel's API -> agent runs tests, then calls deploy-preview -> gets the URL and pastes it into the PR description",
-      "source": "https://opencode.ai/docs/config/"
+      "description": "Extends OpenCode through JavaScript or TypeScript plugin functions that hook into events and customize behavior, integrations, or execution.",
+      "trigger": "Place a plugin in .opencode/plugins/ or ~/.config/opencode/plugins/ · or add an npm package to the plugin array in opencode.json",
+      "example": "A plugin exports a tool.execute.before hook that validates or modifies bash arguments before the built-in tool executes.",
+      "source": "https://opencode.ai/docs/plugins/",
+      "howto": "Create a JavaScript or TypeScript module in `.opencode/plugins/` or `~/.config/opencode/plugins/`. Export one or more plugin functions that return event hooks such as `tool.execute.before`, or add npm package names to the `plugin` array in `opencode.json`."
     },
     {
       "id": "cx-plan-mode",
@@ -1620,10 +1959,11 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "A read-only planning mode where Codex proposes an implementation plan without writing any files. Iterate on approach before committing to execution.",
-      "trigger": "$plan or toggle Plan Mode in the thread composer",
-      "example": "User types $plan -> 'Migrate this Express API to Fastify' -> Codex returns a 7-step migration plan -> user asks 'keep the existing middleware' -> plan updates -> user says 'go ahead'",
-      "source": "https://developers.openai.com/codex/app/features/"
+      "description": "Switch the active chat into planning mode so Codex can propose an execution plan before implementation begins.",
+      "trigger": "Type /plan, optionally followed by the planning request",
+      "example": "User types '/plan Propose a migration plan for this Express service' → Codex enters plan mode and produces an execution plan.",
+      "source": "https://developers.openai.com/codex/developer-commands#switch-to-plan-mode-with-plan",
+      "howto": "Type /plan and press Enter, optionally adding the request inline. Codex enters plan mode and uses the inline text as the first planning request. /plan is temporarily unavailable while Codex is already working."
     },
     {
       "id": "cx-goal-mode",
@@ -1631,10 +1971,11 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Long-running autonomous task execution toward a measurable finish line. Codex keeps working, across hours or days, until the goal's success criterion is met.",
-      "trigger": "/goal in the thread composer",
-      "example": "User sets goal: 'Migrate the Python CLI to Rust, done when all existing tests pass' -> Codex works for hours -> pauses when it needs a decision -> user resumes after lunch",
-      "source": "https://developers.openai.com/codex/use-cases/follow-goals"
+      "description": "Give Codex a durable objective with a verifiable stopping condition. Codex can continue across turns and work independently for multiple hours.",
+      "trigger": "/goal <objective>",
+      "example": "User types '/goal Migrate this service to Fastify. Stop when the contract tests pass and the rollback path is documented.' → Codex works through checkpoints toward the stopping condition.",
+      "source": "https://developers.openai.com/codex/use-cases/follow-goals",
+      "howto": "Set a durable objective with /goal <objective>. Use /goal to inspect it and /goal pause, /goal resume, or /goal clear to control it. If the command is missing, enable features.goals in config.toml or run codex features enable goals."
     },
     {
       "id": "cx-agent-skills",
@@ -1642,10 +1983,11 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Reusable workflow packages with instructions, scripts, and resources. Codex auto-discovers skills from .agents/skills/ and loads the right one when your task matches.",
-      "trigger": "Type $skill-name or $ to browse skills; or describe a task that matches a skill's description",
-      "example": "Skill 'linear-pr' packages steps for creating a Linear ticket and linking a PR -> user asks 'create a ticket for this bug and open a PR' -> Codex loads the skill and follows the exact steps",
-      "source": "https://developers.openai.com/codex/skills/"
+      "description": "Reusable workflow directories containing a required SKILL.md and optional scripts, references, assets, and metadata. Codex loads full instructions when a skill is selected.",
+      "trigger": "Run /skills or type $ to mention a skill in CLI/IDE · or describe a task matching its description",
+      "example": "A repository skill documents the release workflow → the user asks Codex to prepare a release → Codex selects and follows the skill.",
+      "source": "https://developers.openai.com/codex/skills",
+      "howto": "Create `.agents/skills/<name>/SKILL.md` with name and description metadata. Codex scans repository skill directories from the current directory to the repository root; user skills can live in `~/.agents/skills`. In CLI/IDE, invoke a skill explicitly with $ or /skills, or let Codex match its description implicitly."
     },
     {
       "id": "cx-skill-creator",
@@ -1653,10 +1995,11 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "A built-in system skill that interviews you about a workflow and generates a ready-to-use SKILL.md file for it.",
+      "description": "A bundled system skill that asks what a skill should do, when it should trigger, and whether it should remain instruction-only or include scripts.",
       "trigger": "$skill-creator",
-      "example": "User types $skill-creator -> answers 3 questions about their deploy workflow -> Codex writes a complete SKILL.md with instructions and saves it to .agents/skills/deploy/",
-      "source": "https://developers.openai.com/codex/skills/"
+      "example": "User invokes $skill-creator → describes a deployment workflow and its triggers → reviews the generated skill.",
+      "source": "https://developers.openai.com/codex/skills#create-a-skill",
+      "howto": "Invoke $skill-creator and answer its questions about purpose, triggers, and scripts. Review the generated skill and place it in a supported repository or user skill location. Codex detects changes automatically; restart only if the skill does not appear."
     },
     {
       "id": "cx-skill-installer",
@@ -1664,10 +2007,11 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "A built-in system skill that installs curated third-party skills from the community skills registry into your local Codex setup.",
+      "description": "A bundled system skill for installing curated skills or downloading skills from other repositories into the user's local Codex setup.",
       "trigger": "$skill-installer <skill-name>",
-      "example": "User types '$skill-installer linear' -> Codex installs the Linear skill -> user can now say '$linear create a ticket for this issue' in any thread",
-      "source": "https://developers.openai.com/codex/skills/"
+      "example": "User types '$skill-installer linear' → Codex installs the curated Linear skill for local use.",
+      "source": "https://developers.openai.com/codex/skills#install-curated-skills-for-local-use",
+      "howto": "Run $skill-installer followed by a curated skill name, such as $skill-installer linear, or ask it to download a skill from another repository. Codex detects installed skills automatically; restart only if one does not appear."
     },
     {
       "id": "cx-thread-automations",
@@ -1675,21 +2019,23 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Scheduled recurring wake-up calls that return to the same Codex thread on a cron-like schedule, keeping a workflow running while you're away.",
-      "trigger": "Set up via Settings -> Automations; attach to a pinned thread",
-      "example": "Chief-of-Staff thread set to run every 30 minutes: checks Slack and Gmail for unanswered messages, researches answers, drafts replies",
-      "source": "https://developers.openai.com/codex/app/automations/"
+      "description": "Heartbeat-style recurring wake-ups attached to the current thread. They preserve thread context and support minute-based intervals or daily and weekly schedules.",
+      "trigger": "Ask Codex in the current thread to create an automation with a task and schedule",
+      "example": "A thread automation checks a long-running command every few minutes until it finishes, then reports in the same conversation.",
+      "source": "https://developers.openai.com/codex/app/automations#thread-automations",
+      "howto": "In a regular thread, ask Codex to create a thread automation and specify the task, schedule, reporting rules, and stopping condition. Test the prompt manually first. Manage automations from the Automations pane in the app sidebar."
     },
     {
-      "id": "cx-durable-threads",
-      "name": "Durable Threads (Pinned)",
+      "id": "cx-chats",
+      "name": "Chats",
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Long-running Codex threads that preserve working context, decisions, and preferences across repeated sessions. Accessible instantly via Cmd+1 through Cmd+9.",
-      "trigger": "Pin a thread via the thread menu; use Cmd+1-9 to jump back",
-      "example": "User pins a 'Release Thread' -> each sprint, opens it with Cmd+1 -> Codex already knows the team's release process, past blockers, and preferences",
-      "source": "https://developers.openai.com/codex/app/features/"
+      "description": "Threads for tasks that do not need a specific project folder or Git repository, including research, triage, planning, and connected-tool workflows.",
+      "trigger": "Start a Chat when the task is not tied to a codebase",
+      "example": "User starts a Chat to research an API through connected tools without opening a repository.",
+      "source": "https://developers.openai.com/codex/app/features#chats",
+      "howto": "Start a Chat for research, triage, planning, connected-tool work, or another task that does not require a project folder or Git repository."
     },
     {
       "id": "cx-worktree",
@@ -1697,10 +2043,11 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Isolate Codex changes in a Git worktree so the agent can work on a parallel branch without touching your current working files.",
-      "trigger": "Choose 'Worktree' when starting a new thread in the Codex app",
-      "example": "User starts a Worktree thread -> asks Codex to try a risky refactor -> Codex works in isolation -> user reviews the diff -> decides to merge or discard",
-      "source": "https://developers.openai.com/codex/app/features/"
+      "description": "Create a new Git worktree so Codex changes remain isolated from the regular project checkout and independent tasks can run side by side.",
+      "trigger": "Choose Worktree when creating a new thread",
+      "example": "User runs a risky refactor in a worktree → reviews the isolated diff → uses the app's Git tools as appropriate.",
+      "source": "https://developers.openai.com/codex/app/worktrees",
+      "howto": "Choose Worktree instead of Local when creating the thread. Codex creates an isolated Git worktree. Review the resulting diff and use the built-in Git tools to stage, revert, commit, push, or create a pull request as needed."
     },
     {
       "id": "cx-mcp",
@@ -1708,21 +2055,23 @@
       "ecosystem": "Codex",
       "category": "API",
       "status": "Stable",
-      "description": "Connect external tools and services via Model Context Protocol servers. Shared across Codex app, CLI, and IDE Extension automatically.",
-      "trigger": "Open Settings -> MCP in the Codex app or configure in CLI config",
-      "example": "Add the OpenAI Docs MCP server -> ask 'how do I use streaming with the Responses API?' -> Codex fetches live docs through the MCP tool",
-      "source": "https://developers.openai.com/codex/app/features/"
+      "description": "Connect external tools and services through Model Context Protocol servers. The Codex app, CLI, and IDE extension use the same MCP configuration.",
+      "trigger": "Open the MCP section in app settings · or configure MCP in config.toml",
+      "example": "User enables a recommended MCP server → Codex can call that server's tools from supported Codex surfaces.",
+      "source": "https://developers.openai.com/codex/mcp",
+      "howto": "Open the MCP section in the app settings and enable a recommended server or add a custom server. The app, CLI, and IDE extension use the same MCP configuration stored in `config.toml`."
     },
     {
       "id": "cx-voice-input",
-      "name": "Voice Input",
+      "name": "Voice Dictation",
       "ecosystem": "Codex",
-      "category": "Agentic",
+      "category": "Visual",
       "status": "Stable",
-      "description": "Dictate prompts directly into Codex using your microphone. Useful for vague or rough thoughts that are natural to say but awkward to type.",
+      "description": "Transcribe microphone input into an editable Codex prompt.",
       "trigger": "Hold Ctrl+M while the composer is visible",
-      "example": "User holds Ctrl+M -> says 'I think there's a race condition somewhere in the auth flow, go look' -> Codex transcribes and starts investigating",
-      "source": "https://developers.openai.com/codex/app/features/"
+      "example": "User holds Ctrl+M and dictates a task → reviews or edits the transcription → sends it to start work.",
+      "source": "https://developers.openai.com/codex/app/features#voice-dictation",
+      "howto": "With the composer visible, hold Ctrl+M and speak. Review or edit the transcription, then send it to start the task."
     },
     {
       "id": "cx-steering-queuing",
@@ -1730,21 +2079,23 @@
       "ecosystem": "Codex",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Steering interrupts an in-flight task with new direction before it finishes. Queuing adds the next task to run after the current step completes.",
-      "trigger": "Type or speak mid-task to steer; add a follow-up message to queue",
-      "example": "Codex is reviewing a page -> user steers: 'make that header smaller' -> Codex adjusts mid-task. User queues: 'once done, send the preview link to the reviewer in Slack'",
-      "source": "https://developers.openai.com/codex/app/features/"
+      "description": "In the IDE extension, follow-up messages sent during a run can either wait for the next run in queue mode or modify the current run in steer mode.",
+      "trigger": "Set chatgpt.followUpQueueMode to queue or steer · use Cmd/Ctrl+Shift+Enter to invert it for one message",
+      "example": "With queue as the default, a follow-up waits for the next run → Cmd/Ctrl+Shift+Enter sends one follow-up as steering instead.",
+      "source": "https://developers.openai.com/codex/developer-settings#editor-settings-reference",
+      "howto": "Set `chatgpt.followUpQueueMode` to `queue` or `steer` in the IDE extension. During a run, send the follow-up normally for the configured behavior, or press Cmd/Ctrl+Shift+Enter to invert it for that message."
     },
     {
-      "id": "cx-shared-memory",
-      "name": "Shared Memory (AGENTS.md + Vault)",
+      "id": "cx-memories",
+      "name": "Memories",
       "ecosystem": "Codex",
-      "category": "Agentic",
+      "category": "Memory",
       "status": "Stable",
-      "description": "Durable context stored outside any single thread so future sessions can resume from something explicit. Define it via AGENTS.md and a structured vault folder.",
-      "trigger": "Create AGENTS.md at the repo root or vault root with memory routing instructions",
-      "example": "AGENTS.md tells Codex to update vault/people/ and vault/projects/ after every session -> next session picks up the last decision, owner, and blocker",
-      "source": "https://developers.openai.com/codex/memories/"
+      "description": "An opt-in local recall layer that can carry stable preferences, recurring workflows, technology choices, project conventions, and known pitfalls from eligible earlier threads into future work.",
+      "trigger": "Enable Memories in settings · or set memories = true under [features] in ~/.codex/config.toml",
+      "example": "After Memories is enabled, Codex can recall a stable project convention from eligible earlier threads without treating it as mandatory team policy.",
+      "source": "https://developers.openai.com/codex/memories",
+      "howto": "Enable Memories in Codex settings or `config.toml`. Use /memories to control whether the current thread uses existing memories or contributes future memories. Keep mandatory team rules in AGENTS.md or checked-in documentation; generated memory state lives under `~/.codex/memories/`."
     },
     {
       "id": "pi-compaction",
@@ -1754,7 +2105,8 @@
       "status": "Stable",
       "description": "Auto-summarises older context when it approaches the model's window so long sessions stay alive without losing the work, with a structured goal, progress, and file-tracker format the model can pick up from.",
       "trigger": "/compact · auto when contextWindow - reserveTokens is exceeded",
-      "example": "A two-hour debugging session auto-compacts at the 70% mark, preserving the goal, completed work, in-progress items, and modified files in a summary the next prompt can resume from without re-reading anything.",
+      "howto": "Run /compact [instructions] to summarize older messages manually; configure reserveTokens and keepRecentTokens in ~/.pi/agent/settings.json or <project-dir>/.pi/settings.json.",
+      "example": "A long debugging session reaches the configured threshold and compacts older messages into a structured summary while retaining recent context.",
       "source": "https://pi.dev/docs/latest/compaction"
     },
     {
@@ -1765,6 +2117,7 @@
       "status": "Stable",
       "description": "TypeScript modules that register custom tools, slash commands, event handlers, and TUI components on the ExtensionAPI, with full access to the session, settings, and provider layer.",
       "trigger": "export default function (pi: ExtensionAPI) { ... } in an extensions/ folder",
+      "howto": "Place a TypeScript extension in ~/.pi/agent/extensions/ or .pi/extensions/, then run /reload; use pi -e ./path.ts only for quick tests.",
       "example": "An extension hooks session_before_compact to generate summaries with your own model, replacing the default LLM call and keeping the LLM-agnostic summarization pipeline.",
       "source": "https://pi.dev/docs/latest/extensions"
     },
@@ -1775,8 +2128,9 @@
       "category": "Agentic",
       "status": "Stable",
       "description": "Self-contained capability packages that follow the Agent Skills spec and load on demand with progressive disclosure, so only the descriptions are always in context and full instructions arrive when matched.",
-      "trigger": "Drop a SKILL.md into ~/.pi/agent/skills/ or .pi/skills/ · /skill:name",
-      "example": "A brave-search skill registers as /skill:brave-search, the system prompt lists it alongside other skills, and the model loads the full SKILL.md only when the task actually needs a web lookup.",
+      "trigger": "Put SKILL.md in ~/.pi/agent/skills/<name>/ or .pi/skills/<name>/ · use --skill <path> for explicit loading",
+      "howto": "Put SKILL.md inside a skill directory under ~/.pi/agent/skills/ or the trusted project's .pi/skills/; use repeatable --skill <path> arguments for explicit loading.",
+      "example": "A brave-search skill appears in the available-skills list, and the model loads its full SKILL.md only when the task needs a web lookup.",
       "source": "https://pi.dev/docs/latest/skills"
     },
     {
@@ -1787,6 +2141,7 @@
       "status": "Stable",
       "description": "Reusable markdown prompts that expand from slash commands, parameterised with $1, $2 positional args and $ARGUMENTS for the full input, shipped with the agent or defined in prompts/ directories.",
       "trigger": "/template-name with args · register a .md file under prompts/",
+      "howto": "Create a Markdown file such as ~/.pi/agent/prompts/review.md or .pi/prompts/review.md, then invoke it as /review; optionally add description and argument-hint frontmatter.",
       "example": "/review-pr diff expands a saved template that diffs the current branch, scans for anti-patterns, and produces a structured code review every time without re-writing the prompt from scratch.",
       "source": "https://pi.dev/docs/latest/prompt-templates"
     },
@@ -1798,6 +2153,7 @@
       "status": "Stable",
       "description": "Bundle and share extensions, skills, prompt templates, and themes through npm or git so a single install brings the whole capability surface, with optional per-resource filtering.",
       "trigger": "pi install npm:@you/your-pkg · pi install git:github.com/you/repo@v1 · pi install ./path",
+      "howto": "Run pi install npm:@foo/bar@1.0.0, or install from a git reference, URL, or local path; add -l when installation should be recorded in .pi/settings.json instead of ~/.pi/agent/settings.json.",
       "example": "pi install npm:@badlogic/pi-brave-search adds the search skill and the matching extension in one shot, pinned to a specific version, and the project auto-installs its missing packages on next startup.",
       "source": "https://pi.dev/docs/latest/packages"
     },
@@ -1809,6 +2165,7 @@
       "status": "Stable",
       "description": "Persistent JSONL sessions with /tree branching, /fork, /clone, named sessions, searchable /resume, and one-click export to HTML or a private GitHub gist with a read-only share link.",
       "trigger": "pi -c · /resume · /tree · /fork · /share · /export",
+      "howto": "Run pi -c to continue the most recent session or pi -r to browse previous sessions; use pi --no-session for an unsaved session.",
       "example": "pi -r opens a searchable picker of every past session in the current project, then /share publishes a chosen session as a private GitHub gist and returns a read-only HTML link the team can browse.",
       "source": "https://pi.dev/docs/latest/sessions"
     },
@@ -1820,6 +2177,7 @@
       "status": "Stable",
       "description": "One CLI for every major model — Anthropic, OpenAI, Google, Groq, DeepSeek, Mistral, Cerebras, plus ChatGPT Plus, Claude Pro, and GitHub Copilot subscriptions through /login.",
       "trigger": "export ANTHROPIC_API_KEY=... · /login · --model <id>",
+      "howto": "Run /login and select a provider to configure subscription OAuth or an API key; alternatively export a provider variable such as ANTHROPIC_API_KEY before starting pi, and use /logout to clear stored credentials.",
       "example": "Run /login to authenticate with ChatGPT Plus for OpenAI Codex, then switch to Claude Pro for the next session — no code changes, no swapping CLIs, no rewriting prompts to fit a different harness.",
       "source": "https://pi.dev/docs/latest/providers"
     },
@@ -1831,6 +2189,7 @@
       "status": "Stable",
       "description": "Register your own model API via pi.registerProvider() for corporate proxies, self-hosted deployments, OAuth flows, and non-standard LLM APIs, with full streaming and tool-calling support.",
       "trigger": "pi.registerProvider(\"my-provider\", { baseUrl, apiKey, api, models })",
+      "howto": "In an extension factory, call pi.registerProvider(\"my-provider\", { name, baseUrl, apiKey: \"$MY_API_KEY\", api, models }) and register dynamically discovered models there rather than during session_start.",
       "example": "An extension routes Anthropic traffic through a corporate gateway by registering the existing provider with a custom baseUrl and auth headers, so every request leaves the network through the approved path.",
       "source": "https://pi.dev/docs/latest/custom-provider"
     }

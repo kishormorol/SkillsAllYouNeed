@@ -542,6 +542,8 @@ window.addEventListener("hashchange", openFromHash);
 /* ───── Matrix ───── */
 function buildMatrix(){
   const t = $("#matrix");
+  $("#matrix-count").textContent = MATRIX_ROWS.length;
+  $("#matrix-ecosystem-count").textContent = ECOSYSTEMS.length;
   const headRow = `
     <thead>
       <tr>
@@ -554,11 +556,11 @@ function buildMatrix(){
       ${MATRIX_ROWS.map((row, i)=>{
         const [label, ...cells] = row;
         return `<tr>
-          <td><span class="row-num">${String(i+1).padStart(2,'0')}</span>${label}</td>
+          <th scope="row"><span class="row-num">${String(i+1).padStart(2,'0')}</span>${label}</th>
           ${cells.map(c=>{
-            if(c==="y") return `<td><span class="mark yes">✓</span></td>`;
-            if(c==="n") return `<td><span class="mark no">✗</span></td>`;
-            return `<td><span class="mark partial">partial</span></td>`;
+            if(c==="y") return `<td><span class="mark yes" aria-label="Supported">✓</span></td>`;
+            if(c==="n") return `<td><span class="mark no" aria-label="Not supported">✗</span></td>`;
+            return `<td><span class="mark partial" aria-label="Partial support">partial</span></td>`;
           }).join("")}
         </tr>`;
       }).join("")}
@@ -659,6 +661,7 @@ document.getElementById("add-skill-form").addEventListener("submit", e=>{
 /* ───── Boot ───── */
 buildChips();
 buildEcoStrip();
+buildMatrix();
 render();
 openFromHash();
 updateFavCount();

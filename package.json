@@ -1,0 +1,11 @@
+{
+  "name": "skills-all-you-need",
+  "private": true,
+  "scripts": {
+    "validate": "node tools/validate-corpus.mjs",
+    "generate": "node tools/validate-corpus.mjs --write-json"
+  },
+  "devDependencies": {
+    "yaml": "2.9.0"
+  }
+}

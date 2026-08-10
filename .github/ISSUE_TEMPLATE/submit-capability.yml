@@ -25,9 +25,16 @@ body:
         - Claude
         - Claude Code
         - ChatGPT
+        - Codex
+        - OpenCode
+        - Cursor
         - Gemini
         - Perplexity
-        - Copilot
+        - Microsoft 365 Copilot
+        - GitHub Copilot
+        - Antigravity
+        - Kiro
+        - Pi
     validations:
       required: true
 
@@ -74,6 +81,15 @@ body:
       label: Trigger phrase
       description: What phrase or action activates this skill
       placeholder: '"Save this to my notes" · auto-triggered on decisions'
+    validations:
+      required: true
+
+  - type: textarea
+    id: howto
+    attributes:
+      label: How to use
+      description: Exact setup and usage steps, including commands or UI paths where relevant
+      placeholder: Install the extension, open Settings → Integrations, enable the connector, then authenticate your account.
     validations:
       required: true
 
