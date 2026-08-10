@@ -187,7 +187,7 @@ Thanks to everyone who has helped grow the registry:
 
 | Contributor | What they added |
 |-------------|----------------|
-| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) · Pi ecosystem, 8 skills, font flash fix, complete matrix columns (v1.6) |
+| [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) · Pi ecosystem, 8 skills, font flash fix, complete matrix columns (v1.6) · Cursor + Kiro ecosystems, 18 sourced entries, corpus validator + CI (v1.7) |
 
 Want to see your name here? [Open a PR](https://github.com/kishormorol/SkillsAllYouNeed/compare) adding skills or fixing entries.
 
@@ -202,4 +202,4 @@ Code: **MIT**
 
 *Named in tribute to [Attention Is All You Need](https://arxiv.org/abs/1706.03762) — Vaswani et al., 2017.*
 
-<!-- Search keywords: AI skills directory, LLM capabilities, Claude skills, ChatGPT features, Gemini tools, Perplexity features, Copilot skills, prompt engineering, AI assistant comparison, MCP tools, Claude Code skills, AI capabilities registry, GitHub Copilot skills, Antigravity skills, Codex skills, OpenCode skills -->
+<!-- Search keywords: AI skills directory, LLM capabilities, Claude skills, ChatGPT features, Gemini tools, Perplexity features, Copilot skills, prompt engineering, AI assistant comparison, MCP tools, Claude Code skills, AI capabilities registry, GitHub Copilot skills, Antigravity skills, Codex skills, OpenCode skills, Cursor skills, Kiro skills, Pi skills -->
