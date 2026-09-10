@@ -970,6 +970,11 @@ const SKILLS = [
     trigger:"Browse and clone individual skill folders from the repo",
     example:"Pick the 'aws-skills' pack, drop it in `.claude/skills/`, and Claude Code gains AWS CDK and cost-optimisation expertise.",
     source:"https://github.com/travisvn/awesome-claude-skills"},
+  {id:"cc-skill-yylo", name:"YYLO Skills", ecosystem:"Claude Code", category:"Agentic", status:"Stable",
+    description:"Open-source library of 7 structured task-management skills (yylo-dev) — Kanban workflow operation, implementation-sized task planning, wiki and workflow records, provenance-bound evidence, and validated task execution.",
+    trigger:"`npx skills add yylo-dev/yylo-skills` · then invoke by workflow",
+    example:"Assign one Kanban task and ask the agent to execute it — it delivers through validated steps and files provenance-bound evidence in the ledger.",
+    source:"https://github.com/yylo-dev/yylo-skills"},
 
   /* ── OPENCODE ── */
   {id:"oc-plan-mode", name:"Plan Mode", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
@@ -1261,6 +1266,7 @@ const HOWTO = {
   "cc-skill-ai-research":    "Clone `Orchestra-Research/AI-research-SKILLs` and copy desired skill folders to `.claude/skills/`. Adds systematic literature review, hypothesis generation, and experiment design workflows.",
   "cc-skill-cybersecurity":  "Clone `mukul975/Anthropic-Cybersecurity-Skills` and copy skill folders to `.claude/skills/`. Equips Claude Code with threat modelling, OWASP audit, and secure-code-review workflows.",
   "cc-skill-awesome-collection": "Browse `travisvn/awesome-claude-skills` on GitHub, pick any skill pack you need, and copy its folder to `.claude/skills/`. The README groups 100+ packs by domain for easy discovery.",
+  "cc-skill-yylo":           "Run `npx skills add yylo-dev/yylo-skills` to install the pack, or clone `yylo-dev/yylo-skills` and copy folders from `skills/` to `.claude/skills/`. Equips Claude Code with Kanban task operation, implementation-sized task planning, wiki and workflow records, evidence capture, and validated single-task execution.",
 
   /* OPENCODE */
   "oc-plan-mode":        "Press Tab, or use the configured `switch_agent` keybind, to cycle through primary agents and select Plan. Plan asks for approval before file edits or bash commands by default; configure those permissions as `deny` if strict read-only behavior is required.",

@@ -1,7 +1,7 @@
 {
   "version": "1.7",
-  "generated": "2026-08-10",
-  "count": 181,
+  "generated": "2026-09-10",
+  "count": 182,
   "ecosystems": [
     "Claude",
     "Claude Code",
@@ -1832,6 +1832,18 @@
       "example": "Pick the 'aws-skills' pack, drop it in `.claude/skills/`, and Claude Code gains AWS CDK and cost-optimisation expertise.",
       "source": "https://github.com/travisvn/awesome-claude-skills",
       "howto": "Browse `travisvn/awesome-claude-skills` on GitHub, pick any skill pack you need, and copy its folder to `.claude/skills/`. The README groups 100+ packs by domain for easy discovery."
+    },
+    {
+      "id": "cc-skill-yylo",
+      "name": "YYLO Skills",
+      "ecosystem": "Claude Code",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Open-source library of 7 structured task-management skills (yylo-dev) — Kanban workflow operation, implementation-sized task planning, wiki and workflow records, provenance-bound evidence, and validated task execution.",
+      "trigger": "`npx skills add yylo-dev/yylo-skills` · then invoke by workflow",
+      "example": "Assign one Kanban task and ask the agent to execute it — it delivers through validated steps and files provenance-bound evidence in the ledger.",
+      "source": "https://github.com/yylo-dev/yylo-skills",
+      "howto": "Run `npx skills add yylo-dev/yylo-skills` to install the pack, or clone `yylo-dev/yylo-skills` and copy folders from `skills/` to `.claude/skills/`. Equips Claude Code with Kanban task operation, implementation-sized task planning, wiki and workflow records, evidence capture, and validated single-task execution."
     },
     {
       "id": "oc-plan-mode",
