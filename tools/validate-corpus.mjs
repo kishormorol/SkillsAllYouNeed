@@ -5,15 +5,25 @@ import { parse } from "yaml";
 const root = new URL("../", import.meta.url);
 const path = (file) => new URL(file, root);
 const writeJson = process.argv.includes("--write-json");
-const VERSION = "1.7";
+const VERSION = "1.8";
 const LICENSE = "CC BY 4.0";
 const SOURCE = "https://kishormorol.github.io/SkillsAllYouNeed/";
 const CURRENT_RELEASE_IDS = [
-  "pp-comet", "pp-comet-assistant",
-  "mc-studio-agents", "mc-studio-skills", "mc-agent-flows",
-  "cur-agent-mode", "cur-plan-mode", "cur-rules", "cur-skills", "cur-mcp",
-  "cur-cloud-agent", "cur-bugbot", "cur-cli",
-  "kiro-specs", "kiro-task-execution", "kiro-steering", "kiro-hooks", "kiro-powers"
+  "cl-knowledge-work-plugins",
+  "cc-plugins", "cc-checkpointing", "cc-headless", "cc-sandbox", "cc-statusline",
+  "cc-skill-yylo", "cc-skill-superpowers", "cc-skill-vercel", "cc-skill-trailofbits",
+  "cc-skill-scientific", "cc-skill-wshobson-agents",
+  "gm-spark", "gm-scheduled-actions",
+  "pp-agent-api", "pp-search-api",
+  "mc-researcher", "mc-analyst",
+  "ghc-agent-skills", "ghc-custom-instructions", "ghc-custom-agents", "ghc-memory",
+  "ghc-spaces", "ghc-awesome-copilot",
+  "ag-skills", "ag-rules", "ag-plugins", "ag-hooks", "ag-mcp",
+  "cur-hooks", "cur-subagents", "cur-plugins",
+  "kiro-mcp", "kiro-cli", "kiro-skills", "kiro-custom-agents",
+  "oc-permissions", "oc-formatters",
+  "cx-agents-md", "cx-exec", "cx-hooks", "cx-code-review",
+  "pi-rpc", "pi-sdk", "pi-themes"
 ];
 
 function read(file) {

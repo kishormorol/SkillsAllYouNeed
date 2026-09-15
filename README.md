@@ -24,19 +24,19 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 
 | Ecosystem | Skills | Highlights |
 |-----------|--------|------------|
-| **Claude** | web, desktop & mobile | Artifacts, Projects, Memory, Extended Thinking, Computer Use |
-| **Claude Code** | CLI + IDE agent | MCP servers, Hooks, Subagents, Skills, CI integration |
+| **Claude** | web, desktop & mobile | Artifacts, Projects, Memory, Extended Thinking, Computer Use, Knowledge Work Plugins |
+| **Claude Code** | CLI + IDE agent | MCP servers, Hooks, Subagents, Skills, Plugins, Sandbox, `claude -p`, community skill packs |
 | **ChatGPT** | web, desktop & mobile | Canvas, Custom GPTs, Voice, Deep Research, Operator |
-| **Gemini** | web, mobile & Workspace | Gems, Deep Research, Imagen, Veo, NotebookLM, Gemini API |
-| **Perplexity** | answer engine | Pro Search, Spaces, Pages, Focus modes, Sonar API |
-| **Microsoft 365 Copilot** | Microsoft 365 + Windows | Word/Excel/Teams, Designer, Pages, Notebook |
-| **OpenCode** | open source terminal agent | Plan/Build modes, Custom Agents, Plugins, LSP, MCP, GitHub Actions |
-| **Codex** | CLI + desktop agent | Plan/Goal modes, Worktrees, Automations, Computer Use, Skills |
-| **Cursor** | AI-native code editor | Agent Mode, Plan Mode, Rules, Skills, MCP, Cloud Agent, Bugbot, CLI |
-| **GitHub Copilot** | IDE + CLI agent | Code Completion, Chat, CLI, Cloud Agent, Code Review |
-| **Antigravity** | Google coding agent | Projects & Worktrees, agy CLI, Scheduled Tasks, Artifacts |
-| **Kiro** | agentic engineering IDE | Specs, Task execution, Steering, Hooks, Powers |
-| **Pi** | minimal terminal coding harness | Compaction, Extensions, Skills, Prompt templates, Pi packages, Multi-provider |
+| **Gemini** | web, mobile & Workspace | Gems, Deep Research, Imagen, Veo, NotebookLM, Gemini Spark, Scheduled Actions, Gemini API |
+| **Perplexity** | answer engine | Pro Search, Spaces, Pages, Focus modes, Sonar, Agent & Search APIs |
+| **Microsoft 365 Copilot** | Microsoft 365 + Windows | Word/Excel/Teams, Designer, Pages, Notebook, Researcher, Analyst |
+| **OpenCode** | open source terminal agent | Plan/Build modes, Custom Agents, Plugins, Permissions, Formatters, LSP, MCP, GitHub Actions |
+| **Codex** | CLI + desktop agent | Plan/Goal modes, Worktrees, Automations, Skills, AGENTS.md, Hooks, `codex exec`, Code Review |
+| **Cursor** | AI-native code editor | Agent Mode, Plan Mode, Rules, Skills, Subagents, Hooks, Plugins, MCP, Cloud Agent, Bugbot, CLI |
+| **GitHub Copilot** | IDE + CLI agent | Code Completion, Chat, CLI, Cloud Agent, Code Review, Agent Skills, Custom Agents, Spaces, Memory |
+| **Antigravity** | Google coding agent | Projects & Worktrees, agy CLI, Scheduled Tasks, Artifacts, Skills, Rules, Plugins, Hooks, MCP |
+| **Kiro** | agentic engineering IDE + CLI | Specs, Task execution, Steering, Hooks, Powers, Skills, Custom Agents, MCP, Kiro CLI |
+| **Pi** | minimal terminal coding harness | Compaction, Extensions, Skills, Prompt templates, Pi packages, Multi-provider, RPC mode, SDK, Themes |
 
 ---
 
@@ -128,7 +128,7 @@ GET https://kishormorol.github.io/SkillsAllYouNeed/skills.json
 
 ```json
 {
-  "version": "1.7",
+  "version": "1.8",
   "count": 226,
   "ecosystems": ["Claude", "Claude Code", "ChatGPT", "Codex", "OpenCode", "Cursor", "Gemini", "Perplexity", "Microsoft 365 Copilot", "GitHub Copilot", "Antigravity", "Kiro", "Pi"],
   "license": "CC BY 4.0",
@@ -157,6 +157,7 @@ Good for: RAG pipelines · fine-tuning datasets · AI assistant tooling · resea
 
 | Version | What shipped |
 |---------|-------------|
+| **v1.8** | 45 new source-verified entries across all 13 ecosystems — Claude Code Plugins, Sandbox, Checkpointing, Status Line and `claude -p`; Copilot Agent Skills, Custom Agents, Spaces and Memory; Antigravity Skills, Rules, Plugins, Hooks and MCP; Cursor Hooks, Subagents and Plugins; Kiro CLI, Skills, Custom Agents and MCP; Codex AGENTS.md, Hooks, `codex exec` and Code Review; Pi RPC, SDK and Themes; Perplexity Agent + Search APIs; Gemini Spark; M365 Researcher + Analyst; community packs (Superpowers, Vercel, Trail of Bits, Scientific, Awesome Copilot, Knowledge Work Plugins) |
 | **v1.7** | Cursor + Kiro ecosystems, 18 new sourced entries, Comet + Copilot Studio expansions, context/spec/harness matrix rows, corpus validator |
 | **v1.6** | Pi ecosystem, 8 skills, font flash fix, complete matrix columns |
 | **v1.5** | GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, 9 new skills, modular architecture (styles.css, data.js, scripts.js), smooth scroll, font fixes |
@@ -188,7 +189,7 @@ Thanks to everyone who has helped grow the registry:
 | Contributor | What they added |
 |-------------|----------------|
 | [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) · Pi ecosystem, 8 skills, font flash fix, complete matrix columns (v1.6) · Cursor + Kiro ecosystems, 18 sourced entries, corpus validator + CI (v1.7) |
-| [@InsightFactoryAPP](https://github.com/InsightFactoryAPP) | YYLO Skills entry for Claude Code (v1.7) |
+| [@InsightFactoryAPP](https://github.com/InsightFactoryAPP) | YYLO Skills entry for Claude Code (v1.8) |
 
 Want to see your name here? [Open a PR](https://github.com/kishormorol/SkillsAllYouNeed/compare) adding skills or fixing entries.
 
