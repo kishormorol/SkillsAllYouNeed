@@ -1,7 +1,7 @@
 {
   "version": "1.7",
   "generated": "2026-09-15",
-  "count": 217,
+  "count": 226,
   "ecosystems": [
     "Claude",
     "Claude Code",
@@ -682,6 +682,18 @@
       "source": "https://code.claude.com/docs/en/sandboxing"
     },
     {
+      "id": "cc-statusline",
+      "name": "Status Line",
+      "ecosystem": "Claude Code",
+      "category": "Code",
+      "status": "Stable",
+      "description": "Customizable bar at the bottom of Claude Code that runs your shell script with JSON session data — model, directory, context usage, cost — and shows whatever it prints.",
+      "trigger": "/statusline describe what to show · \"statusLine\" in settings.json",
+      "howto": "Run `/statusline show model name and context percentage with a progress bar` and Claude Code writes the script and updates settings. To configure by hand, set `\"statusLine\": {\"type\": \"command\", \"command\": \"~/.claude/statusline.sh\"}` in `~/.claude/settings.json`; the script reads fields such as `.model.display_name` and `.context_window.used_percentage` from stdin.",
+      "example": "Use `/statusline` to show the git branch on one line and a color-coded context bar with session cost on a second line.",
+      "source": "https://code.claude.com/docs/en/statusline"
+    },
+    {
       "id": "gpt-pulse",
       "name": "Pulse",
       "ecosystem": "ChatGPT",
@@ -1174,6 +1186,30 @@
       "howto": "Chrome address bar → type `@gemini` and press Tab, or press Ctrl+Shift+Space to open the Gemini side panel."
     },
     {
+      "id": "gm-spark",
+      "name": "Gemini Spark",
+      "ecosystem": "Gemini",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Personal AI agent in the Gemini apps that automates workflows and manages tasks — such as triaging newsletters or following a developing story — on a schedule or in response to events, asking before sensitive actions.",
+      "trigger": "Gemini web, Mac, or mobile app → Switch to Spark → describe the task",
+      "howto": "Click Switch to Spark and describe the task; add a schedule to run it at a set time or when an event happens. Gemini confirms before sending messages, changing data, buying, or submitting forms, and asks you to take control for passwords or payments. Requires Google AI Pro or Ultra, a personal account, age 18+, and Keep Activity; not available in the EEA, UK, Switzerland, or Nigeria.",
+      "example": "Ask Spark to summarize and archive newsletters every morning and unsubscribe from lists you never open, confirming before each unsubscribe.",
+      "source": "https://support.google.com/gemini/answer/16596215"
+    },
+    {
+      "id": "gm-scheduled-actions",
+      "name": "Scheduled Actions",
+      "ecosystem": "Gemini",
+      "category": "Agentic",
+      "status": "Stable",
+      "description": "Prompts that Gemini runs automatically at a time and frequency you choose, delivering recurring digests, reports, and reminders.",
+      "trigger": "Include timing in a prompt, e.g. 'every weekday at 8am…' · Settings & help → Scheduled actions",
+      "howto": "Enter a prompt with when and how often it should run and submit; Gemini replies with a summary of the schedule. Edit, pause, resume, or delete it under Settings & help → Scheduled actions. Up to 10 can be active; with a Google AI plan, content is prepared within the hour before delivery.",
+      "example": "Ask 'Every weekday at 7am, give me a digest of my calendar, top emails, and the weather with outfit ideas'.",
+      "source": "https://support.google.com/gemini/answer/16316416"
+    },
+    {
       "id": "cl-extended-thinking",
       "name": "Extended Thinking",
       "ecosystem": "Claude",
@@ -1292,6 +1328,30 @@
       "howto": "Inside Comet, describe the outcome you want instead of each click. Review any confirmation prompts before it takes sensitive actions such as submitting forms or changing account state.",
       "example": "Asked to plan a work trip, Comet Assistant searches flights and hotels across tabs, narrows choices, and leaves the final booking confirmation for the user.",
       "source": "https://www.perplexity.ai/hub/blog/the-new-comet-assistant"
+    },
+    {
+      "id": "pp-agent-api",
+      "name": "Agent API",
+      "ecosystem": "Perplexity",
+      "category": "API",
+      "status": "Stable",
+      "description": "Web-grounded answers with built-in citations in one call, plus access to third-party models from OpenAI, Anthropic, Google, and xAI with web_search, fetch_url, and finance_search tools and ready-made presets.",
+      "trigger": "POST https://api.perplexity.ai/v1/agent · client.responses.create()",
+      "howto": "Set `PERPLEXITY_API_KEY`, install `perplexityai` (Python) or `@perplexity-ai/perplexity_ai` (TypeScript), and call `client.responses.create(model=..., input=...)`. The endpoint also accepts `POST /v1/responses` for OpenAI compatibility; enable tools such as `web_search` or `fetch_url` for grounded, cited output.",
+      "example": "Call `client.responses.create()` with a third-party model and the `web_search` tool to get a cited summary of this week's semiconductor earnings.",
+      "source": "https://docs.perplexity.ai/docs/agent-api/quickstart"
+    },
+    {
+      "id": "pp-search-api",
+      "name": "Search API",
+      "ecosystem": "Perplexity",
+      "category": "API",
+      "status": "Stable",
+      "description": "Raw, ranked web search results for developers — multi-query requests, domain, language, and country filters, and controllable content extraction — without a generated answer.",
+      "trigger": "POST https://api.perplexity.ai/search · client.search.create()",
+      "howto": "Call `client.search.create(query=..., max_results=5)` (1–20 results, up to 5 queries per request). Narrow results with `search_domain_filter`, `search_language_filter`, and `country`, and tune extraction with `search_context_size` or token budgets. Each result has `title`, `url`, `snippet`, `date`, and `last_updated`.",
+      "example": "Run `client.search.create(query=[\"RAG evaluation\", \"LLM reranking\"], search_domain_filter=[\"arxiv.org\"])` to feed fresh papers into your own pipeline.",
+      "source": "https://docs.perplexity.ai/docs/search/quickstart"
     },
     {
       "id": "mc-365",
@@ -1510,6 +1570,18 @@
       "source": "https://docs.github.com/en/copilot/concepts/agents/copilot-memory"
     },
     {
+      "id": "ghc-spaces",
+      "name": "Copilot Spaces",
+      "ecosystem": "GitHub Copilot",
+      "category": "Memory",
+      "status": "Stable",
+      "description": "Curated context collections — repositories, code, pull requests, issues, notes, transcripts, images, and uploads — that ground Copilot answers, usable in Copilot Chat on GitHub and in IDEs through the GitHub MCP server.",
+      "trigger": "Create a space on GitHub · use it in Copilot Chat · or access it in your IDE via the GitHub MCP server",
+      "howto": "Create a space, add the repositories, issues, files, and notes that matter for a topic, and chat with Copilot inside it. Share organization spaces with admin, editor, or viewer access, or keep personal spaces private, shared with specific users, or public (view-only). Anyone with a Copilot license, including Copilot Free, can create spaces.",
+      "example": "Build an 'Onboarding' space with the architecture doc, key services, and open good-first-issues, so new teammates can ask Copilot grounded questions.",
+      "source": "https://docs.github.com/en/copilot/concepts/context/spaces"
+    },
+    {
       "id": "ghc-awesome-copilot",
       "name": "Awesome Copilot",
       "ecosystem": "GitHub Copilot",
@@ -1616,6 +1688,18 @@
       "howto": "Create `hooks.json` in your customization directory and map events to shell commands with timeouts. Each hook receives JSON on stdin (tool details, workspace paths, metadata) and returns JSON on stdout; a PreToolUse hook can return `deny` or `ask`, and PostInvocation can use `terminationBehavior` to force continuation or termination.",
       "example": "Add a PreToolUse hook that returns `deny` whenever a shell command touches production credentials.",
       "source": "https://antigravity.google/docs/hooks/"
+    },
+    {
+      "id": "ag-mcp",
+      "name": "MCP Servers",
+      "ecosystem": "Antigravity",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Connect local (stdio) or remote Model Context Protocol servers from an MCP Store or a JSON config, across the Antigravity app, IDE, and CLI.",
+      "trigger": "CLI: /mcp · IDE: … menu → MCP Servers · or edit mcp_config.json",
+      "howto": "Install from the MCP UI (Settings > Customizations in Antigravity 2.0, the agent panel … menu in the IDE, or `/mcp` in the CLI), or edit `~/.gemini/config/mcp_config.json` globally or `.agents/mcp_config.json` per workspace. Each server under `mcpServers` uses `command` with `args`/`env` for stdio, or `serverUrl` with `headers` for remote.",
+      "example": "Add a remote server with `serverUrl` and an Authorization header so the agent can query your internal issue tracker.",
+      "source": "https://antigravity.google/docs/mcp/"
     },
     {
       "id": "cur-agent-mode",
@@ -1736,6 +1820,18 @@
       "howto": "Add Markdown files to `.cursor/agents/` (or `~/.cursor/agents/`) with optional frontmatter `name`, `description`, `model`, `readonly`, and `is_background`. Cursor also reads `.claude/agents/` and `.codex/agents/`, with `.cursor/` taking precedence. Invoke with `/name` or let the agent delegate based on the description.",
       "example": "Create a read-only `verifier` subagent, then type `/verifier confirm the auth flow` to check the change without polluting the main conversation.",
       "source": "https://cursor.com/docs/agent/subagents"
+    },
+    {
+      "id": "cur-plugins",
+      "name": "Plugins & Marketplace",
+      "ecosystem": "Cursor",
+      "category": "Integration",
+      "status": "Stable",
+      "description": "Distributable bundles of rules, skills, agents, commands, MCP servers, and hooks, installed from the manually reviewed Cursor Marketplace or private team marketplaces.",
+      "trigger": "Customize → find a plugin → Install · browse cursor.com/marketplace",
+      "howto": "Open Customize, pick a plugin, and install it at project or user scope. Teams plans get one private team marketplace and Enterprise unlimited, where admins set each plugin to Default Off, Default On, or Required and control whether members can publish personal skills.",
+      "example": "An admin marks the company's security-review plugin as Required, so every developer's agent gets the same rules, hooks, and MCP servers.",
+      "source": "https://cursor.com/docs/plugins"
     },
     {
       "id": "kiro-specs",
@@ -2492,6 +2588,18 @@
       "howto": "Define hooks in `hooks.json` or inline `[hooks]` tables in `config.toml`, at user level (`~/.codex/`) or in the repository (`.codex/`). Hooks are on by default under the `hooks` feature key (`codex_hooks` is a deprecated alias); set `[features] hooks = false` to turn them off.",
       "example": "Add a PreToolUse hook that blocks any shell command writing outside the repository and explains why to the agent.",
       "source": "https://developers.openai.com/codex/hooks"
+    },
+    {
+      "id": "cx-code-review",
+      "name": "GitHub Code Review",
+      "ecosystem": "Codex",
+      "category": "Code",
+      "status": "Stable",
+      "description": "Codex reviews GitHub pull requests on request or automatically, flagging only P0 and P1 issues and following repository review rules from AGENTS.md, with an optional deeper security review.",
+      "trigger": "@codex review · @codex security review · automatic reviews in Codex settings",
+      "howto": "Set up Codex cloud for the repository, enable code review in Codex settings (requires push or admin permission), then comment `@codex review` on a pull request or turn on automatic reviews. Add a `## Code Review Rules` section to AGENTS.md for repository-specific guidance, and reply in the PR to ask Codex to fix what it found.",
+      "example": "Comment `@codex review` on a PR; Codex flags a P1 missing authorization check, and a follow-up comment asks it to push the fix to the same PR.",
+      "source": "https://developers.openai.com/codex/integrations/github"
     },
     {
       "id": "pi-compaction",
