@@ -400,6 +400,12 @@ const SKILLS = [
     howto:"Run `claude -p \"your task\"` and pre-approve tools with `--allowedTools \"Read,Edit,Bash\"` or a `--permission-mode`. Use `--output-format json` (optionally with `--json-schema`) or `stream-json` for machine-readable output. Add `--bare` in CI to skip local hooks, plugins, MCP servers, and CLAUDE.md.",
     example:"In a build script, run `git diff main | claude -p \"report typos as filename:line\"` so Claude acts as a project-specific linter.",
     source:"https://code.claude.com/docs/en/headless"},
+  {id:"cc-sandbox", name:"Bash Sandbox", ecosystem:"Claude Code", category:"Code", status:"Stable",
+    description:"OS-enforced filesystem and network isolation for every Bash command and its child processes, so Claude can run most commands without asking while staying inside boundaries you define. Runs on macOS, Linux, and WSL2.",
+    trigger:"/sandbox · or \"sandbox\": {\"enabled\": true} in settings",
+    howto:"Run `/sandbox`, choose auto-allow (sandboxed commands run without prompting) or regular permissions, and review the resolved config. macOS uses the built-in Seatbelt framework; on Linux and WSL2 install `bubblewrap` and `socat`. Commands that can't be sandboxed fall back to a \"Bash command (unsandboxed)\" permission prompt.",
+    example:"Enable auto-allow so Claude runs the test suite and build freely in the project directory, while any attempt to reach a non-allowed host still asks first.",
+    source:"https://code.claude.com/docs/en/sandboxing"},
 
   /* CHATGPT · v1.1 */
   {id:"gpt-pulse", name:"Pulse", ecosystem:"ChatGPT", category:"Agentic", status:"Beta",
@@ -620,6 +626,12 @@ const SKILLS = [
     howto:"In Claude.ai, open the model selector and enable the 'Extended thinking' toggle. For API access, set thinking: {type:'enabled', budget_tokens:8000} in your request. Claude will emit a thinking block before the response.",
     example:"Asked to find the flaw in a multi‑step math proof, Claude works through each step in its thinking block, catches the sign error in step 4, and returns a corrected proof.",
     source:"https://www.anthropic.com/research/claude-think"},
+  {id:"cl-knowledge-work-plugins", name:"Knowledge Work Plugins", ecosystem:"Claude", category:"Integration", status:"Stable",
+    description:"Anthropic's open-source, Apache-2.0 role plugins (anthropics/knowledge-work-plugins) for Claude Cowork, also compatible with Claude Code — productivity, sales, customer support, product management, marketing, legal, finance, data, enterprise search, and bio-research — each bundling skills, connectors, and slash commands.",
+    trigger:"Install from claude.com/plugins in Cowork · `claude plugin install sales@knowledge-work-plugins` in Claude Code",
+    howto:"In Cowork, install plugins from claude.com/plugins. In Claude Code, run `claude plugin marketplace add anthropics/knowledge-work-plugins`, then `claude plugin install sales@knowledge-work-plugins`. Skills fire when relevant and commands such as `/sales:call-prep` or `/data:write-query` become available. Customize the files for your company's tools and process.",
+    example:"Install the finance plugin, connect your data warehouse, and run `/finance:reconciliation` to reconcile accounts for month-end close.",
+    source:"https://github.com/anthropics/knowledge-work-plugins"},
 
   /* ── CHATGPT ADDITIONAL SKILLS ── */
   {id:"gpt-deep-research", name:"Deep Research", ecosystem:"ChatGPT", category:"Web", status:"Stable",
@@ -784,6 +796,12 @@ const SKILLS = [
     howto:"Individual users get Copilot Memory by default; organization and enterprise admins must enable the policy first, after which users can opt out. Stored facts and preferences that go unused are deleted automatically after 28 days, and the timer resets when Copilot validates and uses one.",
     example:"After code review learns that a repository builds with `make ci`, cloud agent reuses that fact on its next task in the same repository.",
     source:"https://docs.github.com/en/copilot/concepts/agents/copilot-memory"},
+  {id:"ghc-awesome-copilot", name:"Awesome Copilot", ecosystem:"GitHub Copilot", category:"Agentic", status:"Stable",
+    description:"GitHub's MIT-licensed community collection (github/awesome-copilot) of custom agents, instructions, skills, hooks, workflows, and plugins, searchable at awesome-copilot.github.com and installable as a Copilot plugin marketplace.",
+    trigger:"`copilot plugin install <plugin-name>@awesome-copilot`",
+    howto:"The awesome-copilot marketplace is usually pre-registered in Copilot CLI and VS Code, so run `copilot plugin install <plugin-name>@awesome-copilot`. On older setups, first run `copilot plugin marketplace add github/awesome-copilot`. Browse agents, instructions, and skills on the website and inspect third-party items before installing.",
+    example:"Search the site for a Terraform agent, install its plugin, and Copilot gains a specialist agent plus matching instructions for infrastructure code.",
+    source:"https://github.com/github/awesome-copilot"},
 
   /* ── GOOGLE ANTIGRAVITY SKILLS ── */
   {id:"ag-projects", name:"Projects & Worktrees", ecosystem:"Antigravity", category:"Agentic", status:"Stable",
@@ -828,6 +846,12 @@ const SKILLS = [
     howto:"Enable bundled plugins from the Customizations page, or create a plugin folder with a `plugin.json` manifest plus optional `skills/`, `rules/`, `mcp_config.json`, and `hooks.json`. Place it in `.agents/plugins/` for a workspace or `~/.gemini/config/plugins/` globally; Antigravity discovers it automatically.",
     example:"Package your team's review skill, TypeScript rules, and a Jira MCP server as one plugin so every workspace gets the same setup.",
     source:"https://antigravity.google/docs/plugins/"},
+  {id:"ag-hooks", name:"Hooks", ecosystem:"Antigravity", category:"Integration", status:"Stable",
+    description:"Scripts that run at agent lifecycle points — PreToolUse, PostToolUse, PreInvocation, PostInvocation, and Stop — to gate tool calls, inject context, or control whether execution continues.",
+    trigger:"Add hooks.json to .agents/ (workspace) or ~/.gemini/config/ (global)",
+    howto:"Create `hooks.json` in your customization directory and map events to shell commands with timeouts. Each hook receives JSON on stdin (tool details, workspace paths, metadata) and returns JSON on stdout; a PreToolUse hook can return `deny` or `ask`, and PostInvocation can use `terminationBehavior` to force continuation or termination.",
+    example:"Add a PreToolUse hook that returns `deny` whenever a shell command touches production credentials.",
+    source:"https://antigravity.google/docs/hooks/"},
 
   /* ── CURSOR SKILLS ── */
   {id:"cur-agent-mode", name:"Agent Mode", ecosystem:"Cursor", category:"Agentic", status:"Stable",
@@ -934,6 +958,18 @@ const SKILLS = [
     howto:"Install with `curl -fsSL https://cli.kiro.dev/install | bash` and run `kiro-cli` in your project. For CI, set `KIRO_API_KEY` (Pro, Pro+, Pro Max, or Power plans) and run `kiro-cli chat --no-interactive \"your prompt\"`, adding `--output-format stream-json` for JSON Lines output.",
     example:"In a pipeline, run `kiro-cli chat --no-interactive --trust-tools=read \"summarize this diff\"` and post the result as a build comment.",
     source:"https://kiro.dev/docs/cli/"},
+  {id:"kiro-skills", name:"Agent Skills", ecosystem:"Kiro", category:"Agentic", status:"Stable",
+    description:"SKILL.md folders that Kiro loads automatically when a request matches their description, or that you invoke as slash commands, with import straight from GitHub.",
+    trigger:"Add a skill to .kiro/skills/ · type / in chat to invoke one",
+    howto:"Create `.kiro/skills/<name>/SKILL.md` for a workspace or `~/.kiro/skills/<name>/` globally; `name` must match the folder and `description` drives activation. To import, open Agent Steering & Skills, click +, choose Import a skill → GitHub, and paste a URL to the skill folder (not the repository root).",
+    example:"Import a changelog-writing skill from GitHub, then type `/changelog` in chat to draft release notes in your team's format.",
+    source:"https://kiro.dev/docs/skills/"},
+  {id:"kiro-custom-agents", name:"Custom Agents", ecosystem:"Kiro", category:"Agentic", status:"Stable",
+    description:"JSON or Markdown agent definitions with their own prompt, model, tools, permissions, resources, and MCP or Powers access, selectable as the primary agent in the Kiro IDE and CLI.",
+    trigger:"Add .kiro/agents/NAME.json or NAME.md · select it as the session agent",
+    howto:"Define an agent in `.kiro/agents/` (shared with the workspace, loaded only if trusted) or `~/.kiro/agents/` (personal) using fields such as `name`, `description`, `prompt`, `model`, `tools`, `excludedTools`, `resources`, `permissions`, `includeMcpJson`, and `includePowers`. Workspace agents win on name conflicts.",
+    example:"Create a `reviewer` agent with read-only tools and a code-review prompt, then select it in the CLI to review a branch without any edits.",
+    source:"https://kiro.dev/docs/custom-agents/"},
 
   /* ── API SKILLS ── */
   {id:"api-anthropic-thinking", name:"Claude Extended Thinking API", ecosystem:"Claude", category:"API", status:"Beta",
@@ -1153,6 +1189,18 @@ const SKILLS = [
     trigger:"Place a plugin in .opencode/plugins/ or ~/.config/opencode/plugins/ · or add an npm package to the plugin array in opencode.json",
     example:"A plugin exports a tool.execute.before hook that validates or modifies bash arguments before the built-in tool executes.",
     source:"https://opencode.ai/docs/plugins/"},
+  {id:"oc-permissions", name:"Permissions", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
+    description:"Allow, ask, or deny rules for each tool — read, edit, bash, webfetch, external directories, and more — with wildcard command patterns and per-agent overrides.",
+    trigger:"\"permission\" in opencode.json · per agent under agent → NAME → permission",
+    howto:"Set `\"permission\"` in `opencode.json` to `allow`, `ask`, or `deny` globally with `\"*\"`, or per tool. For `bash` and `edit`, use pattern objects where `*` and `?` are wildcards. Control paths outside the project with `external_directory`, and override any rule for a specific agent.",
+    example:"Use `\"bash\": {\"*\": \"ask\", \"git *\": \"allow\", \"rm *\": \"deny\"}` so git commands run freely, deletions are blocked, and everything else asks first.",
+    source:"https://opencode.ai/docs/permissions/"},
+  {id:"oc-formatters", name:"Formatters", ecosystem:"OpenCode", category:"Code", status:"Stable",
+    description:"Automatic language-specific formatting after OpenCode writes or edits a file, with built-in formatters such as prettier, gofmt, rustfmt, and ruff detected from the project.",
+    trigger:"Enabled automatically when a matching formatter is available · \"formatter\" in opencode.json",
+    howto:"OpenCode picks a formatter by file extension when its command or config is present. Customize it under `\"formatter\"` with `command` (use `$FILE`), `extensions`, and `environment`; disable one with `\"disabled\": true` or all with `\"formatter\": false`.",
+    example:"Set `\"prettier\": {\"command\": [\"npx\", \"prettier\", \"--write\", \"$FILE\"]}` so every TypeScript file OpenCode edits is formatted immediately.",
+    source:"https://opencode.ai/docs/formatters/"},
 
   /* ── CODEX ── */
   {id:"cx-plan-mode", name:"Plan Mode", ecosystem:"Codex", category:"Agentic", status:"Stable",
@@ -1227,6 +1275,12 @@ const SKILLS = [
     howto:"Run `codex exec \"your task\"` inside a Git repository, or pipe a prompt with `codex exec -`. Add `--json` for newline-delimited JSON events, use `codex exec resume --last` to continue, and pass `--skip-git-repo-check` only when you are sure the environment is safe.",
     example:"In a CI job, run `codex exec \"summarize failing tests and propose fixes\" > report.md` to capture only the final answer as an artifact.",
     source:"https://developers.openai.com/codex/noninteractive"},
+  {id:"cx-hooks", name:"Hooks", ecosystem:"Codex", category:"Integration", status:"Stable",
+    description:"Scripts or MCP tools that run during the agentic loop at events such as SessionStart, PreToolUse, PermissionRequest, PostToolUse, UserPromptSubmit, and Stop — to add context or block, allow, or rewrite tool calls.",
+    trigger:"~/.codex/hooks.json · <repo>/.codex/hooks.json · [hooks] tables in config.toml",
+    howto:"Define hooks in `hooks.json` or inline `[hooks]` tables in `config.toml`, at user level (`~/.codex/`) or in the repository (`.codex/`). Hooks are on by default under the `hooks` feature key (`codex_hooks` is a deprecated alias); set `[features] hooks = false` to turn them off.",
+    example:"Add a PreToolUse hook that blocks any shell command writing outside the repository and explains why to the agent.",
+    source:"https://developers.openai.com/codex/hooks"},
 
   /* ── PI ── */
   {id:"pi-compaction", name:"Compaction", ecosystem:"Pi", category:"Agentic", status:"Stable",
@@ -1277,6 +1331,24 @@ const SKILLS = [
     howto:"In an extension factory, call pi.registerProvider(\"my-provider\", { name, baseUrl, apiKey: \"$MY_API_KEY\", api, models }) and register dynamically discovered models there rather than during session_start.",
     example:"An extension routes Anthropic traffic through a corporate gateway by registering the existing provider with a custom baseUrl and auth headers, so every request leaves the network through the approved path.",
     source:"https://pi.dev/docs/latest/custom-provider"},
+  {id:"pi-rpc", name:"RPC & JSON modes", ecosystem:"Pi", category:"API", status:"Stable",
+    description:"Headless integration modes: RPC mode takes JSONL commands on stdin and streams responses and events on stdout, and JSON mode emits every session event as JSON lines, for embedding Pi in IDEs, apps, or custom UIs.",
+    trigger:"pi --mode rpc · pi --mode json",
+    howto:"Start `pi --mode rpc` and send one JSON command per line — for example `prompt`, `steer`, `abort`, `get_state`, `set_model`, `compact`, or `fork` — correlating replies with an optional `id`. Use `pi --mode json` when you only need the event stream.",
+    example:"Build an editor panel that launches `pi --mode rpc`, sends a `prompt` command, and renders `message_update` events as the answer streams in.",
+    source:"https://pi.dev/docs/latest/rpc"},
+  {id:"pi-sdk", name:"SDK", ecosystem:"Pi", category:"API", status:"Stable",
+    description:"TypeScript SDK for running Pi agent sessions inside your own program, with control over tools, models, thinking levels, extensions, skills, commands, and the system prompt.",
+    trigger:"npm package @earendil-works/pi-coding-agent · createAgentSession()",
+    howto:"Import `createAgentSession`, `ModelRuntime`, and `SessionManager` from `@earendil-works/pi-coding-agent`, create a session, subscribe to events, and call `session.prompt(...)`. Add custom tools with `customTools` or load extensions from disk or inline factories.",
+    example:"Create an in-memory session with `SessionManager.inMemory()`, stream `text_delta` events to stdout, and prompt 'What files are in the current directory?'.",
+    source:"https://pi.dev/docs/latest/sdk"},
+  {id:"pi-themes", name:"Themes", ecosystem:"Pi", category:"Visual", status:"Stable",
+    description:"Built-in dark and light terminal themes chosen from your terminal background, plus custom JSON themes that hot-reload while you edit them.",
+    trigger:"/settings · \"theme\" in settings.json · --use-theme NAME",
+    howto:"Pick a theme in `/settings` or set `\"theme\"` in `settings.json`; use `--use-theme <name>` for one session. Add custom themes as `~/.pi/agent/themes/*.json` — Pi reloads the active theme automatically when you save it.",
+    example:"Create `~/.pi/agent/themes/solarized.json`, set `\"theme\": \"solarized\"`, and tweak its colors while Pi updates live on each save.",
+    source:"https://pi.dev/docs/latest/themes"},
 
 ];
 
