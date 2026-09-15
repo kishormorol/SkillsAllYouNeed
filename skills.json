@@ -1,6 +1,6 @@
 {
   "version": "1.7",
-  "generated": "2026-09-10",
+  "generated": "2026-09-15",
   "count": 182,
   "ecosystems": [
     "Claude",
@@ -1839,11 +1839,11 @@
       "ecosystem": "Claude Code",
       "category": "Agentic",
       "status": "Stable",
-      "description": "Open-source library of 7 structured task-management skills (yylo-dev) — Kanban workflow operation, implementation-sized task planning, wiki and workflow records, provenance-bound evidence, and validated task execution.",
+      "description": "Open-source library of 7 structured task-management skills (yylo-dev) for YYLO Ledger — task operation, implementation-sized task planning, wiki and workflow records, provenance-bound evidence, and validated task execution. Requires the YYLO Ledger CLI; the planning and execution skills also need YYLO orchestration.",
       "trigger": "`npx skills add yylo-dev/yylo-skills` · then invoke by workflow",
-      "example": "Assign one Kanban task and ask the agent to execute it — it delivers through validated steps and files provenance-bound evidence in the ledger.",
+      "example": "Assign one Ledger task and ask the agent to execute it — it delivers through validated steps and files provenance-bound evidence in the Ledger.",
       "source": "https://github.com/yylo-dev/yylo-skills",
-      "howto": "Run `npx skills add yylo-dev/yylo-skills` to install the pack, or clone `yylo-dev/yylo-skills` and copy folders from `skills/` to `.claude/skills/`. Equips Claude Code with Kanban task operation, implementation-sized task planning, wiki and workflow records, evidence capture, and validated single-task execution."
+      "howto": "Run `npx skills add yylo-dev/yylo-skills` to install the pack, or clone `yylo-dev/yylo-skills` and copy folders from `skills/` to `.claude/skills/`. Equips Claude Code with Ledger task operation, implementation-sized task planning, wiki and workflow records, evidence capture, and validated single-task execution. Needs `yylo-ledger` installed; the planning and execution skills also rely on YYLO orchestration."
     },
     {
       "id": "oc-plan-mode",
