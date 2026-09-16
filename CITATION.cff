@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "SkillsAllYouNeed"
-abstract: "A curated directory of every first-party skill, capability, and tool across Claude, ChatGPT, Gemini, Codex and DeepSeek."
+abstract: "A curated directory of every first-party skill, capability, and tool across 13 AI assistant ecosystems, each entry linked to the vendor's own documentation."
 authors:
   - family-names: Morol
     given-names: Md Kishor
@@ -15,7 +15,7 @@ keywords:
   - anthropic
   - chatgpt
   - claude
-  - deepseek
+  - cursor
   - gemini
   - llm
   - openai
