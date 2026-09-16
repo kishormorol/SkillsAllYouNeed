@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "SkillsAllYouNeed"
+abstract: "A curated directory of every first-party skill, capability, and tool across Claude, ChatGPT, Gemini, Codex and DeepSeek."
+authors:
+  - family-names: Morol
+    given-names: Md Kishor
+repository-code: "https://github.com/kishormorol/SkillsAllYouNeed"
+url: "https://kishormorol.github.io/SkillsAllYouNeed/"
+license: CC-BY-4.0
+keywords:
+  - ai
+  - ai-tools
+  - anthropic
+  - chatgpt
+  - claude
+  - deepseek
+  - gemini
+  - llm
+  - openai
+  - reference
