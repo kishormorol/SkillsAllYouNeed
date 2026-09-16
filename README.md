@@ -8,6 +8,7 @@
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-4527A0?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![API](https://img.shields.io/badge/API-skills.json-1A7A44?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)
 [![HF Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-llm--skills--registry-FFD21E?style=flat-square)](https://huggingface.co/datasets/kishormorol/llm-skills-registry)
+[![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-live%20demo-FFD21E?style=flat-square)](https://huggingface.co/spaces/kishormorol/SkillsAllYouNeed)
 
 ![SkillsAllYouNeed home page: 226 skills across 13 ecosystems and 9 categories, free to use](docs/screenshot.jpg)
 
