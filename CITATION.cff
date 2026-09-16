@@ -6,6 +6,7 @@ abstract: "A curated directory of every first-party skill, capability, and tool 
 authors:
   - family-names: Morol
     given-names: Md Kishor
+    orcid: "https://orcid.org/0000-0002-4468-8260"
 repository-code: "https://github.com/kishormorol/SkillsAllYouNeed"
 url: "https://kishormorol.github.io/SkillsAllYouNeed/"
 license: CC-BY-4.0
