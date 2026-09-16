@@ -8,6 +8,8 @@
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-4527A0?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![API](https://img.shields.io/badge/API-skills.json-1A7A44?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)
 
+![SkillsAllYouNeed home page: 226 skills across 13 ecosystems and 9 categories, free to use](docs/screenshot.jpg)
+
 ---
 
 ## What is this?
