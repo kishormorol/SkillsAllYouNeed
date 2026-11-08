@@ -19,3 +19,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run validate
+      - run: python3 -m unittest discover -s tests -v

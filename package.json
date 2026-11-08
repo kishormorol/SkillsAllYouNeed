@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "validate": "node tools/validate-corpus.mjs",
-    "generate": "node tools/validate-corpus.mjs --write-json"
+    "generate": "node tools/validate-corpus.mjs --write-json",
+    "audit": "python3 tools/audit_skills.py",
+    "test": "node tools/validate-corpus.mjs && python3 -m unittest discover -s tests -v"
   },
   "devDependencies": {
     "yaml": "2.9.0"

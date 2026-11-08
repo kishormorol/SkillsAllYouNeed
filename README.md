@@ -81,6 +81,11 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - **Export JSON ↓** — downloads currently visible skills as a structured JSON file
 - **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 226 skills (CC BY 4.0)
 
+### Audit SKILL.md (Web + CLI + Agent Skill)
+- **In the browser (`Audit SKILL.md ✓`)** — paste any `SKILL.md` in the grid toolbar modal to validate YAML frontmatter, unquoted `: ` / ` #` scalar traps, trigger cues, 500-line context budget, hardcoded secrets, and unsafe shell/prompt-injection patterns locally
+- **From the CLI (`tools/audit_skills.py`)** — zero-dependency Python 3.9+ linter for local skill folders (`~/.agents/skills`, `~/.claude/skills`) and CI (`--format text|json|tsv`, `--fail-on error|warning|none`)
+- **As an Agent Skill (`skills/skill-audit/SKILL.md`)** — symlink `skills/skill-audit` into `~/.agents/skills/` and `~/.claude/skills/` to run `/skill-audit` inside Claude Code, Codex, Cursor, or Antigravity
+
 ### Keyboard shortcuts
 | Key | Action |
 |-----|--------|

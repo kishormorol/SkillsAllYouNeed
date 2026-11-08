@@ -1571,3 +1571,27 @@
   .card.featured .custom-badge{ background:var(--highlight); color:var(--ink); }
   .sheet-actions button.is-delete{ color:var(--ink-mute); }
   .sheet-actions button.is-delete:hover{ background:var(--accent); color:var(--paper); border-color:var(--accent); }
+
+  /* ── Audit SKILL.md results ─── */
+  .audit-results{ margin-top:18px; font-family:var(--mono); font-size:12px; }
+  .audit-summary{
+    padding:10px 14px; border:1px solid var(--rule); margin-bottom:10px;
+    display:flex; justify-content:space-between; align-items:center;
+    text-transform:uppercase; letter-spacing:.08em; font-size:11px;
+  }
+  .audit-summary.pass{ border-color:#2D7A4F; color:#2D7A4F; }
+  .audit-summary.warn{ border-color:#A0600A; color:#A0600A; }
+  .audit-summary.error{ border-color:var(--accent); color:var(--accent); }
+  [data-theme="dark"] .audit-summary.pass{ border-color:#5CB880; color:#5CB880; }
+  [data-theme="dark"] .audit-summary.warn{ border-color:#CC9840; color:#CC9840; }
+  .audit-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .audit-item{
+    padding:10px 12px; border:1px solid var(--rule-soft); background:var(--paper-2);
+    line-height:1.45; color:var(--ink);
+  }
+  .audit-item .audit-tag{
+    display:inline-block; font-size:9.5px; text-transform:uppercase; letter-spacing:.08em;
+    padding:1px 6px; margin-right:8px; font-weight:600;
+  }
+  .audit-item.error .audit-tag{ background:var(--accent); color:var(--paper); }
+  .audit-item.warning .audit-tag{ background:#A0600A; color:var(--paper); }

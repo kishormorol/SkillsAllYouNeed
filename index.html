@@ -196,6 +196,7 @@
     <div class="grid-toolbar" id="grid-toolbar">
       <button id="surprise-btn" class="chip" aria-label="Open a random skill">Surprise me →</button>
       <button id="add-skill-btn" class="chip" aria-label="Add a new skill">Add skill +</button>
+      <button id="audit-skill-btn" class="chip" aria-label="Audit a SKILL.md file">Audit SKILL.md ✓</button>
       <span class="spacer"></span>
       <button id="fav-filter-btn" class="chip" aria-pressed="false" aria-label="Show saved skills only">Saved <span id="fav-count" class="badge"></span></button>
       <button id="export-btn" class="chip" aria-label="Export visible skills as JSON">Export JSON ↓</button>
@@ -402,6 +403,27 @@
         <button type="button" class="btn-ghost" id="add-cancel-btn">Cancel</button>
       </div>
     </form>
+  </div>
+</div>
+
+<!-- ─── AUDIT SKILL SCRIM ─── -->
+<div class="add-scrim" id="audit-scrim" role="dialog" aria-modal="true" aria-label="Audit a SKILL.md file">
+  <div class="add-sheet">
+    <button class="close" id="audit-close-btn" aria-label="Close" style="position:absolute;top:18px;right:18px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;border:1px solid var(--rule);padding:6px 10px;background:none;cursor:pointer;">Close ✕</button>
+    <h3>Audit a <span class="it">SKILL.md.</span></h3>
+    <p class="form-sub">Checks YAML frontmatter, trigger cues, context budget, secrets &amp; unsafe commands locally in your browser</p>
+    <div class="form-row full">
+      <div class="form-group">
+        <label for="audit-input">SKILL.md content *</label>
+        <textarea id="audit-input" rows="9" style="font-family:var(--mono);font-size:12.5px;line-height:1.5" placeholder="---&#10;name: my-skill&#10;description: Explain what it does. Use when the user asks to &quot;run X&quot; or &quot;check Y&quot;.&#10;---&#10;&#10;# My Skill&#10;&#10;Instructions here..."></textarea>
+      </div>
+    </div>
+    <div class="form-actions" style="margin-top:12px">
+      <button type="button" class="btn-primary" id="audit-run-btn">Run audit →</button>
+      <button type="button" class="btn-ghost" id="audit-sample-pass-btn">Load clean example</button>
+      <button type="button" class="btn-ghost" id="audit-sample-Trap-btn">Load buggy example</button>
+    </div>
+    <div id="audit-results" class="audit-results" aria-live="polite"></div>
   </div>
 </div>
 

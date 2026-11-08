@@ -1,0 +1,1 @@
+../skills/skill-audit/scripts/audit_skills.py
