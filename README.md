@@ -86,6 +86,19 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - **From the CLI (`tools/audit_skills.py`)** — zero-dependency Python 3.9+ linter for local skill folders (`~/.agents/skills`, `~/.claude/skills`) and CI (`--format text|json|tsv`, `--fail-on error|warning|none`)
 - **As an Agent Skill (`skills/skill-audit/SKILL.md`)** — symlink `skills/skill-audit` into `~/.agents/skills/` and `~/.claude/skills/` to run `/skill-audit` inside Claude Code, Codex, Cursor, or Antigravity
 
+```bash
+# Audit all installed skills in ~/.agents/skills and ~/.claude/skills
+python3 tools/audit_skills.py
+
+# Audit a specific skill directory in CI (exit 1 on warnings or errors)
+python3 tools/audit_skills.py ./skills/skill-audit --fail-on warning
+
+# Install /skill-audit for Claude Code, Codex, Cursor, and Antigravity
+mkdir -p ~/.agents/skills ~/.claude/skills
+ln -sfn "$(pwd)/skills/skill-audit" ~/.agents/skills/skill-audit
+ln -sfn ~/.agents/skills/skill-audit ~/.claude/skills/skill-audit
+```
+
 ### Keyboard shortcuts
 | Key | Action |
 |-----|--------|
@@ -112,14 +125,17 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 Modular HTML + CSS + JS. Zero build step. Zero runtime dependencies.
 
 ```
-index.html   ← skeleton HTML
-styles.css   ← all presentation
-data.js      ← skills corpus, glyphs, ecosystem config
-scripts.js   ← renderer, filters, state, interactions
-skills.json  ← machine-readable corpus
-sitemap.xml  ← for search engine crawlers
-manifest.json← PWA manifest
-favicon.svg  ← brand icon
+index.html        ← skeleton HTML
+styles.css        ← all presentation
+data.js           ← skills corpus, glyphs, ecosystem config
+scripts.js        ← renderer, filters, state, interactions, in-browser SKILL.md auditor
+skills.json       ← machine-readable corpus
+skills/           ← installable /skill-audit Agent Skill + Python CLI linter
+tools/            ← corpus validator (validate-corpus.mjs) + audit_skills.py link
+tests/            ← unit tests for the SKILL.md auditor
+sitemap.xml       ← for search engine crawlers
+manifest.json     ← PWA manifest
+favicon.svg       ← brand icon
 ```
 
 - **Type:** Instrument Serif · Newsreader · JetBrains Mono
@@ -188,7 +204,7 @@ Found a missing skill? Spotted an error? Two ways to help:
 
 Every entry needs: `id`, `name`, `ecosystem`, `category`, `status`, `description`, `trigger`, `howto`, `example`, `source`.
 
-Run `npm run validate` before opening a PR. It checks the registry, comparison matrix, submission form, workflow, and generated `skills.json`.
+Run `npm test` (or `npm run validate`) before opening a PR. It checks the registry, comparison matrix, submission form, workflow, generated `skills.json`, and `SKILL.md` auditor test suite.
 
 ---
 
