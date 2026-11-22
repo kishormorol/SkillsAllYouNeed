@@ -3,7 +3,7 @@
 > The open registry of AI skills — ready-to-use capability definitions for Claude, Claude Code, ChatGPT, Codex, OpenCode, Cursor, Gemini, Perplexity, Microsoft 365 Copilot, GitHub Copilot, Antigravity, Kiro, and Pi.
 
 [![Live site](https://img.shields.io/badge/live%20site-kishormorol.github.io%2FSkillsAllYouNeed-C7401E?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
-[![Skills](https://img.shields.io/badge/skills-226-15130E?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
+[![Skills](https://img.shields.io/badge/skills-227-15130E?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
 [![Ecosystems](https://img.shields.io/badge/ecosystems-13-1B5296?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-4527A0?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![API](https://img.shields.io/badge/API-skills.json-1A7A44?style=flat-square)](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)
@@ -11,7 +11,7 @@
 [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-live%20demo-FFD21E?style=flat-square)](https://huggingface.co/spaces/kishormorol/SkillsAllYouNeed)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22798630-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.22798630)
 
-![SkillsAllYouNeed home page: 226 skills across 13 ecosystems and 9 categories, free to use](docs/screenshot.jpg)
+![SkillsAllYouNeed home page: 227 skills across 13 ecosystems and 9 categories, free to use](docs/screenshot.jpg)
 
 ---
 
@@ -25,7 +25,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 
 ---
 
-## Ecosystems covered (226 skills)
+## Ecosystems covered (227 skills)
 
 | Ecosystem | Skills | Highlights |
 |-----------|--------|------------|
@@ -66,7 +66,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - Sort by index order or recent (Beta-first)
 
 ### Cards & detail sheet
-- 226 skill cards in an asymmetric 12-column editorial grid
+- 227 skill cards in an asymmetric 12-column editorial grid
 - Per-ecosystem brand colors (vermillion, navy, green, purple, teal, blue)
 - **Click any card** → full detail sheet with description, trigger, how-to, worked example, and source
 - **Related skills** — up to 4 cross-links by category and ecosystem inside every sheet
@@ -79,7 +79,7 @@ If you've ever asked *"Can Claude do X?"* or *"How do I trigger ChatGPT's deep r
 - Saved filter shows only your bookmarked skills
 - Web Share API integration — native share sheet on mobile
 - **Export JSON ↓** — downloads currently visible skills as a structured JSON file
-- **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 226 skills (CC BY 4.0)
+- **[skills.json API](https://kishormorol.github.io/SkillsAllYouNeed/skills.json)** — machine-readable corpus of all 227 skills (CC BY 4.0)
 
 ### Audit SKILL.md (Web + CLI + Agent Skill)
 - **In the browser (`Audit SKILL.md ✓`)** — paste any `SKILL.md` in the grid toolbar modal to validate YAML frontmatter, unquoted `: ` / ` #` scalar traps, trigger cues, 500-line context budget, hardcoded secrets, and unsafe shell/prompt-injection patterns locally
@@ -146,7 +146,7 @@ favicon.svg       ← brand icon
 
 ## Use the JSON API
 
-All 226 skills are available as a static JSON endpoint:
+All 227 skills are available as a static JSON endpoint:
 
 ```
 GET https://kishormorol.github.io/SkillsAllYouNeed/skills.json
@@ -155,7 +155,7 @@ GET https://kishormorol.github.io/SkillsAllYouNeed/skills.json
 ```json
 {
   "version": "1.8",
-  "count": 226,
+  "count": 227,
   "ecosystems": ["Claude", "Claude Code", "ChatGPT", "Codex", "OpenCode", "Cursor", "Gemini", "Perplexity", "Microsoft 365 Copilot", "GitHub Copilot", "Antigravity", "Kiro", "Pi"],
   "license": "CC BY 4.0",
   "skills": [
@@ -216,6 +216,7 @@ Thanks to everyone who has helped grow the registry:
 |-------------|----------------|
 | [@WhiteHades](https://github.com/WhiteHades) | OpenCode + Codex ecosystems, 22 skills, branded SVG icons (v1.4) · GitHub Copilot + Antigravity ecosystems, Microsoft 365 Copilot rename, modular architecture refactor (v1.5) · Pi ecosystem, 8 skills, font flash fix, complete matrix columns (v1.6) · Cursor + Kiro ecosystems, 18 sourced entries, corpus validator + CI (v1.7) |
 | [@InsightFactoryAPP](https://github.com/InsightFactoryAPP) | YYLO Skills entry for Claude Code (v1.8) |
+| [@xiaoxuux](https://github.com/xiaoxuux) | RedYA Xiaohongshu skill entry for Claude Code (v1.8) |
 
 Want to see your name here? [Open a PR](https://github.com/kishormorol/SkillsAllYouNeed/compare) adding skills or fixing entries.
 

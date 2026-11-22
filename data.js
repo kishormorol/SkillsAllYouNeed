@@ -1185,6 +1185,12 @@ const SKILLS = [
     howto:"Add the marketplace with `/plugin marketplace add wshobson/agents`, then install only the plugins you need, such as `/plugin install python-development`. For skills alone, use `gh skill install wshobson/agents` or `npx skills add wshobson/agents --skill python-testing-patterns`.",
     example:"Install the python-development plugin and Claude Code gains Python-specialist agents and testing-pattern skills for that project.",
     source:"https://github.com/wshobson/agents"},
+  {id:"cc-skill-redya-xiaohongshu", name:"小红书图文与实况图·红鸦 AI (RedYA Xiaohongshu)", ecosystem:"Claude Code", category:"Visual", status:"Stable",
+    description:"Third-party skill (rnthking/redya-skills) that writes Xiaohongshu image-text posts and Live Photo posts through the hosted RedYA API: it picks ordinary, product, reference-adaptation, or Live Photo mode from the request, supports outline-first or direct generation and standalone wording checks, and hands a finished draft to the publishing editor for confirmation. Requires a paid RedYA API key (REDYA_API_KEY) and account credits for AI generation.",
+    trigger:'"帮我写一篇小红书商品图文，先给我看大纲。" (Draft a Xiaohongshu product post and show me the outline first.) · "怎么用" for seven examples',
+    howto:"Copy the `skill/redya-xiaohongshu` folder from `rnthking/redya-skills` into `.claude/skills/`. Sign in to RedYA, generate an API key on the developer page (https://hy.ithinkai.cn/developer), and set `REDYA_API_KEY` in the environment Claude Code runs in. Generation spends RedYA account credits; asking \"怎么用\" shows examples without a key.",
+    example:"With a packaging photo and a close-up of dried figs, ask for an office-snack post, review the page plan, assign the close-up to the texture page and the packaging photo to the last page, then generate the illustrations.",
+    source:"https://github.com/rnthking/redya-skills/tree/4f7d0c1f85555db664feb94eea2a5caa17a0be21/skill/redya-xiaohongshu"},
 
   /* ── OPENCODE ── */
   {id:"oc-plan-mode", name:"Plan Mode", ecosystem:"OpenCode", category:"Agentic", status:"Stable",
